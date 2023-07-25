@@ -5,20 +5,32 @@ import { Mouse } from "lucide-react";
 
 export default function ScrollDown() {
   return (
-    <div className="fixed bottom-0 right-0 m-4 bg-black rounded-full p-2">
+    <div className="fixed bottom-0 right-0 m-8 md:m-12 select-none flex items-center justify-center">
       <motion.svg
         viewBox="0 0 100 100"
         width="100"
         height="100"
-        className="w-20 h-auto fill-white"
-        initial={true}
+        className="w-16 md:w-20 h-auto fill-white absolute"
+        initial={{ rotate: 0, opacity: 0, scale: 0 }}
         animate={{
           rotate: 360,
+          opacity: 1,
+          scale: 1,
         }}
         transition={{
-          duration: 4,
-          ease: "circInOut",
-          repeat: Infinity,
+          rotate: {
+            duration: 4,
+            ease: "circInOut",
+            repeat: Infinity,
+          },
+          opacity: {
+            duration: 0.4,
+            ease: "easeIn",
+          },
+          scale: {
+            duration: 0.4,
+            ease: "easeIn",
+          },
         }}
       >
         <defs>
@@ -35,7 +47,19 @@ export default function ScrollDown() {
           <textPath href="#circle">scroll down • scroll down •</textPath>
         </text>
       </motion.svg>
-      <Mouse className="absolute left-1/2 top-1/2 translate-x-[-50%] translate-y-[-50%]" />
+      <motion.div
+        initial={{ opacity: 0, scale: 0 }}
+        animate={{
+          opacity: 1,
+          scale: 1,
+        }}
+        transition={{
+          duration: 0.4,
+          ease: "easeIn",
+        }}
+      >
+        <Mouse className="w-5 md:w-8"/>
+      </motion.div>
     </div>
   );
 }
