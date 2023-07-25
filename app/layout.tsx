@@ -3,6 +3,7 @@ import "./globals.css";
 import type { Metadata } from "next";
 import { Inter, Merriweather, Roboto_Slab } from "next/font/google";
 import ScrollDown from "@/components/ScrollDown";
+import PageScrollProgress from "@/components/PageScrollProgress";
 
 const inter = Inter({ subsets: ["latin"] });
 const merri = Merriweather({
@@ -24,9 +25,10 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${inter.className} ${merri.variable}`}>
+        <PageScrollProgress />
         <Navbar />
         {children}
-        <ScrollDown/>
+        <ScrollDown />
       </body>
     </html>
   );

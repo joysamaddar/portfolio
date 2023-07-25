@@ -4,13 +4,7 @@ import { motion } from "framer-motion";
 
 export default function Navbar() {
   return (
-    <>
-      <motion.div
-        initial={{ width: "0%" }}
-        animate={{ width: "100%" }}
-        transition={{ duration: 0.55, ease: "easeInOut" }}
-        className="absolute w-screen h-[3px] bg-blue-500"
-      ></motion.div>
+    <div>
       <motion.nav
         initial={{ opacity: 0, y: "2rem" }}
         animate={{ opacity: 1, y: 0 }}
@@ -26,6 +20,6 @@ export default function Navbar() {
           <li className="cursor-pointer">Contact</li>
         </ul>
       </motion.nav>
-    </>
+    </div>
   );
 }
