@@ -44,3 +44,7 @@
   writing-mode: vertical-rl;
   text-orientation: sideways;
 }
+
+.slanting-text {
+  transform: rotate(-28deg) skew(25deg);
+}

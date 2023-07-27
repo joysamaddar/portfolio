@@ -1,9 +1,9 @@
 import Navbar from "@/components/Navbar";
 import "./globals.css";
 import type { Metadata } from "next";
-import { Inter, Merriweather, Roboto_Slab } from "next/font/google";
-import ScrollDown from "@/components/ScrollDown";
-import PageScrollProgress from "@/components/PageScrollProgress";
+import { Inter, Merriweather } from "next/font/google";
+import ScrollDown from "@/components/ui/ScrollDown";
+import PageScrollProgress from "@/components/ui/PageScrollProgress";
 
 const inter = Inter({ subsets: ["latin"] });
 const merri = Merriweather({

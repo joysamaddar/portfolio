@@ -1,13 +1,11 @@
-import TextCarousel from "@/components/TextCarousel";
+import Hero from "@/components/Hero";
+import Intro from "@/components/Intro";
 
 export default function Home() {
   return (
-    <main className="flex flex-col items-center justify-center">
-      <div className="hero h-[90vh] w-full flex flex-row items-center justify-center px-[10%] gap-24">
-        <div className="relative flex items-center justify-center">
-          <TextCarousel />
-        </div>
-      </div>
+    <main className="max-w-screen overflow-clip">
+      <Hero />
+      <Intro />
     </main>
   );
 }
