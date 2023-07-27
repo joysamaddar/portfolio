@@ -3,22 +3,44 @@
 @tailwind utilities;
 
 :root {
-  --black: #000;
+  --black: #0d0d0d;
   --white: #fff;
   --gray: #595959;
+  --darkgray: #2b3030;
   box-sizing: border-box;
   padding: 0;
   border: 0;
   overflow-x: hidden;
-}
-
-body {
-  background: var(--black);
-  color: white;
+  scroll-behavior: smooth;
 }
 
 @layer base {
+  body {
+    @apply bg-black text-white;
+  }
+
   ::selection {
     @apply bg-blue-500 text-white;
   }
+
+  ::-webkit-scrollbar {
+    @apply w-2.5;
+  }
+
+  ::-webkit-scrollbar-track {
+    @apply bg-transparent;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    @apply bg-darkgray;
+  }
+
+  .edgespacing {
+    @apply mx-[8%] my-8 md:my-12;
+  }
+}
+
+.vertical-text {
+  writing-mode: vertical-rl;
+  text-orientation: sideways;
 }
