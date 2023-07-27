@@ -17,7 +17,7 @@ export default function Intro() {
   const width6 = useTransform(scrollYProgress, [0.25, 0.9], ["100%", "0%"])
 
   return (
-    <section ref={sectionRef} className="relative w-screen px-[8%] py-24 select-none flex flex-col">
+    <section id="about" ref={sectionRef} className="relative w-screen px-[8%] pt-[12rem] pb-[6rem] select-none flex flex-col">
       <h2 className="text-xs text-gray uppercase underline underline-offset-4">ABOUT ME</h2>
       <div className="flex flex-col gap-6 mt-12 font-semibold text-6xl text-white">
         <div className="relative">

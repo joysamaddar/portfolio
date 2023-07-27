@@ -22,7 +22,7 @@ export default function MakeAndBreak() {
           whileInView={{
             width: "300px",
             height: "300px",
-            transition: { type: "spring", bounce: 0.3, delay: 2 },
+            transition: { type: "spring", bounce: 0.3, delay: 1 },
           }}
           viewport={{ once: true, amount: 1, margin: "-25%", root: targetElem }}
           className="bg-[#00000005] absolute rounded-full"
@@ -32,7 +32,7 @@ export default function MakeAndBreak() {
           whileInView={{
             width: "600px",
             height: "600px",
-            transition: { type: "spring", bounce: 0.3, delay: 2 },
+            transition: { type: "spring", bounce: 0.3, delay: 1 },
           }}
           viewport={{ once: true, amount: 1, margin: "-25%", root: targetElem }}
           className="bg-[#00000005] absolute rounded-full"
@@ -42,7 +42,7 @@ export default function MakeAndBreak() {
           whileInView={{
             width: "900px",
             height: "900px",
-            transition: { type: "spring", bounce: 0.3, delay: 2 },
+            transition: { type: "spring", bounce: 0.3, delay: 1 },
           }}
           viewport={{ once: true, amount: 1, margin: "-25%", root: targetElem }}
           className="bg-[#00000005] absolute rounded-full"
@@ -52,7 +52,7 @@ export default function MakeAndBreak() {
           whileInView={{
             opacity: 1,
             y: "0",
-            transition: { duration: 0.5, delay: 2 },
+            transition: { duration: 0.5, delay: 1 },
           }}
           viewport={{ once: true, amount: 1, margin: "-25%", root: targetElem }}
           className="italic font-semibold text-4xl text-graytransparent cursor-default"

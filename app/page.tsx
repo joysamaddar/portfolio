@@ -1,3 +1,4 @@
+import Experience from "@/components/Experience";
 import Hero from "@/components/Hero";
 import Intro from "@/components/Intro";
 import MakeAndBreak from "@/components/MakeAndBreak";
@@ -8,6 +9,7 @@ export default function Home() {
       <Hero />
       <MakeAndBreak/>
       <Intro />
+      <Experience/>
     </main>
   );
 }
