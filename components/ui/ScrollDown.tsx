@@ -10,7 +10,7 @@ export default function ScrollDown() {
         viewBox="0 0 100 100"
         width="100"
         height="100"
-        className="w-16 h-auto fill-white"
+        className="w-16 h-auto fill-graytransparent"
         initial={{ rotate: 0, opacity: 0, scale: 0 }}
         animate={{
           rotate: 360,
@@ -59,7 +59,7 @@ export default function ScrollDown() {
         }}
         className="absolute"
       >
-        <Mouse className="w-5"/>
+        <Mouse className="w-5 text-graytransparent"/>
       </motion.div>
     </div>
   );

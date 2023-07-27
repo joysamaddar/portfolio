@@ -7,6 +7,7 @@
   --white: #fff;
   --gray: #595959;
   --darkgray: #2b3030;
+  --graytransparent: #ffffff88;
   box-sizing: border-box;
   padding: 0;
   border: 0;
@@ -43,6 +44,14 @@
 .vertical-text {
   writing-mode: vertical-rl;
   text-orientation: sideways;
+}
+
+.brokenclip1{
+  clip-path: polygon(0 0, 100% 0, 100% 31%, 0 70%);
+}
+
+.brokenclip2{
+  clip-path: polygon(0 100%, 100% 100%, 100% 31%, 0 70%);
 }
 
 .slanting-text {

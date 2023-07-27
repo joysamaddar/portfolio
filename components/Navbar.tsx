@@ -36,7 +36,7 @@ export default function Navbar() {
           variants={ulAnim}
           initial="hidden"
           animate="show"
-          className="flex flex-col items-end justify-center text-gray uppercase"
+          className="flex flex-col items-end justify-center text-graytransparent uppercase"
         >
           <motion.li
             variants={liAnim}

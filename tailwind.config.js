@@ -6,14 +6,12 @@ module.exports = {
   ],
   theme: {
     extend: {
-      fontFamily: {
-        secondary: ['var(--font-secondary)'],
-      },
       colors: {
         black: "var(--black)",
         white: "var(--white)",
         gray: "var(--gray)",
         darkgray: "var(--darkgray)",
+        graytransparent: "var(--graytransparent)"
       }
     },
   },
