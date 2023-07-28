@@ -9,12 +9,12 @@ export default function Intro() {
     target: sectionRef,
     offset: ["start end", "end start"]
   } as any);
-  const width1 = useTransform(scrollYProgress, [0.25, 0.4], ["100%", "0%"])
-  const width2 = useTransform(scrollYProgress, [0.25, 0.5], ["100%", "0%"])
-  const width3 = useTransform(scrollYProgress, [0.25, 0.6], ["100%", "0%"])
-  const width4 = useTransform(scrollYProgress, [0.25, 0.7], ["100%", "0%"])
-  const width5 = useTransform(scrollYProgress, [0.25, 0.8], ["100%", "0%"])
-  const width6 = useTransform(scrollYProgress, [0.25, 0.9], ["100%", "0%"])
+  const width1 = useTransform(scrollYProgress, [0.35, 0.5], ["100%", "0%"])
+  const width2 = useTransform(scrollYProgress, [0.35, 0.6], ["100%", "0%"])
+  const width3 = useTransform(scrollYProgress, [0.35, 0.7], ["100%", "0%"])
+  const width4 = useTransform(scrollYProgress, [0.35, 0.8], ["100%", "0%"])
+  const width5 = useTransform(scrollYProgress, [0.35, 0.9], ["100%", "0%"])
+  const width6 = useTransform(scrollYProgress, [0.35, 1], ["100%", "0%"])
 
   return (
     <section id="about" ref={sectionRef} className="relative w-screen px-[8%] pt-[12rem] pb-[6rem] select-none flex flex-col">
