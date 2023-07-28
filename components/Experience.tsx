@@ -19,6 +19,20 @@ export default function Experience() {
   const widthline2 = useTransform(scrollYProgress, [0.25, 0.4], ["0%", "100%"]);
   const widthline3 = useTransform(scrollYProgress, [0.4, 0.65], ["0%", "100%"]);
 
+  const pTagVariants = {
+    hidden: {
+      opacity: 0,
+      y: "1rem",
+    },
+    show: (i: number) => ({
+      opacity: 1,
+      y: "0rem",
+      transition: {
+        duration: 0.4,
+        delay: 0.4*i,
+      },
+    }),
+  }
   return (
     <section ref={targetElem} className="select-none px-[8%] my-[6rem]">
       <h2 className="text-xs text-gray uppercase underline underline-offset-4">
@@ -47,39 +61,15 @@ export default function Experience() {
             className="h-[1px] absolute top-0 left-0 bg-gray"
           ></motion.div>
           <motion.h2
-            variants={{
-              hidden: {
-                opacity: 0,
-                y: "1rem",
-              },
-              show: {
-                opacity: 1,
-                y: "0rem",
-                transition: {
-                  duration: 0.4,
-                  delay: 0.4,
-                },
-              },
-            }}
+            custom={1}
+            variants={pTagVariants}
             className="uppercase font-black text-4xl tracking-wide flex flex-row"
           >
             <p className="flex flex-col items-center justify-center">
               <span>JUN</span>
               <motion.span
-                variants={{
-                  hidden: {
-                    opacity: 0,
-                    y: "0.5rem",
-                  },
-                  show: {
-                    opacity: 1,
-                    y: "0rem",
-                    transition: {
-                      duration: 0.4,
-                      delay: 0.8,
-                    },
-                  },
-                }}
+                custom={2}
+                variants={pTagVariants}
                 className="font-extralight text-xs"
               >
                 2023
@@ -89,78 +79,30 @@ export default function Experience() {
           </motion.h2>
           <div className="text-right relative">
             <motion.a
-              variants={{
-                hidden: {
-                  opacity: 0,
-                  y: "1rem",
-                },
-                show: {
-                  opacity: 1,
-                  y: "0rem",
-                  transition: {
-                    duration: 0.4,
-                    delay: 0.4,
-                  },
-                },
-              }}
+              custom={1}
+              variants={pTagVariants}
               href={"https://www.linkedin.com/company/fasthrdotai/"}
               target="_blank"
             >
               <ArrowUpRight className="text-gray absolute top-0 right-[-2rem] translate-y-[5%]" />
             </motion.a>
             <motion.p
-              variants={{
-                hidden: {
-                  opacity: 0,
-                  y: "1rem",
-                },
-                show: {
-                  opacity: 1,
-                  y: "0rem",
-                  transition: {
-                    duration: 0.4,
-                    delay: 0.4,
-                  },
-                },
-              }}
+              custom={1}
+              variants={pTagVariants}
               className="text-lg mb-2"
             >
               Fasthr.AI
             </motion.p>
             <motion.p
-              variants={{
-                hidden: {
-                  opacity: 0,
-                  y: "1rem",
-                },
-                show: {
-                  opacity: 1,
-                  y: "0rem",
-                  transition: {
-                    duration: 0.4,
-                    delay: 0.8,
-                  },
-                },
-              }}
+              custom={2}
+              variants={pTagVariants}
               className="text-gray"
             >
               Frontend Engineer
             </motion.p>
             <motion.p
-              variants={{
-                hidden: {
-                  opacity: 0,
-                  y: "1rem",
-                },
-                show: {
-                  opacity: 1,
-                  y: "0rem",
-                  transition: {
-                    duration: 0.4,
-                    delay: 1.2,
-                  },
-                },
-              }}
+              custom={3}
+            variants={pTagVariants}
               className="text-gray text-xs font-light"
             >
               Full time
@@ -189,39 +131,15 @@ export default function Experience() {
             className="h-[1px] w-full absolute top-0 left-0 bg-gray"
           ></motion.div>
           <motion.h2
-            variants={{
-              hidden: {
-                opacity: 0,
-                y: "1rem",
-              },
-              show: {
-                opacity: 1,
-                y: "0rem",
-                transition: {
-                  duration: 0.4,
-                  delay: 0.4,
-                },
-              },
-            }}
+            custom={1}
+            variants={pTagVariants}
             className="uppercase font-black text-4xl tracking-wide flex flex-row"
           >
             <p className="flex flex-col items-center justify-center">
               <span>MAR</span>
               <motion.span
-                variants={{
-                  hidden: {
-                    opacity: 0,
-                    y: "0.5rem",
-                  },
-                  show: {
-                    opacity: 1,
-                    y: "0rem",
-                    transition: {
-                      duration: 0.4,
-                      delay: 0.8,
-                    },
-                  },
-                }}
+                custom={2}
+                variants={pTagVariants}
                 className="font-extralight text-xs"
               >
                 2022
@@ -231,20 +149,8 @@ export default function Experience() {
             <p className="flex flex-col items-center justify-center">
               <span>MAY</span>
               <motion.span
-                variants={{
-                  hidden: {
-                    opacity: 0,
-                    y: "0.5rem",
-                  },
-                  show: {
-                    opacity: 1,
-                    y: "0rem",
-                    transition: {
-                      duration: 0.4,
-                      delay: 0.8,
-                    },
-                  },
-                }}
+                custom={2}
+                variants={pTagVariants}
                 className="font-extralight text-xs"
               >
                 2023
@@ -253,40 +159,16 @@ export default function Experience() {
           </motion.h2>
           <div className="text-right relative">
             <motion.a
-              variants={{
-                hidden: {
-                  opacity: 0,
-                  y: "1rem",
-                },
-                show: {
-                  opacity: 1,
-                  y: "0rem",
-                  transition: {
-                    duration: 0.4,
-                    delay: 0.4,
-                  },
-                },
-              }}
+             custom={1}
+             variants={pTagVariants}
               href={"https://www.linkedin.com/company/cognizant/"}
               target="_blank"
             >
               <ArrowUpRight className="text-gray absolute top-0 right-[-2rem] translate-y-[5%]" />
             </motion.a>
             <motion.p
-              variants={{
-                hidden: {
-                  opacity: 0,
-                  y: "1rem",
-                },
-                show: {
-                  opacity: 1,
-                  y: "0rem",
-                  transition: {
-                    duration: 0.4,
-                    delay: 0.4,
-                  },
-                },
-              }}
+              custom={1}
+              variants={pTagVariants}
               className="text-lg mb-2"
             >
               Cognizant
@@ -294,58 +176,22 @@ export default function Experience() {
             <div className="flex flex-col gap-4">
               <div>
                 <motion.p
-                  variants={{
-                    hidden: {
-                      opacity: 0,
-                      y: "1rem",
-                    },
-                    show: {
-                      opacity: 1,
-                      y: "0rem",
-                      transition: {
-                        duration: 0.4,
-                        delay: 0.8,
-                      },
-                    },
-                  }}
+                 custom={2}
+                 variants={pTagVariants}
                   className="text-gray"
                 >
                   Programmer Analyst
                 </motion.p>
                 <motion.p
-                  variants={{
-                    hidden: {
-                      opacity: 0,
-                      y: "1rem",
-                    },
-                    show: {
-                      opacity: 1,
-                      y: "0rem",
-                      transition: {
-                        duration: 0.4,
-                        delay: 1.2,
-                      },
-                    },
-                  }}
+                  custom={3}
+                  variants={pTagVariants}
                   className="text-gray text-xs font-light"
                 >
                   AUG 2022-MAY 2023
                 </motion.p>
                 <motion.p
-                  variants={{
-                    hidden: {
-                      opacity: 0,
-                      y: "1rem",
-                    },
-                    show: {
-                      opacity: 1,
-                      y: "0rem",
-                      transition: {
-                        duration: 0.4,
-                        delay: 1.6,
-                      },
-                    },
-                  }}
+                  custom={4}
+                  variants={pTagVariants}
                   className="text-gray text-xs font-light"
                 >
                   Full time
@@ -353,58 +199,22 @@ export default function Experience() {
               </div>
               <div>
                 <motion.p
-                  variants={{
-                    hidden: {
-                      opacity: 0,
-                      y: "1rem",
-                    },
-                    show: {
-                      opacity: 1,
-                      y: "0rem",
-                      transition: {
-                        duration: 0.4,
-                        delay: 2,
-                      },
-                    },
-                  }}
+                  custom={5}
+                  variants={pTagVariants}
                   className="text-gray"
                 >
                   Intern
                 </motion.p>
                 <motion.p
-                  variants={{
-                    hidden: {
-                      opacity: 0,
-                      y: "1rem",
-                    },
-                    show: {
-                      opacity: 1,
-                      y: "0rem",
-                      transition: {
-                        duration: 0.4,
-                        delay: 2.4,
-                      },
-                    },
-                  }}
+                  custom={6}
+                  variants={pTagVariants}
                   className="text-gray text-xs font-light"
                 >
                   MAR 2022-AUG 2023
                 </motion.p>
                 <motion.p
-                  variants={{
-                    hidden: {
-                      opacity: 0,
-                      y: "1rem",
-                    },
-                    show: {
-                      opacity: 1,
-                      y: "0rem",
-                      transition: {
-                        duration: 0.4,
-                        delay: 2.8,
-                      },
-                    },
-                  }}
+                  custom={7}
+                  variants={pTagVariants}
                   className="text-gray text-xs font-light"
                 >
                   Internship
@@ -435,39 +245,15 @@ export default function Experience() {
             className="h-[1px] w-full absolute top-0 left-0 bg-gray"
           ></motion.div>
           <motion.h2
-            variants={{
-              hidden: {
-                opacity: 0,
-                y: "1rem",
-              },
-              show: {
-                opacity: 1,
-                y: "0rem",
-                transition: {
-                  duration: 0.4,
-                  delay: 0.4,
-                },
-              },
-            }}
+            custom={1}
+            variants={pTagVariants}
             className="uppercase font-black text-4xl tracking-wide flex flex-row"
           >
             <p className="flex flex-col items-center justify-center">
               <span>FEB</span>
               <motion.span
-                variants={{
-                  hidden: {
-                    opacity: 0,
-                    y: "0.5rem",
-                  },
-                  show: {
-                    opacity: 1,
-                    y: "0rem",
-                    transition: {
-                      duration: 0.4,
-                      delay: 0.8,
-                    },
-                  },
-                }}
+                custom={2}
+                variants={pTagVariants}
                 className="font-extralight text-xs"
               >
                 2022
@@ -477,20 +263,8 @@ export default function Experience() {
             <p className="flex flex-col items-center justify-center">
               <span>MAR</span>
               <motion.span
-                variants={{
-                  hidden: {
-                    opacity: 0,
-                    y: "0.5rem",
-                  },
-                  show: {
-                    opacity: 1,
-                    y: "0rem",
-                    transition: {
-                      duration: 0.4,
-                      delay: 0.8,
-                    },
-                  },
-                }}
+                custom={2}
+                variants={pTagVariants}
                 className="font-extralight text-xs"
               >
                 2022
@@ -499,78 +273,30 @@ export default function Experience() {
           </motion.h2>
           <div className="text-right relative">
             <motion.a
-              variants={{
-                hidden: {
-                  opacity: 0,
-                  y: "1rem",
-                },
-                show: {
-                  opacity: 1,
-                  y: "0rem",
-                  transition: {
-                    duration: 0.4,
-                    delay: 0.4,
-                  },
-                },
-              }}
+              custom={1}
+              variants={pTagVariants}
               href={"https://www.linkedin.com/company/agoraverse/"}
               target="_blank"
             >
               <ArrowUpRight className="text-gray absolute top-0 right-[-2rem] translate-y-[5%]" />
             </motion.a>
             <motion.p
-              variants={{
-                hidden: {
-                  opacity: 0,
-                  y: "1rem",
-                },
-                show: {
-                  opacity: 1,
-                  y: "0rem",
-                  transition: {
-                    duration: 0.4,
-                    delay: 0.4,
-                  },
-                },
-              }}
+              custom={1}
+              variants={pTagVariants}
               className="text-lg mb-2"
             >
               Agoraverse
             </motion.p>
             <motion.p
-              variants={{
-                hidden: {
-                  opacity: 0,
-                  y: "1rem",
-                },
-                show: {
-                  opacity: 1,
-                  y: "0rem",
-                  transition: {
-                    duration: 0.4,
-                    delay: 0.8,
-                  },
-                },
-              }}
+              custom={2}
+              variants={pTagVariants}
               className="text-gray"
             >
               Junior Full Stack Developer
             </motion.p>
             <motion.p
-              variants={{
-                hidden: {
-                  opacity: 0,
-                  y: "1rem",
-                },
-                show: {
-                  opacity: 1,
-                  y: "0rem",
-                  transition: {
-                    duration: 0.4,
-                    delay: 1.2,
-                  },
-                },
-              }}
+              custom={3}
+              variants={pTagVariants}
               className="text-gray text-xs font-light"
             >
               Part time
