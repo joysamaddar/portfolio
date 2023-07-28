@@ -84,7 +84,7 @@ export default function Experience() {
               href={"https://www.linkedin.com/company/fasthrdotai/"}
               target="_blank"
             >
-              <ArrowUpRight className="text-gray absolute top-0 right-[-2rem] translate-y-[5%]" />
+              <ArrowUpRight className="z-[999] text-gray absolute top-0 right-[-2rem] translate-y-[5%]" />
             </motion.a>
             <motion.p
               custom={1}
@@ -164,7 +164,7 @@ export default function Experience() {
               href={"https://www.linkedin.com/company/cognizant/"}
               target="_blank"
             >
-              <ArrowUpRight className="text-gray absolute top-0 right-[-2rem] translate-y-[5%]" />
+              <ArrowUpRight className="z-[999] text-gray absolute top-0 right-[-2rem] translate-y-[5%]" />
             </motion.a>
             <motion.p
               custom={1}
@@ -278,7 +278,7 @@ export default function Experience() {
               href={"https://www.linkedin.com/company/agoraverse/"}
               target="_blank"
             >
-              <ArrowUpRight className="text-gray absolute top-0 right-[-2rem] translate-y-[5%]" />
+              <ArrowUpRight className="z-[999] text-gray absolute top-0 right-[-2rem] translate-y-[5%]" />
             </motion.a>
             <motion.p
               custom={1}
