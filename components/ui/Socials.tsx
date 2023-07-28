@@ -1,3 +1,5 @@
+"use client"
+
 import { motion } from "framer-motion";
 import { Github, Linkedin, Twitter } from "lucide-react";
 
@@ -13,8 +15,8 @@ export default function Socials(){
   };
 
   const socialsAnim = {
-    hidden: { opacity: 0, y: "-1.5rem" },
-    show: { opacity: 1, y: "0", transition: { type: "spring", bounce: 0.3 } },
+    hidden: { opacity: 0, x: "-1.5rem" },
+    show: { opacity: 1, x: "0", transition: { type: "spring", bounce: 0.3 } },
   };
 
   return(
@@ -22,7 +24,7 @@ export default function Socials(){
     variants={ulAnim}
     initial="hidden"
     animate="show"
-    className="text-graytransparent flex flex-col gap-4 items-center justify-start transition-all fixed bottom-0 pl-[2.5%] my-8 md:my-12"
+    className="text-graytransparent flex flex-col gap-4 items-center justify-start transition-all fixed bottom-0 pl-[3%] my-8 md:my-12"
   >
     <motion.a
       variants={socialsAnim}

@@ -4,12 +4,13 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import ScrollDown from "@/components/ui/ScrollDown";
 import PageScrollProgress from "@/components/ui/PageScrollProgress";
+import Socials from "@/components/ui/Socials";
 
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "Joy's Portfolio",
-  description: "Portfolio of Joy Samaddar",
+  description: "Making pixel-perfect UIs and robust backends.",
 };
 
 export default function RootLayout({
@@ -21,6 +22,7 @@ export default function RootLayout({
     <html lang="en">
       <body className={`${inter.className}`}>
         <PageScrollProgress />
+        <Socials/>
         <Navbar />
         {children}
         <ScrollDown />
