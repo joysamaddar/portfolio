@@ -2,6 +2,7 @@ import Experience from "@/components/Experience";
 import Hero from "@/components/Hero";
 import Intro from "@/components/Intro";
 import MakeAndBreak from "@/components/MakeAndBreak";
+import Skills from "@/components/Skills";
 
 export default function Home() {
   return (
@@ -10,6 +11,7 @@ export default function Home() {
       <MakeAndBreak/>
       <Intro />
       <Experience/>
+      <Skills />
     </main>
   );
 }
