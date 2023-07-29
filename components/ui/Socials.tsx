@@ -24,12 +24,13 @@ export default function Socials(){
     variants={ulAnim}
     initial="hidden"
     animate="show"
-    className="text-graytransparent flex flex-col gap-4 items-center justify-start transition-all fixed bottom-0 pl-[3%] my-8 md:my-12"
+    className="text-graytransparent flex flex-col items-center justify-start transition-all fixed bottom-0 ml-[2.5%] my-8 md:my-12"
   >
     <motion.a
       variants={socialsAnim}
       href="https://www.linkedin.com/in/joy-samaddar/"
       target="_blank"
+      className="p-2"
     >
       <Linkedin className="w-5 h-5 hover:text-blue-500" />
     </motion.a>
@@ -37,6 +38,7 @@ export default function Socials(){
       variants={socialsAnim}
       href="https://github.com/joysamaddar"
       target="_blank"
+      className="p-2"
     >
       <Github className="w-5 h-5 hover:text-blue-500" />
     </motion.a>
@@ -44,6 +46,7 @@ export default function Socials(){
       variants={socialsAnim}
       href="https://twitter.com/0xjooy"
       target="_blank"
+      className="p-2"
     >
       <Twitter className="w-5 h-5 hover:text-blue-500" />
     </motion.a>
