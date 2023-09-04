@@ -4,7 +4,7 @@
 
 :root {
   --black: #0d0d0d;
-  --white: #fff;
+  --white: #ffffff;
   --gray: #595959;
   --darkgray: #2b3030;
   --graytransparent: #ffffff88;
@@ -19,6 +19,12 @@
   body {
     @apply bg-black text-white;
   }
+/*   
+  main {
+    max-width: 1800px;
+    width: 100%;
+    margin: auto;
+  } */
 
   ::selection {
     @apply bg-blue-500 text-white;
@@ -52,4 +58,12 @@
 
 .brokenclip2{
   clip-path: polygon(0 100%, 100% 100%, 100% 31%, 0 70%);
+}
+
+.gradientborder{
+    border-width: 1px;
+    border-style: solid;
+    border-image: linear-gradient(to bottom right, var(--black), var(--darkgray)) 1;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.4);
+    overflow: hidden;
 }
