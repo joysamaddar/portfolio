@@ -2,6 +2,7 @@
 
 import { motion, useScroll, useTransform } from "framer-motion";
 import { useRef } from "react";
+import Heading from "./ui/Heading";
 
 export default function Intro() {
   const sectionRef = useRef<HTMLElement>(null);
@@ -18,7 +19,7 @@ export default function Intro() {
 
   return (
     <section id="about" ref={sectionRef} className="relative w-screen px-[8%] pt-[12rem] pb-[6rem] select-none flex flex-col">
-      <h2 className="text-xs text-gray uppercase underline underline-offset-4">ABOUT ME</h2>
+      <Heading>ABOUT ME</Heading>
       <div className="flex flex-col gap-6 mt-12 font-semibold text-6xl text-white">
         <div className="relative">
           <p>Grew up fiddling with</p>

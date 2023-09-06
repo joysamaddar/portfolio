@@ -4,6 +4,7 @@ import { motion, useScroll, useTransform } from "framer-motion";
 import { ArrowUpRight } from "lucide-react";
 import Link from "next/link";
 import { useRef } from "react";
+import Heading from "./ui/Heading";
 
 export default function Experience() {
   const targetElem = useRef<HTMLElement>(null);
@@ -35,9 +36,7 @@ export default function Experience() {
   }
   return (
     <section ref={targetElem} className="select-none px-[8%] my-[6rem]">
-      <h2 className="text-xs text-gray uppercase underline underline-offset-4">
-        EXPERIENCE
-      </h2>
+      <Heading>EXPERIENCE</Heading>
       <div className="flex flex-col gap-20 mt-24 items-start justify-center mx-48">
         <motion.div
           variants={{
