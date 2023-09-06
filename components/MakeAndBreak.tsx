@@ -15,7 +15,7 @@ export default function MakeAndBreak() {
           transition: { duration: 2, ease: "easeInOut", times: [0, 0.15, 0.9] },
         }}
         viewport={{ once: true, amount: 1, margin: "-25%" }}
-        className="relative bg-gradient-to-r from-blue-400 to-blue-500 h-[15rem] mb-24 flex items-center justify-center mx-auto overflow-hidden"
+        className="relative bg-gradient-to-r from-blue-400 to-blue-500 h-[15rem] mb-24 flex items-center justify-center mx-auto overflow-hidden z-[998]"
       >
         <motion.div
           initial={{ width: "0px", height: "0px" }}
