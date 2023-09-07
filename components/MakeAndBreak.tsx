@@ -17,36 +17,27 @@ export default function MakeAndBreak() {
         viewport={{ once: true, amount: 1, margin: "-25%" }}
         className="relative bg-gradient-to-r from-blue-400 to-blue-500 h-[15rem] mb-24 flex items-center justify-center mx-auto overflow-hidden z-[998]"
       >
-        <motion.div
-          initial={{ width: "0px", height: "0px" }}
-          whileInView={{
-            width: "300px",
-            height: "300px",
-            transition: { type: "spring", bounce: 0.3, delay: 1 },
-          }}
-          viewport={{ once: true, amount: 1, margin: "-25%", root: targetElem }}
-          className="bg-[#00000005] absolute rounded-full"
-        ></motion.div>
-        <motion.div
-          initial={{ width: "0px", height: "0px" }}
-          whileInView={{
-            width: "600px",
-            height: "600px",
-            transition: { type: "spring", bounce: 0.3, delay: 1 },
-          }}
-          viewport={{ once: true, amount: 1, margin: "-25%", root: targetElem }}
-          className="bg-[#00000005] absolute rounded-full"
-        ></motion.div>
-        <motion.div
-          initial={{ width: "0px", height: "0px" }}
-          whileInView={{
-            width: "900px",
-            height: "900px",
-            transition: { type: "spring", bounce: 0.3, delay: 1 },
-          }}
-          viewport={{ once: true, amount: 1, margin: "-25%", root: targetElem }}
-          className="bg-[#00000005] absolute rounded-full"
-        ></motion.div>
+        {[...Array(3)].map((_num, i: number) => {
+          const dist = 300*(i+1);
+          return (
+            <motion.div
+              key={i}
+              initial={{ width: "0px", height: "0px" }}
+              whileInView={{
+                width: dist+"px",
+                height: dist+"px",
+                transition: { type: "spring", bounce: 0.3, delay: 1 },
+              }}
+              viewport={{
+                once: true,
+                amount: 1,
+                margin: "-25%",
+                root: targetElem,
+              }}
+              className="bg-[#00000005] absolute rounded-full"
+            />
+          );
+        })}
         <motion.div
           initial={{ opacity: 0, y: "1.5rem" }}
           whileInView={{
