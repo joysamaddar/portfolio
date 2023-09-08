@@ -16,13 +16,14 @@
   border: 0;
   overflow-x: hidden;
   scroll-behavior: smooth;
+  scroll-snap-type: y proximity;
 }
 
 @layer base {
   body {
     @apply bg-black text-white;
   }
-/*   
+  /*   
   main {
     max-width: 1800px;
     width: 100%;
@@ -55,18 +56,46 @@
   text-orientation: sideways;
 }
 
-.brokenclip1{
+.brokenclip1 {
   clip-path: polygon(0 0, 100% 0, 100% 31%, 0 70%);
 }
 
-.brokenclip2{
+.brokenclip2 {
   clip-path: polygon(0 100%, 100% 100%, 100% 31%, 0 70%);
 }
 
-.gradientborder{
-    border-width: 1px;
-    border-style: solid;
-    border-image: linear-gradient(to bottom right, var(--black), var(--darkgray)) 1;
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.4);
-    overflow: hidden;
+.gradientborder {
+  border-width: 1px;
+  border-style: solid;
+  border-image: linear-gradient(to bottom right, var(--black), var(--darkgray))
+    1;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.4);
+  overflow: hidden;
+}
+
+.scrollsnapping {
+  scroll-snap-align: end;
+}
+
+.btn_shadow_primary,
+.btn_shadow_white {
+  transition: all 0.2s ease-in-out;
+}
+
+.btn_shadow_primary {
+  box-shadow: inset -0px 0px 0px var(--primary);
+}
+
+.btn_shadow_white {
+  box-shadow: inset -0px 0px 0px var(--white);
+}
+
+.btn_shadow_primary:hover {
+  box-shadow: inset -100px 0px 0px var(--primary);
+  color: white;
+}
+
+.btn_shadow_white:hover {
+  box-shadow: inset -100px 0px 0px var(--white);
+  color: var(--black);
 }

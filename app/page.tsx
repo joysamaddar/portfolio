@@ -12,8 +12,8 @@ export default function Home() {
       <MakeAndBreak />
       <Intro />
       <Experience />
-      <Skills />
       <Works />
+      <Skills />
     </main>
   );
 }
