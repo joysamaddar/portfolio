@@ -14,7 +14,7 @@ export function RevealingTextContainer({
   widthEnd = 0.5,
   children,
 }: RevealingTextContainerProps) {
-  const widthDiff = (1 - widthEnd) / (children.length - 1);
+  const widthDiff = (1 - widthEnd) / (children.length==1?1:(children.length - 1));
 
   return (
     <div className="flex flex-col gap-6 mt-12 font-semibold text-6xl text-white">
