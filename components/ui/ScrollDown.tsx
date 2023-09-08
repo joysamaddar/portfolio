@@ -5,7 +5,7 @@ import { Mouse } from "lucide-react";
 
 export default function ScrollDown() {
   return (
-    <div className="fixed bottom-0 right-0 select-none flex items-center justify-center mx-[2%] my-8 md:my-12 z-[999]">
+    <div className="fixed bottom-0 right-0 select-none flex items-center justify-center mx-[2%] my-8 md:my-12 z-[999] bg-black rounded-full p-2">
       <motion.svg
         viewBox="0 0 100 100"
         width="100"

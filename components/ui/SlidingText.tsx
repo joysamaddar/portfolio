@@ -3,15 +3,16 @@ import { motion } from "framer-motion";
 
 interface SlidingTextProps {
   children: string;
-  size?: string;
+  className?: string;
+  doNotRepeat?: boolean;
 }
 
-export function SlidingText({ children, size }: SlidingTextProps) {
+export function SlidingText({ children, className, doNotRepeat=true }: SlidingTextProps) {
   const letters = children.split("");
 
   return (
     <motion.div
-      className={cn("text-6xl flex relative overflow-hidden", size)}
+      className={cn("text-6xl font-black flex relative overflow-hidden", className)}
       variants={{
         down: {
           opacity: "0%",
@@ -25,7 +26,7 @@ export function SlidingText({ children, size }: SlidingTextProps) {
       }}
       initial={"down"}
       whileInView={"up"}
-      viewport={{ once: true, amount: 0.8, margin: "0px 0px -200px 0px" }}
+      viewport={{ once: doNotRepeat, amount: 0.8, margin: "0px 0px -200px 0px" }}
     >
       {letters.map((letter, i) => (
         <motion.p
