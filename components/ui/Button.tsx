@@ -1,7 +1,8 @@
 import { cn } from "@/lib/utils";
+import { DetailedHTMLProps, HTMLAttributes } from "react";
 
 interface ButtonProps {
-  children: string;
+  children: JSX.Element | string;
   type?: "primary" | "white";
   className?: string;
 }
@@ -16,7 +17,7 @@ export default function Button({
     primary: "border border-primary text-primary btn_shadow_primary",
   };
   return (
-    <button className={cn("p-2 w-[100px]", typeClasses[type], className)}>
+    <button className={cn("p-2 min-w-[100px]", typeClasses[type], className)}>
       {children}
     </button>
   );

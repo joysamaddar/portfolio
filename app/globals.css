@@ -91,11 +91,11 @@
 }
 
 .btn_shadow_primary:hover {
-  box-shadow: inset -100px 0px 0px var(--primary);
+  box-shadow: inset -120px 0px 0px var(--primary);
   color: white;
 }
 
 .btn_shadow_white:hover {
-  box-shadow: inset -100px 0px 0px var(--white);
+  box-shadow: inset -120px 0px 0px var(--white);
   color: var(--black);
 }

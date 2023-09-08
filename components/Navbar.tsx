@@ -76,7 +76,7 @@ export default function Navbar() {
             className="py-1"
             whileHover={liHoverAnim}
           >
-            Work
+            Projects
           </motion.li>
           <motion.li
             variants={liAnim}

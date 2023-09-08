@@ -3,7 +3,7 @@ import Hero from "@/components/Hero";
 import Intro from "@/components/Intro";
 import MakeAndBreak from "@/components/MakeAndBreak";
 import Skills from "@/components/Skills";
-import Works from "@/components/Works";
+import Projects from "@/components/Projects";
 
 export default function Home() {
   return (
@@ -12,7 +12,7 @@ export default function Home() {
       <MakeAndBreak />
       <Intro />
       <Experience />
-      <Works />
+      <Projects />
       <Skills />
     </main>
   );

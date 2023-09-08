@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { motion } from "framer-motion";
+import { motion, useScroll } from "framer-motion";
 import dooit from "@/public/dooit.png";
 import joey_jumps from "@/public/joey_jumps.png";
 import xatty from "@/public/xatty.png";
@@ -11,8 +11,11 @@ import { SlidingText } from "./ui/SlidingText";
 import GradientBlocker from "./ui/GradientBlocker";
 import Button from "./ui/Button";
 import { cn } from "@/lib/utils";
+import { RevealingTextContainer, RevealingTextItem } from "./ui/RevealingText";
+import { useRef } from "react";
+import { Github } from "lucide-react";
 
-const works = [
+const projects = [
   {
     title: "DOOIT",
     imageSrc: dooit,
@@ -37,6 +40,7 @@ const works = [
     ],
     liveLink: "https://dooit.vercel.app/",
     codeLink: "https://github.com/joysamaddar/dooit",
+    align: "left",
   },
   {
     title: "JOEY JUMPS",
@@ -44,9 +48,14 @@ const works = [
     imageBorder: "white",
     description: "A platformer game for fun and lols.",
     primaryColorText: "platformer game",
-    skills: ["Vanilla Javascript"],
+    features: [
+      "No libraries used. No gimmicks. Just plain old HTML and JS.",
+      "Amazing sprite animations.",
+    ],
+    skills: ["HTML", "Vanilla Javascript"],
     liveLink: "https://joysamaddar.github.io/Joey-Jumps/",
     codeLink: "https://github.com/joysamaddar/Joey-Jumps",
+    align: "left",
   },
   {
     title: "XATTY",
@@ -60,10 +69,17 @@ const works = [
     skills: ["Node.js", "Express.js", "Socket.IO", "React", "SCSS"],
     liveLink: "https://xatty.netlify.app/",
     codeLink: "https://github.com/joysamaddar/Xatty",
+    align: "right",
   },
 ];
 
-export default function Works() {
+export default function Projects() {
+  const sectionRef = useRef<HTMLDivElement>(null);
+  const { scrollYProgress } = useScroll({
+    target: sectionRef,
+    offset: ["start end", "end end"],
+  } as any);
+
   const textsVariant = {
     hidden: {
       opacity: 0,
@@ -97,9 +113,9 @@ export default function Works() {
   return (
     <section className="relative select-none mx-[15%] mt-[6rem]">
       <Heading className="sticky h-16 md:h-24 top-0 flex items-end bg-black z-[995] pb-[1.25rem] w-[120%]">
-        WORKS
+        Projects
       </Heading>
-      {works.map((work, i) => (
+      {projects.map((project, i) => (
         <motion.div
           key={i}
           variants={{
@@ -116,11 +132,19 @@ export default function Works() {
           initial={"hidden"}
           whileInView={"show"}
           viewport={{ once: false, margin: "0px 0px -200px 0px" }}
-          className="flex flex-row items-center justify-between gap-4 text-white h-[100vh] relative overflow-y-clip overflow-x-visible scrollsnapping"
+          className={cn(
+            "flex items-center justify-between gap-12 text-white h-[100vh] relative overflow-y-clip overflow-x-visible scrollsnapping",
+            project.align == "left" ? "flex-row-reverse" : "flex-row"
+          )}
         >
           <div className="flex flex-col w-1/2">
-            <SlidingText className={work.title.split("").length < 7 ?"text-[6vw]" : "text-[5vw]"} doNotRepeat={false}>
-              {work.title}
+            <SlidingText
+              className={
+                project.title.split("").length < 7 ? "text-[6vw]" : "text-[5vw]"
+              }
+              doNotRepeat={false}
+            >
+              {project.title}
             </SlidingText>
             <div className="flex flex-col gap-8">
               <motion.p
@@ -128,11 +152,11 @@ export default function Works() {
                 variants={textsVariant}
                 className="text-[1.5vw]"
               >
-                {work.description.split(work.primaryColorText)[0]}
-                <span className="text-primary">{work.primaryColorText}</span>
-                {work.description.split(work.primaryColorText)[1]}
+                {project.description.split(project.primaryColorText)[0]}
+                <span className="text-primary">{project.primaryColorText}</span>
+                {project.description.split(project.primaryColorText)[1]}
               </motion.p>
-              {work.features && (
+              {project.features && (
                 <div className="flex flex-col gap-1 font-thin">
                   <motion.p
                     custom={2}
@@ -141,7 +165,7 @@ export default function Works() {
                   >
                     FEATURES
                   </motion.p>
-                  {work.features.map((feature, i) => (
+                  {project.features.map((feature, i) => (
                     <motion.p custom={3 + i} variants={textsVariant} key={i}>
                       ◼ {feature}
                     </motion.p>
@@ -149,9 +173,9 @@ export default function Works() {
                 </div>
               )}
               <div className="flex flex-row gap-2 flex-wrap font-thin w-[75%] text-[11px]">
-                {work.skills.map((skill, i) => (
+                {project.skills.map((skill, i) => (
                   <motion.p
-                    custom={work.features ? work.features.length + 3 : 2}
+                    custom={project.features ? project.features.length + 3 : 2}
                     variants={skillsVariant}
                     className="p-1 gradientborder shadow-2xl"
                     key={i}
@@ -177,16 +201,16 @@ export default function Works() {
             }}
             className="w-1/2 relative h-[100vh]"
           >
-            {work.imagePosition == "top" && <GradientBlocker />}
+            {project.imagePosition == "top" && <GradientBlocker />}
             <Image
-              src={work.imageSrc}
-              alt={`${work.title} product image`}
+              src={project.imageSrc}
+              alt={`${project.title} product image`}
               className={cn(
                 "mt-48 absolute border-primary",
-                work.imagePosition == "top"
+                project.imagePosition == "top"
                   ? "top-0 rounded-t-2xl border-t-[2px] border-x-[2px]"
                   : "top-[55%] translate-y-[-50%] -mt-12 border-[2px] rounded-2xl",
-                work.imageBorder == "white" && "border-white"
+                project.imageBorder == "white" && "border-white"
               )}
               priority
             />
@@ -209,17 +233,56 @@ export default function Works() {
                 },
               },
             }}
-            className={cn("absolute bottom-12 left-[50.75%] z-[999] flex flex-row gap-2 flex-wrap bg-black drop-shadow-2xl p-3 gradientborder")}
+            className={cn(
+              "absolute bottom-12 left-[50.75%] z-[999] flex flex-row gap-2 flex-wrap bg-black drop-shadow-2xl p-3 gradientborder"
+            )}
           >
-            <Link href={work.codeLink} target="_blank">
+            <Link href={project.codeLink} target="_blank">
               <Button type="white">View Code</Button>
             </Link>
-            <Link href={work.liveLink} target="_blank">
+            <Link href={project.liveLink} target="_blank">
               <Button>View Live</Button>
             </Link>
           </motion.div>
         </motion.div>
       ))}
+      <div
+        ref={sectionRef}
+        className="h-[100vh] flex flex-col gap-16 items-center justify-center scrollsnapping text-center relative"
+      >
+        <RevealingTextContainer scrollYProgress={scrollYProgress}>
+          {["Check out more", "of my projects on"].map((text, i) => (
+            <RevealingTextItem index={i} key={i}>
+              {text}
+            </RevealingTextItem>
+          ))}
+        </RevealingTextContainer>
+        <motion.div
+          variants={{
+            hidden: {
+              opacity: 0,
+              y: 50,
+            },
+            show: {
+              opacity: 1,
+              y: 0,
+              transition: {
+                duration: 0.4,
+                ease: "easeInOut",
+              },
+            },
+          }}
+          initial={"hidden"}
+          whileInView={"show"}
+          viewport={{ once: false, margin: "0px 0px 0px 0px" }}
+        >
+          <Button type="white" className="relative p-3">
+            <p className="flex flex-row gap-2">
+              <Github /> Github
+            </p>
+          </Button>
+        </motion.div>
+      </div>
     </section>
   );
 }
