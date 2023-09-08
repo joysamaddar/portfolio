@@ -14,7 +14,7 @@ export default function MakeAndBreak() {
           height: ["3px", "3px", "240px"],
           transition: { duration: 2, ease: "easeInOut", times: [0, 0.15, 0.9] },
         }}
-        viewport={{ once: true, amount: 1, margin: "-25%" }}
+        viewport={{ once: true, amount: 1, margin: "0px 0px -200px 0px" }}
         className="relative bg-gradient-to-r from-blue-400 to-blue-500 h-[15rem] mb-24 flex items-center justify-center mx-auto overflow-hidden z-[998]"
       >
         {[...Array(3)].map((_num, i: number) => {
