@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import Link from "next/link";
 
 export default function Navbar() {
   const liHoverAnim = {
@@ -25,6 +26,7 @@ export default function Navbar() {
   return (
     <div>
       <nav className="fixed top-0 left-0 w-full flex flex-row items-start justify-between pl-[3%] pr-[2%] pt-8 md:pt-12 text-xs select-none z-[997]">
+        <Link href={"./"} className="group">
         <motion.svg
           initial={{ opacity: 0, x: "-1.5rem" }}
           animate={{ opacity: 1, x: 0 }}
@@ -38,8 +40,10 @@ export default function Navbar() {
           <path
             d="M137 0H0V82.5H41.3223L61.6612 62.1612L79.3388 79.8388L51.6777 107.5H0V137H137V0Z"
             fill="var(--white)"
+            className="group-hover:fill-primary transition-all duration-500"
           />
         </motion.svg>
+        </Link>
         <motion.ul
           variants={ulAnim}
           initial="hidden"

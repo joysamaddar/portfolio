@@ -32,7 +32,7 @@ export default function Socials(){
       target="_blank"
       className="p-2"
     >
-      <Linkedin className="w-5 h-5 hover:text-blue-500" />
+      <Linkedin className="w-5 h-5 hover:text-primary" />
     </motion.a>
     <motion.a
       variants={socialsAnim}
@@ -40,7 +40,7 @@ export default function Socials(){
       target="_blank"
       className="p-2"
     >
-      <Github className="w-5 h-5 hover:text-blue-500" />
+      <Github className="w-5 h-5 hover:text-primary" />
     </motion.a>
     <motion.a
       variants={socialsAnim}
@@ -48,7 +48,7 @@ export default function Socials(){
       target="_blank"
       className="p-2"
     >
-      <Twitter className="w-5 h-5 hover:text-blue-500" />
+      <Twitter className="w-5 h-5 hover:text-primary" />
     </motion.a>
   </motion.div>
   )

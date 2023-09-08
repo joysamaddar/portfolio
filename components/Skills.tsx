@@ -41,60 +41,60 @@ export default function Skills() {
             style={{ translateX: reverseText }}
             className="flex flex-row gap-2 text-gray items-center w-max relative"
           >
-            <p className="hover:text-blue-500 hover:scale-105 transition duration-100 ease-in-out">
+            <p className="hover:text-primary hover:scale-105 transition duration-100 ease-in-out">
               HTML
             </p>
             <p className="text-lg font-extralight">•</p>
-            <p className="hover:text-blue-500 hover:scale-105 transition duration-100 ease-in-out">
+            <p className="hover:text-primary hover:scale-105 transition duration-100 ease-in-out">
               CSS
             </p>
             <p className="text-lg font-extralight">•</p>
-            <p className="hover:text-blue-500 hover:scale-105 transition duration-100 ease-in-out">
+            <p className="hover:text-primary hover:scale-105 transition duration-100 ease-in-out">
               SCSS
             </p>
             <p className="text-lg font-extralight">•</p>
-            <p className="hover:text-blue-500 hover:scale-105 transition duration-100 ease-in-out">
+            <p className="hover:text-primary hover:scale-105 transition duration-100 ease-in-out">
               TailwindCSS
             </p>
             <p className="text-lg font-extralight">•</p>
-            <p className="hover:text-blue-500 hover:scale-105 transition duration-100 ease-in-out">
+            <p className="hover:text-primary hover:scale-105 transition duration-100 ease-in-out">
               Bootstrap
             </p>
             <p className="text-lg font-extralight">•</p>
-            <p className="hover:text-blue-500 hover:scale-105 transition duration-100 ease-in-out">
+            <p className="hover:text-primary hover:scale-105 transition duration-100 ease-in-out">
               Javascript
             </p>
             <p className="text-lg font-extralight">•</p>
-            <p className="hover:text-blue-500 hover:scale-105 transition duration-100 ease-in-out">
+            <p className="hover:text-primary hover:scale-105 transition duration-100 ease-in-out">
               TypeScript
             </p>
             <div className="absolute right-[calc(-100%-1.5rem)] flex flex-row gap-2 items-center">
               <p className="text-lg font-extralight">•</p>
-              <p className="hover:text-blue-500 hover:scale-105 transition duration-100 ease-in-out">
+              <p className="hover:text-primary hover:scale-105 transition duration-100 ease-in-out">
                 HTML
               </p>
               <p className="text-lg font-extralight">•</p>
-              <p className="hover:text-blue-500 hover:scale-105 transition duration-100 ease-in-out">
+              <p className="hover:text-primary hover:scale-105 transition duration-100 ease-in-out">
                 CSS
               </p>
               <p className="text-lg font-extralight">•</p>
-              <p className="hover:text-blue-500 hover:scale-105 transition duration-100 ease-in-out">
+              <p className="hover:text-primary hover:scale-105 transition duration-100 ease-in-out">
                 SCSS
               </p>
               <p className="text-lg font-extralight">•</p>
-              <p className="hover:text-blue-500 hover:scale-105 transition duration-100 ease-in-out">
+              <p className="hover:text-primary hover:scale-105 transition duration-100 ease-in-out">
                 TailwindCSS
               </p>
               <p className="text-lg font-extralight">•</p>
-              <p className="hover:text-blue-500 hover:scale-105 transition duration-100 ease-in-out">
+              <p className="hover:text-primary hover:scale-105 transition duration-100 ease-in-out">
                 Bootstrap
               </p>
               <p className="text-lg font-extralight">•</p>
-              <p className="hover:text-blue-500 hover:scale-105 transition duration-100 ease-in-out">
+              <p className="hover:text-primary hover:scale-105 transition duration-100 ease-in-out">
                 Javascript
               </p>
               <p className="text-lg font-extralight">•</p>
-              <p className="hover:text-blue-500 hover:scale-105 transition duration-100 ease-in-out">
+              <p className="hover:text-primary hover:scale-105 transition duration-100 ease-in-out">
                 TypeScript
               </p>
             </div>
@@ -103,59 +103,59 @@ export default function Skills() {
             style={{ x: forwardText }}
             className="flex flex-row gap-2 text-gray items-center w-max relative"
           >
-            <p className="hover:text-blue-500 hover:scale-105 transition duration-100 ease-in-out">
+            <p className="hover:text-primary hover:scale-105 transition duration-100 ease-in-out">
               React
             </p>
             <p className="text-lg font-extralight">•</p>
-            <p className="hover:text-blue-500 hover:scale-105 transition duration-100 ease-in-out">
+            <p className="hover:text-primary hover:scale-105 transition duration-100 ease-in-out">
               Redux
             </p>
             <p className="text-lg font-extralight">•</p>
-            <p className="hover:text-blue-500 hover:scale-105 transition duration-100 ease-in-out">
+            <p className="hover:text-primary hover:scale-105 transition duration-100 ease-in-out">
               Zustand
             </p>
             <p className="text-lg font-extralight">•</p>
-            <p className="hover:text-blue-500 hover:scale-105 transition duration-100 ease-in-out">
+            <p className="hover:text-primary hover:scale-105 transition duration-100 ease-in-out">
               Next.JS
             </p>
             <p className="text-lg font-extralight">•</p>
-            <p className="hover:text-blue-500 hover:scale-105 transition duration-100 ease-in-out">
+            <p className="hover:text-primary hover:scale-105 transition duration-100 ease-in-out">
               Node.js
             </p>
             <p className="text-lg font-extralight">•</p>
-            <p className="hover:text-blue-500 hover:scale-105 transition duration-100 ease-in-out">
+            <p className="hover:text-primary hover:scale-105 transition duration-100 ease-in-out">
               Express.js
             </p>
             <p className="text-lg font-extralight">•</p>
-            <p className="hover:text-blue-500 hover:scale-105 transition duration-100 ease-in-out">
+            <p className="hover:text-primary hover:scale-105 transition duration-100 ease-in-out">
               NestJS
             </p>
             <div className="absolute left-[calc(-100%-2rem)] flex flex-row gap-2 items-center">
-              <p className="hover:text-blue-500 hover:scale-105 transition duration-100 ease-in-out">
+              <p className="hover:text-primary hover:scale-105 transition duration-100 ease-in-out">
                 React
               </p>
               <p className="text-lg font-extralight">•</p>
-              <p className="hover:text-blue-500 hover:scale-105 transition duration-100 ease-in-out">
+              <p className="hover:text-primary hover:scale-105 transition duration-100 ease-in-out">
                 Redux
               </p>
               <p className="text-lg font-extralight">•</p>
-              <p className="hover:text-blue-500 hover:scale-105 transition duration-100 ease-in-out">
+              <p className="hover:text-primary hover:scale-105 transition duration-100 ease-in-out">
                 Zustand
               </p>
               <p className="text-lg font-extralight">•</p>
-              <p className="hover:text-blue-500 hover:scale-105 transition duration-100 ease-in-out">
+              <p className="hover:text-primary hover:scale-105 transition duration-100 ease-in-out">
                 Next.JS
               </p>
               <p className="text-lg font-extralight">•</p>
-              <p className="hover:text-blue-500 hover:scale-105 transition duration-100 ease-in-out">
+              <p className="hover:text-primary hover:scale-105 transition duration-100 ease-in-out">
                 Node.js
               </p>
               <p className="text-lg font-extralight">•</p>
-              <p className="hover:text-blue-500 hover:scale-105 transition duration-100 ease-in-out">
+              <p className="hover:text-primary hover:scale-105 transition duration-100 ease-in-out">
                 Express.js
               </p>
               <p className="text-lg font-extralight">•</p>
-              <p className="hover:text-blue-500 hover:scale-105 transition duration-100 ease-in-out">
+              <p className="hover:text-primary hover:scale-105 transition duration-100 ease-in-out">
                 NestJS
               </p>
               <p className="text-lg font-extralight">•</p>
@@ -165,60 +165,60 @@ export default function Skills() {
             style={{ x: reverseText }}
             className="flex flex-row gap-2 text-gray items-center w-max relative"
           >
-            <p className="hover:text-blue-500 hover:scale-105 transition duration-100 ease-in-out">
+            <p className="hover:text-primary hover:scale-105 transition duration-100 ease-in-out">
               Clojure
             </p>
             <p className="text-lg font-extralight">•</p>
-            <p className="hover:text-blue-500 hover:scale-105 transition duration-100 ease-in-out">
+            <p className="hover:text-primary hover:scale-105 transition duration-100 ease-in-out">
               ClojureScript
             </p>
             <p className="text-lg font-extralight">•</p>
-            <p className="hover:text-blue-500 hover:scale-105 transition duration-100 ease-in-out">
+            <p className="hover:text-primary hover:scale-105 transition duration-100 ease-in-out">
               Java
             </p>
             <p className="text-lg font-extralight">•</p>
-            <p className="hover:text-blue-500 hover:scale-105 transition duration-100 ease-in-out">
+            <p className="hover:text-primary hover:scale-105 transition duration-100 ease-in-out">
               Spring
             </p>
             <p className="text-lg font-extralight">•</p>
-            <p className="hover:text-blue-500 hover:scale-105 transition duration-100 ease-in-out">
+            <p className="hover:text-primary hover:scale-105 transition duration-100 ease-in-out">
               SpringBoot
             </p>
             <p className="text-lg font-extralight">•</p>
-            <p className="hover:text-blue-500 hover:scale-105 transition duration-100 ease-in-out">
+            <p className="hover:text-primary hover:scale-105 transition duration-100 ease-in-out">
               NoSQL
             </p>
             <p className="text-lg font-extralight">•</p>
-            <p className="hover:text-blue-500 hover:scale-105 transition duration-100 ease-in-out">
+            <p className="hover:text-primary hover:scale-105 transition duration-100 ease-in-out">
               MongoDB
             </p>
             <div className="absolute right-[calc(-100%-1.5rem)] flex flex-row gap-2 items-center">
               <p className="text-lg font-extralight">•</p>
-              <p className="hover:text-blue-500 hover:scale-105 transition duration-100 ease-in-out">
+              <p className="hover:text-primary hover:scale-105 transition duration-100 ease-in-out">
                 Clojure
               </p>
               <p className="text-lg font-extralight">•</p>
-              <p className="hover:text-blue-500 hover:scale-105 transition duration-100 ease-in-out">
+              <p className="hover:text-primary hover:scale-105 transition duration-100 ease-in-out">
                 ClojureScript
               </p>
               <p className="text-lg font-extralight">•</p>
-              <p className="hover:text-blue-500 hover:scale-105 transition duration-100 ease-in-out">
+              <p className="hover:text-primary hover:scale-105 transition duration-100 ease-in-out">
                 Java
               </p>
               <p className="text-lg font-extralight">•</p>
-              <p className="hover:text-blue-500 hover:scale-105 transition duration-100 ease-in-out">
+              <p className="hover:text-primary hover:scale-105 transition duration-100 ease-in-out">
                 Spring
               </p>
               <p className="text-lg font-extralight">•</p>
-              <p className="hover:text-blue-500 hover:scale-105 transition duration-100 ease-in-out">
+              <p className="hover:text-primary hover:scale-105 transition duration-100 ease-in-out">
                 SpringBoot
               </p>
               <p className="text-lg font-extralight">•</p>
-              <p className="hover:text-blue-500 hover:scale-105 transition duration-100 ease-in-out">
+              <p className="hover:text-primary hover:scale-105 transition duration-100 ease-in-out">
                 NoSQL
               </p>
               <p className="text-lg font-extralight">•</p>
-              <p className="hover:text-blue-500 hover:scale-105 transition duration-100 ease-in-out">
+              <p className="hover:text-primary hover:scale-105 transition duration-100 ease-in-out">
                 MongoDB
               </p>
             </div>
@@ -227,59 +227,59 @@ export default function Skills() {
             style={{ x: forwardText }}
             className="flex flex-row gap-2 text-gray items-center w-max relative"
           >
-            <p className="hover:text-blue-500 hover:scale-105 transition duration-100 ease-in-out">
+            <p className="hover:text-primary hover:scale-105 transition duration-100 ease-in-out">
               Mongoose
             </p>
             <p className="text-lg font-extralight">•</p>
-            <p className="hover:text-blue-500 hover:scale-105 transition duration-100 ease-in-out">
+            <p className="hover:text-primary hover:scale-105 transition duration-100 ease-in-out">
               TypeORM
             </p>
             <p className="text-lg font-extralight">•</p>
-            <p className="hover:text-blue-500 hover:scale-105 transition duration-100 ease-in-out">
+            <p className="hover:text-primary hover:scale-105 transition duration-100 ease-in-out">
               SQL
             </p>
             <p className="text-lg font-extralight">•</p>
-            <p className="hover:text-blue-500 hover:scale-105 transition duration-100 ease-in-out">
+            <p className="hover:text-primary hover:scale-105 transition duration-100 ease-in-out">
               Hibernate
             </p>
             <p className="text-lg font-extralight">•</p>
-            <p className="hover:text-blue-500 hover:scale-105 transition duration-100 ease-in-out">
+            <p className="hover:text-primary hover:scale-105 transition duration-100 ease-in-out">
               GraphQL
             </p>
             <p className="text-lg font-extralight">•</p>
-            <p className="hover:text-blue-500 hover:scale-105 transition duration-100 ease-in-out">
+            <p className="hover:text-primary hover:scale-105 transition duration-100 ease-in-out">
               RestAPIs
             </p>
             <p className="text-lg font-extralight">•</p>
-            <p className="hover:text-blue-500 hover:scale-105 transition duration-100 ease-in-out">
+            <p className="hover:text-primary hover:scale-105 transition duration-100 ease-in-out">
               Git
             </p>
             <div className="absolute left-[calc(-100%-2rem)] flex flex-row gap-2 items-center">
-              <p className="hover:text-blue-500 hover:scale-105 transition duration-100 ease-in-out">
+              <p className="hover:text-primary hover:scale-105 transition duration-100 ease-in-out">
                 Mongoose
               </p>
               <p className="text-lg font-extralight">•</p>
-              <p className="hover:text-blue-500 hover:scale-105 transition duration-100 ease-in-out">
+              <p className="hover:text-primary hover:scale-105 transition duration-100 ease-in-out">
                 TypeORM
               </p>
               <p className="text-lg font-extralight">•</p>
-              <p className="hover:text-blue-500 hover:scale-105 transition duration-100 ease-in-out">
+              <p className="hover:text-primary hover:scale-105 transition duration-100 ease-in-out">
                 SQL
               </p>
               <p className="text-lg font-extralight">•</p>
-              <p className="hover:text-blue-500 hover:scale-105 transition duration-100 ease-in-out">
+              <p className="hover:text-primary hover:scale-105 transition duration-100 ease-in-out">
                 Hibernate
               </p>
               <p className="text-lg font-extralight">•</p>
-              <p className="hover:text-blue-500 hover:scale-105 transition duration-100 ease-in-out">
+              <p className="hover:text-primary hover:scale-105 transition duration-100 ease-in-out">
                 GraphQL
               </p>
               <p className="text-lg font-extralight">•</p>
-              <p className="hover:text-blue-500 hover:scale-105 transition duration-100 ease-in-out">
+              <p className="hover:text-primary hover:scale-105 transition duration-100 ease-in-out">
                 RestAPIs
               </p>
               <p className="text-lg font-extralight">•</p>
-              <p className="hover:text-blue-500 hover:scale-105 transition duration-100 ease-in-out">
+              <p className="hover:text-primary hover:scale-105 transition duration-100 ease-in-out">
                 Git
               </p>
               <p className="text-lg font-extralight">•</p>

@@ -15,7 +15,7 @@ export default function MakeAndBreak() {
           transition: { duration: 2, ease: "easeInOut", times: [0, 0.15, 0.9] },
         }}
         viewport={{ once: true, amount: 1, margin: "0px 0px -200px 0px" }}
-        className="relative bg-gradient-to-r from-blue-400 to-blue-500 h-[15rem] mb-24 flex items-center justify-center mx-auto overflow-hidden z-[998]"
+        className="relative bg-gradient-to-r from-primary-light to-primary h-[15rem] mb-24 flex items-center justify-center mx-auto overflow-hidden z-[998]"
       >
         {[...Array(3)].map((_num, i: number) => {
           const dist = 300*(i+1);
@@ -50,7 +50,7 @@ export default function MakeAndBreak() {
         >
           I{" "}
           <motion.div className="relative inline-block group">
-            <motion.p className="absolute opacity-0 group-hover:opacity-100 text-blue-600 transition duration-250 ease-in-out">
+            <motion.p className="absolute opacity-0 group-hover:opacity-100 text-primary-dark transition duration-250 ease-in-out">
               break
             </motion.p>
             <motion.p className="absolute brokenclip1 group-hover:translate-y-[-2rem] transition duration-250 ease-in-out">

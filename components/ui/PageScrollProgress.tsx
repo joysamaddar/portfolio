@@ -14,7 +14,7 @@ export default function PageScrollProgress() {
           restDelta: 0.001,
         }),
       }}
-      className="fixed top-0 left-0 right-0 h-[3px] bg-blue-500 origin-[0%] z-[999]"
+      className="fixed top-0 left-0 right-0 h-[3px] bg-primary origin-[0%] z-[999]"
     ></motion.div>
   );
 }
