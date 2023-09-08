@@ -32,7 +32,7 @@ const works = [
       "TypeORM",
       "NextJS",
       "Tailwind CSS",
-      "SASS",
+      "SCSS",
       "Daisy UI",
     ],
     liveLink: "https://dooit.vercel.app/",
@@ -57,7 +57,7 @@ const works = [
       "Allows multiple users per room",
       "No useless signup or login needed. Share room link & chat!",
     ],
-    skills: ["Node.js", "Express.js", "Socket.IO", "React"],
+    skills: ["Node.js", "Express.js", "Socket.IO", "React", "SCSS"],
     liveLink: "https://xatty.netlify.app/",
     codeLink: "https://github.com/joysamaddar/Xatty",
   },
@@ -95,7 +95,7 @@ export default function Works() {
   };
 
   return (
-    <section className="relative select-none ml-[8%] mt-[6rem]">
+    <section className="relative select-none mx-[15%] mt-[6rem]">
       <Heading className="sticky h-16 md:h-24 top-0 flex items-end bg-black z-[995] pb-[1.25rem] w-[120%]">
         WORKS
       </Heading>
@@ -116,10 +116,10 @@ export default function Works() {
           initial={"hidden"}
           whileInView={"show"}
           viewport={{ once: false, margin: "0px 0px -200px 0px" }}
-          className="flex flex-row items-center justify-between text-white h-[100vh] relative overflow-y-clip overflow-x-visible scrollsnapping"
+          className="flex flex-row items-center justify-between gap-4 text-white h-[100vh] relative overflow-y-clip overflow-x-visible scrollsnapping"
         >
-          <div className="flex flex-col">
-            <SlidingText className="text-[6.5vw]" doNotRepeat={false}>
+          <div className="flex flex-col w-1/2">
+            <SlidingText className={work.title.split("").length < 7 ?"text-[6vw]" : "text-[5vw]"} doNotRepeat={false}>
               {work.title}
             </SlidingText>
             <div className="flex flex-col gap-8">
@@ -182,10 +182,10 @@ export default function Works() {
               src={work.imageSrc}
               alt={`${work.title} product image`}
               className={cn(
-                "mt-48 absolute rounded-tl-2xl border-t-[2px] border-l-[2px] border-primary",
+                "mt-48 absolute border-primary",
                 work.imagePosition == "top"
-                  ? "top-0"
-                  : "top-[60%] translate-y-[-50%] -mt-12 rounded-l-2xl border-b-[2px]",
+                  ? "top-0 rounded-t-2xl border-t-[2px] border-x-[2px]"
+                  : "top-[55%] translate-y-[-50%] -mt-12 border-[2px] rounded-2xl",
                 work.imageBorder == "white" && "border-white"
               )}
               priority
@@ -209,7 +209,7 @@ export default function Works() {
                 },
               },
             }}
-            className="absolute bottom-12 left-1/2 translate-x-[-50%] z-[999] flex flex-row gap-2 flex-wrap bg-black drop-shadow-2xl p-3 gradientborder"
+            className={cn("absolute bottom-12 left-[50.75%] z-[999] flex flex-row gap-2 flex-wrap bg-black drop-shadow-2xl p-3 gradientborder")}
           >
             <Link href={work.codeLink} target="_blank">
               <Button type="white">View Code</Button>

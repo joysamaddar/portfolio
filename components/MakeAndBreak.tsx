@@ -6,7 +6,7 @@ import { useRef } from "react";
 export default function MakeAndBreak() {
   const targetElem = useRef(null);
   return (
-    <section ref={targetElem} className="h-[240px] select-none mx-[8%]">
+    <section ref={targetElem} className="h-[240px] select-none mx-[15%]">
       <motion.div
         initial={{ width: 0, height: 0 }}
         whileInView={{

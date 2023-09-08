@@ -23,12 +23,12 @@
   body {
     @apply bg-black text-white;
   }
-  /*   
+    
   main {
     max-width: 1800px;
     width: 100%;
     margin: auto;
-  } */
+  }
 
   ::selection {
     @apply bg-primary text-white;

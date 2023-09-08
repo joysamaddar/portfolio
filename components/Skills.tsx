@@ -32,7 +32,7 @@ export default function Skills() {
   return (
     <section
       ref={targetElem}
-      className="relative select-none mx-[8%] my-[6rem] h-[200vh]"
+      className="relative select-none mx-[15%] my-[6rem] h-[200vh]"
     >
       <div className="sticky top-[10rem]">
         <Heading>SKILLS</Heading>

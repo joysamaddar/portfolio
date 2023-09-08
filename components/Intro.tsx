@@ -24,7 +24,7 @@ export default function Intro() {
     <section
       id="about"
       ref={sectionRef}
-      className="relative w-screen px-[8%] pt-[12rem] pb-[6rem] select-none flex flex-col"
+      className="relative mx-[15%] pt-[12rem] pb-[6rem] select-none flex flex-col"
     >
       <Heading>ABOUT ME</Heading>
       <RevealingTextContainer scrollYProgress={scrollYProgress}>

@@ -208,9 +208,9 @@ function ExperienceItem({ experience }: ExperienceItemProps) {
 
 export default function Experience() {
   return (
-    <section className="select-none px-[8%] my-[6rem]">
+    <section className="select-none mx-[15%] my-[6rem]">
       <Heading>EXPERIENCE</Heading>
-      <div className="flex flex-col gap-20 mt-24 items-start justify-center mx-48">
+      <div className="flex flex-col gap-20 mt-24 items-start justify-center">
         {experiences.map((experience, i) => (
           <ExperienceItem key={i} experience={experience} />
         ))}

@@ -13,7 +13,7 @@ export default function Hero() {
   const opacity = useTransform(scrollYProgress, [0, 0.4], [1, 0])
 
   return (
-    <motion.section style={{ opacity }} ref={sectionRef} className="h-screen w-screen flex flex-row items-center justify-center">
+    <motion.section style={{ opacity }} ref={sectionRef} className="h-screen mx-[15%] flex flex-row items-center justify-center">
       <div className="flex items-center justify-center z-10">
         <TextCarousel />
       </div>
