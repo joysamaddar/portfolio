@@ -45,7 +45,7 @@ export function SlidingText({ children, className, doNotRepeat=true }: SlidingTe
               },
             }),
           }}
-          className="m-[-0.025em]"
+          className="m-[-0.025em] min-w-[1.5rem]"
         >
           {letter}
         </motion.p>
