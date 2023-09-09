@@ -49,7 +49,7 @@ export default function MakeAndBreak() {
           className="italic font-semibold text-4xl text-graytransparent cursor-default"
         >
           I{" "}
-          <motion.div className="relative inline-block group">
+          <motion.div className="relative inline-block group cursor-pointer">
             <motion.p className="absolute opacity-0 group-hover:opacity-100 text-primary-dark transition duration-250 ease-in-out">
               break
             </motion.p>

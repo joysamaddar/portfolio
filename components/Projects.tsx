@@ -15,6 +15,7 @@ import { RevealingTextContainer, RevealingTextItem } from "./ui/RevealingText";
 import { useRef } from "react";
 import { Github } from "lucide-react";
 import GradientGrid from "./ui/GradientGrid";
+import AlternateSlidingTexts from "./ui/AlternateSlidingTexts";
 
 const projects = [
   {
@@ -74,10 +75,41 @@ const projects = [
   },
 ];
 
+const textsData = [
+  [
+    "HTML",
+    "CSS",
+    "SCSS",
+    "TailwindCSS",
+    "Bootstrap",
+    "Javascript",
+    "TypeScript",
+  ],
+  ["React", "Next.js", "Framer Motion", "GSAP", "Git", "Zustand", "Redux"],
+  ["Node.js", "Express.js", "NestJS", "NoSQL", "SQL", "Mongoose", "TypeORM"],
+  [
+    "GraphQL",
+    "RestAPIs",
+    "Clojure",
+    "ClojureScript",
+    "Python",
+    "Java",
+    "Spring",
+  ],
+  [
+    "SpringBoot",
+    "RadixUI",
+    "Daisy UI",
+    "Tanstack Table",
+    "Hibernate",
+    "Socket.IO",
+  ],
+];
+
 export default function Projects() {
-  const sectionRef = useRef<HTMLDivElement>(null);
+  const targetRef = useRef<HTMLDivElement>(null);
   const { scrollYProgress } = useScroll({
-    target: sectionRef,
+    target: targetRef,
     offset: ["start end", "end end"],
   } as any);
 
@@ -138,7 +170,10 @@ export default function Projects() {
             project.align == "left" ? "flex-row-reverse" : "flex-row"
           )}
         >
-          <GradientGrid className="z-[0] left-2/3" doNotRepeat={false}/>
+          <GradientGrid
+            className="z-[0] left-2/3 !opacity-10"
+            doNotRepeat={false}
+          />
           <div className="flex flex-col w-1/2">
             <SlidingText
               className={
@@ -208,10 +243,10 @@ export default function Projects() {
               src={project.imageSrc}
               alt={`${project.title} product image`}
               className={cn(
-                "mt-48 absolute border-primary",
+                "mt-48 absolute border-primary rounded-2xl border-[2px]",
                 project.imagePosition == "top"
-                  ? "top-0 rounded-t-2xl border-t-[2px] border-x-[2px]"
-                  : "top-[55%] translate-y-[-50%] -mt-12 border-[2px] rounded-2xl",
+                  ? "top-0"
+                  : "top-[55%] translate-y-[-50%] -mt-12",
                 project.imageBorder == "white" && "border-white"
               )}
               priority
@@ -249,9 +284,16 @@ export default function Projects() {
         </motion.div>
       ))}
       <div
-        ref={sectionRef}
+        ref={targetRef}
         className="h-[100vh] flex flex-col gap-16 items-center justify-center scrollsnapping text-center relative"
       >
+        <div className="absolute blur-[7px] w-full">
+          <AlternateSlidingTexts
+            scrollYProgress={scrollYProgress}
+            textsData={textsData}
+          />
+          <GradientBlocker />
+        </div>
         <RevealingTextContainer scrollYProgress={scrollYProgress}>
           {["Check out more", "of my projects on"].map((text, i) => (
             <RevealingTextItem index={i} key={i}>
