@@ -14,6 +14,7 @@ import { cn } from "@/lib/utils";
 import { RevealingTextContainer, RevealingTextItem } from "./ui/RevealingText";
 import { useRef } from "react";
 import { Github } from "lucide-react";
+import GradientGrid from "./ui/GradientGrid";
 
 const projects = [
   {
@@ -137,6 +138,7 @@ export default function Projects() {
             project.align == "left" ? "flex-row-reverse" : "flex-row"
           )}
         >
+          <GradientGrid className="z-[0] left-2/3" doNotRepeat={false}/>
           <div className="flex flex-col w-1/2">
             <SlidingText
               className={

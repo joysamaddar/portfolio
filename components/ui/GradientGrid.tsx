@@ -3,9 +3,10 @@ import { cn } from "@/lib/utils";
 
 interface GradientGridProp {
   className?: string;
+  doNotRepeat?: boolean;
 }
 
-export default function GradientGrid({ className }: GradientGridProp) {
+export default function GradientGrid({ className, doNotRepeat=true }: GradientGridProp) {
   return (
     <motion.div
       variants={{
@@ -21,7 +22,7 @@ export default function GradientGrid({ className }: GradientGridProp) {
       }}
       initial={"hidden"}
       whileInView={"show"}
-      viewport={{ once: true }}
+      viewport={{ once: doNotRepeat }}
       className={cn(
         "absolute left-1/2 top-1/2 translate-x-[-50%] translate-y-[-50%] z-[2] flex items-center justify-center",
         className
