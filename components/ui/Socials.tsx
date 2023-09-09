@@ -24,7 +24,7 @@ export default function Socials(){
     variants={ulAnim}
     initial="hidden"
     animate="show"
-    className="text-graytransparent flex flex-col items-center justify-start transition-all fixed bottom-0 ml-[2.5%] my-8 md:my-12"
+    className="text-graytransparent flex flex-col items-center justify-start transition-all fixed bottom-0 ml-[2.5%] my-8 md:my-12 z-[997]"
   >
     <motion.a
       variants={socialsAnim}
