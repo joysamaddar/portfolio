@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { motion, useScroll } from "framer-motion";
+import { motion, useScroll, useTransform } from "framer-motion";
 import dooit from "@/public/dooit.png";
 import joey_jumps from "@/public/joey_jumps.png";
 import xatty from "@/public/xatty.png";
@@ -113,6 +113,8 @@ export default function Projects() {
     offset: ["start end", "end end"],
   } as any);
 
+  const transformOpacity = useTransform(scrollYProgress, [0, 0.5, 1], [1, 1, 0]);
+
   const textsVariant = {
     hidden: {
       opacity: 0,
@@ -145,9 +147,12 @@ export default function Projects() {
 
   return (
     <section className="relative select-none mx-[15%] mt-[6rem]">
-      <Heading className="sticky h-16 md:h-24 top-0 flex items-end bg-black z-[995] pb-[1.25rem] w-[120%]">
-        Projects
-      </Heading>
+      <motion.div
+        style={{ opacity: transformOpacity }}
+        className="sticky h-16 md:h-24 top-0  flex items-end bg-black z-[996] pb-[1.25rem] w-[120%]"
+      >
+        <Heading>Projects</Heading>
+      </motion.div>
       {projects.map((project, i) => (
         <motion.div
           key={i}
@@ -166,7 +171,7 @@ export default function Projects() {
           whileInView={"show"}
           viewport={{ once: false, margin: "0px 0px -200px 0px" }}
           className={cn(
-            "flex items-center justify-between gap-12 text-white h-[100vh] relative overflow-y-clip overflow-x-visible scrollsnapping",
+            "flex items-center justify-between gap-12 text-white h-[100dvh] relative overflow-y-clip overflow-x-visible scrollsnapping",
             project.align == "left" ? "flex-row-reverse" : "flex-row"
           )}
         >
@@ -236,7 +241,7 @@ export default function Projects() {
                 },
               },
             }}
-            className="w-1/2 relative h-[100vh]"
+            className="w-1/2 relative h-[100dvh]"
           >
             {project.imagePosition == "top" && <GradientBlocker />}
             <Image
@@ -285,7 +290,7 @@ export default function Projects() {
       ))}
       <div
         ref={targetRef}
-        className="h-[100vh] flex flex-col gap-16 items-center justify-center scrollsnapping text-center relative"
+        className="h-[100dvh] flex flex-col gap-16 items-center justify-center scrollsnapping text-center relative"
       >
         <div className="absolute blur-[7px] w-full">
           <AlternateSlidingTexts
