@@ -127,7 +127,7 @@ function ExperienceItem({ experience }: ExperienceItemProps) {
         initial={"collapse"}
         whileInView={"expand"}
         viewport={{ once: true, amount: 0.8, margin: "0px 0px -150px 0px" }}
-        className="h-[1px] absolute top-0 left-0 bg-gray"
+        className="h-[1px] absolute top-0 left-0 linegradient"
       ></motion.div>
       <motion.h2
         custom={1}
