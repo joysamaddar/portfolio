@@ -292,7 +292,7 @@ export default function Projects() {
         ref={targetRef}
         className="h-[100dvh] flex flex-col gap-16 items-center justify-center scrollsnapping text-center relative"
       >
-        <div className="absolute blur-[7px] w-full">
+        <div className="absolute blur-[5px] w-full opacity-60">
           <AlternateSlidingTexts
             scrollYProgress={scrollYProgress}
             textsData={textsData}

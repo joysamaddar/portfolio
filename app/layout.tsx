@@ -22,10 +22,8 @@ export default function RootLayout({
     <html lang="en">
       <body className={`${inter.className}`}>
         <PageScrollProgress />
-        <Socials/>
         <Navbar />
         {children}
-        <ScrollDown />
       </body>
     </html>
   );
