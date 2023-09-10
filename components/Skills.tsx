@@ -94,7 +94,6 @@ export default function Skills() {
                   width: "100%",
                   transition: {
                     duration: 0.6,
-                    delay: 0.4,
                   },
                 },
               }}
@@ -113,9 +112,24 @@ export default function Skills() {
             >
               {skillName}
             </SlidingText>
-            <div className="w-1/2 flex flex-row gap-2 flex-wrap text-sm font-light font-mono text-justify z-[1]">
+            <motion.div variants={{
+                hide: {
+                  opacity: "0%",
+                },
+                show: {
+                  opacity: "100%",
+                  transition: {
+                    duration: 0.6
+                  },
+                },
+              }}
+              initial={"hide"}
+              whileInView={"show"}
+              viewport={{
+                once: true,
+              }} className="w-1/2 flex flex-row gap-2 flex-wrap text-sm font-light font-mono text-justify z-[1]">
               <p>{skills[skillName].join(", ")}</p>
-            </div>
+            </motion.div>
             {Object.keys(skills).length == i + 1 && (
               <motion.div
                 variants={{
@@ -125,8 +139,7 @@ export default function Skills() {
                   expand: {
                     width: "100%",
                     transition: {
-                      duration: 0.6,
-                      delay: 0.4,
+                      duration: 0.6
                     },
                   },
                 }}
