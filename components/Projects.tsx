@@ -325,11 +325,13 @@ export default function Projects() {
           whileInView={"show"}
           viewport={{ once: false, margin: "0px 0px 0px 0px" }}
         >
+          <Link href={"https://github.com/joysamaddar"} target="_blank">
           <Button type="white" className="relative p-3">
             <p className="flex flex-row gap-2">
               <Github /> Github
             </p>
           </Button>
+          </Link>
         </motion.div>
       </div>
     </section>

@@ -23,15 +23,20 @@
   body {
     @apply bg-black text-white;
   }
-    
+
   main {
-    max-width: 1800px;
+    max-width: 1500px;
     width: 100%;
     margin: auto;
   }
 
   .linegradient {
-    background: linear-gradient(to right, transparent, var(--gray), transparent);
+    background: linear-gradient(
+      to right,
+      transparent,
+      var(--gray),
+      transparent
+    );
   }
 
   ::selection {

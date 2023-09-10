@@ -5,9 +5,11 @@ interface SlidingTextProps {
   children: string;
   className?: string;
   doNotRepeat?: boolean;
+  amount?: number | "all" | "some",
+  margin?: string,
 }
 
-export function SlidingText({ children, className, doNotRepeat=true }: SlidingTextProps) {
+export function SlidingText({ children, className, doNotRepeat=true, amount=0.8, margin="0px 0px -200px 0px" }: SlidingTextProps) {
   const letters = children.split("");
 
   return (
@@ -26,7 +28,7 @@ export function SlidingText({ children, className, doNotRepeat=true }: SlidingTe
       }}
       initial={"down"}
       whileInView={"up"}
-      viewport={{ once: doNotRepeat, amount: 0.8, margin: "0px 0px -200px 0px" }}
+      viewport={{ once: doNotRepeat, amount: amount, margin: margin }}
     >
       {letters.map((letter, i) => (
         <motion.p
