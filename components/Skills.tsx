@@ -62,7 +62,7 @@ export default function Skills() {
         {Object.keys(skills).map((skillName, i) => (
           <motion.div
             whileHover="show"
-            className="relative w-full flex items-center justify-between text-gray py-12 px-12 group hover:text-graytransparent transition-all ease-in-out duration-500 min-h-[150px]"
+            className="relative w-full flex items-center justify-between text-gray py-12 px-12 group hover:text-graytransparent transition-all ease-in-out duration-500 min-h-[150px] overflow-hidden"
             key={i}
           >
             <div className="absolute h-full w-full bg-gradient-to-r from-primary-light to-primary top-0 left-0 z-0 opacity-0 group-hover:opacity-100 transition-all ease-in-out duration-500 pointer-events-none" />
