@@ -11,6 +11,7 @@
   --gray: #595959;
   --darkgray: #2b3030;
   --graytransparent: #ffffff88;
+  --maxwidth: 1500px;
   box-sizing: border-box;
   padding: 0;
   border: 0;
@@ -24,12 +25,12 @@
     @apply bg-black text-white;
   }
 
-  main {
-    max-width: 1500px;
+  main, #nav-container{
+    max-width: var(--maxwidth);
     width: 100%;
     margin: auto;
   }
-
+  
   .linegradient {
     background: linear-gradient(
       to right,

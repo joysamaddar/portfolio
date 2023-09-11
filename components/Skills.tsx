@@ -54,8 +54,9 @@ export default function Skills() {
 
   return (
     <section
+      id="skills"
       ref={targetElem}
-      className="relative select-none mx-[15%] min-h-max mb-[6rem]"
+      className="relative select-none mx-[15%] min-h-max pt-[6rem] mb-[6rem]"
     >
       <Heading>SKILLS</Heading>
       <div className="flex flex-col items-center justify-center mt-24">
@@ -112,14 +113,15 @@ export default function Skills() {
             >
               {skillName}
             </SlidingText>
-            <motion.div variants={{
+            <motion.div
+              variants={{
                 hide: {
                   opacity: "0%",
                 },
                 show: {
                   opacity: "100%",
                   transition: {
-                    duration: 0.6
+                    duration: 0.6,
                   },
                 },
               }}
@@ -127,7 +129,9 @@ export default function Skills() {
               whileInView={"show"}
               viewport={{
                 once: true,
-              }} className="w-1/2 flex flex-row gap-2 flex-wrap text-sm font-light font-mono text-justify z-[1]">
+              }}
+              className="w-1/2 flex flex-row gap-2 flex-wrap text-sm font-light font-mono text-justify z-[1]"
+            >
               <p>{skills[skillName].join(", ")}</p>
             </motion.div>
             {Object.keys(skills).length == i + 1 && (
@@ -139,7 +143,7 @@ export default function Skills() {
                   expand: {
                     width: "100%",
                     transition: {
-                      duration: 0.6
+                      duration: 0.6,
                     },
                   },
                 }}

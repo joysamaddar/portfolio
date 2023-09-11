@@ -113,7 +113,11 @@ export default function Projects() {
     offset: ["start end", "end end"],
   } as any);
 
-  const transformOpacity = useTransform(scrollYProgress, [0, 0.5, 1], [1, 1, 0]);
+  const transformOpacity = useTransform(
+    scrollYProgress,
+    [0, 0.5, 1],
+    [1, 1, 0]
+  );
 
   const textsVariant = {
     hidden: {
@@ -146,10 +150,10 @@ export default function Projects() {
   };
 
   return (
-    <section className="relative select-none mx-[15%] mt-[6rem]">
+    <section id="projects" className="relative select-none mx-[15%] pt-[3rem]">
       <motion.div
         style={{ opacity: transformOpacity }}
-        className="sticky h-16 md:h-24 top-0  flex items-end bg-black z-[997] pb-[1.25rem] w-[120%]"
+        className="sticky h-16 md:h-24 top-0 flex items-end bg-black z-[997] pb-[1.25rem] w-[120%]"
       >
         <Heading>Projects</Heading>
       </motion.div>
@@ -290,7 +294,7 @@ export default function Projects() {
       ))}
       <div
         ref={targetRef}
-        className="h-[100dvh] flex flex-col gap-16 items-center justify-center text-center relative"
+        className="h-[80dvh] flex flex-col gap-16 items-center justify-center text-center relative"
       >
         <div className="absolute blur-[5px] w-full opacity-60">
           <AlternateSlidingTexts
@@ -326,11 +330,11 @@ export default function Projects() {
           viewport={{ once: false, margin: "0px 0px 0px 0px" }}
         >
           <Link href={"https://github.com/joysamaddar"} target="_blank">
-          <Button type="white" className="relative p-3">
-            <p className="flex flex-row gap-2">
-              <Github /> Github
-            </p>
-          </Button>
+            <Button type="white" className="relative p-3">
+              <p className="flex flex-row gap-2">
+                <Github /> Github
+              </p>
+            </Button>
           </Link>
         </motion.div>
       </div>
