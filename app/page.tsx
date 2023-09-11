@@ -11,12 +11,24 @@ import { useAnimate, useScroll, useVelocity } from "framer-motion";
 import Socials from "@/components/ui/Socials";
 import ScrollDown from "@/components/ui/ScrollDown";
 import Hobbies from "@/components/Hobbies";
+import Lenis from "@studio-freight/lenis";
 
 export default function Home() {
   const [socialsRef, animateSocials] = useAnimate();
   const [scrollDownRef, animateScrollDown] = useAnimate();
   const { scrollYProgress } = useScroll();
   const xVelocity = useVelocity(scrollYProgress);
+
+  useEffect(() => {
+    const lenis = new Lenis();
+
+    function raf(time: number) {
+      lenis.raf(time);
+      requestAnimationFrame(raf);
+    }
+
+    requestAnimationFrame(raf);
+  }, []);
 
   useEffect(() => {
     return xVelocity.onChange((latestVelocity) => {

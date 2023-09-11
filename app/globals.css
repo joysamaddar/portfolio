@@ -25,19 +25,11 @@
     @apply bg-black text-white;
   }
 
-  main, #nav-container{
+  main,
+  #nav-container {
     max-width: var(--maxwidth);
     width: 100%;
     margin: auto;
-  }
-  
-  .linegradient {
-    background: linear-gradient(
-      to right,
-      transparent,
-      var(--gray),
-      transparent
-    );
   }
 
   ::selection {
@@ -56,10 +48,34 @@
   /* ::-webkit-scrollbar-thumb {
     @apply bg-darkgray;
   } */
+}
 
-  .edgespacing {
-    @apply mx-[8%] my-8 md:my-12;
-  }
+html.lenis {
+  height: auto;
+}
+
+.lenis.lenis-smooth {
+  scroll-behavior: auto;
+}
+
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+
+.lenis.lenis-stopped {
+  overflow: hidden;
+}
+
+.lenis.lenis-scrolling iframe {
+  pointer-events: none;
+}
+
+.linegradient {
+  background: linear-gradient(to right, transparent, var(--gray), transparent);
+}
+
+.edgespacing {
+  @apply mx-[8%] my-8 md:my-12;
 }
 
 .vertical-text {
