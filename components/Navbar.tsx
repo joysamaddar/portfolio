@@ -5,6 +5,7 @@ import { AnimatePresence, motion } from "framer-motion";
 import Link from "next/link";
 import { useState } from "react";
 import MenuToggle from "./ui/MenuToggle";
+import Socials from "./ui/Socials";
 
 const navSections = ["About", "Experience", "Projects", "Skills"];
 
@@ -33,7 +34,7 @@ export default function Navbar() {
   return (
     <>
       <div className="fixed left-[3%] top-8 md:top-12 text-xs select-none z-[1001]">
-        <Link href={"./"} className="group">
+        <Link href={"#hero"} className="group">
           <motion.svg
             initial={{ opacity: 0, x: "-1.5rem" }}
             animate={{ opacity: 1, x: 0 }}
@@ -98,6 +99,7 @@ export default function Navbar() {
                   </motion.li>
                 ))}
               </motion.ul>
+              <Socials direction="horizontal"/>
             </div>
           </motion.div>
         )}

@@ -17,6 +17,7 @@ export default function Hero() {
 
   return (
     <motion.section
+      id="hero"
       style={{ opacity }}
       ref={sectionRef}
       className="h-screen mx-[15%] flex flex-row items-center justify-center"
