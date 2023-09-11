@@ -21,7 +21,6 @@ export default function Hero() {
       ref={sectionRef}
       className="h-screen mx-[15%] flex flex-row items-center justify-center"
     >
-      <GradientGrid/>
       <GradientBackground />
       <div className="flex items-center justify-center z-10">
         <TextCarousel />

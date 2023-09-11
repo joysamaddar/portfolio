@@ -45,15 +45,12 @@ export default function AlternateSlidingTexts({
           key={i}
         >
           {texts.map((text, j) => (
-            <>
-              <p
-                className="hover:text-primary hover:scale-105 transition duration-100 ease-in-out"
-                key={j}
-              >
+            <div className="flex flex-row items-center justify-center gap-2" key={j}>
+              <p className="hover:text-primary hover:scale-105 transition duration-100 ease-in-out">
                 {text}
               </p>
               <p className="text-lg font-extralight">•</p>
-            </>
+            </div>
           ))}
           <div
             className={cn(
@@ -63,16 +60,16 @@ export default function AlternateSlidingTexts({
                 : "left-[calc(-100%-0.5rem)]"
             )}
           >
-            {texts.map((text, i) => (
-              <>
-                <p
-                  className="hover:text-primary hover:scale-105 transition duration-100 ease-in-out"
-                  key={i}
-                >
+            {texts.map((text, k) => (
+              <div
+                className="flex flex-row items-center justify-center gap-2"
+                key={k}
+              >
+                <p className="hover:text-primary hover:scale-105 transition duration-100 ease-in-out">
                   {text}
                 </p>
                 <p className="text-lg font-extralight">•</p>
-              </>
+              </div>
             ))}
           </div>
         </motion.div>

@@ -149,7 +149,7 @@ export default function Projects() {
     <section className="relative select-none mx-[15%] mt-[6rem]">
       <motion.div
         style={{ opacity: transformOpacity }}
-        className="sticky h-16 md:h-24 top-0  flex items-end bg-black z-[996] pb-[1.25rem] w-[120%]"
+        className="sticky h-16 md:h-24 top-0  flex items-end bg-black z-[997] pb-[1.25rem] w-[120%]"
       >
         <Heading>Projects</Heading>
       </motion.div>
@@ -171,7 +171,7 @@ export default function Projects() {
           whileInView={"show"}
           viewport={{ once: false, margin: "0px 0px -200px 0px" }}
           className={cn(
-            "flex items-center justify-between gap-12 text-white h-[100dvh] relative overflow-y-clip overflow-x-visible scrollsnapping",
+            "flex items-center justify-between gap-12 text-white h-[100dvh] relative overflow-y-clip overflow-x-visible",
             project.align == "left" ? "flex-row-reverse" : "flex-row"
           )}
         >
@@ -276,7 +276,7 @@ export default function Projects() {
               },
             }}
             className={cn(
-              "absolute bottom-12 left-[50.75%] z-[999] flex flex-row gap-2 flex-wrap bg-black drop-shadow-2xl p-3 gradientborder"
+              "absolute bottom-12 left-[50.75%] z-[996] flex flex-row gap-2 flex-wrap bg-black drop-shadow-2xl p-3 gradientborder"
             )}
           >
             <Link href={project.codeLink} target="_blank">
@@ -290,7 +290,7 @@ export default function Projects() {
       ))}
       <div
         ref={targetRef}
-        className="h-[100dvh] flex flex-col gap-16 items-center justify-center scrollsnapping text-center relative"
+        className="h-[100dvh] flex flex-col gap-16 items-center justify-center text-center relative"
       >
         <div className="absolute blur-[5px] w-full opacity-60">
           <AlternateSlidingTexts

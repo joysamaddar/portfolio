@@ -16,7 +16,7 @@
   border: 0;
   overflow-x: hidden;
   scroll-behavior: smooth;
-  scroll-snap-type: y proximity;
+  /* scroll-snap-type: y proximity; */
 }
 
 @layer base {
@@ -82,9 +82,9 @@
   overflow: hidden;
 }
 
-.scrollsnapping {
+/* .scrollsnapping {
   scroll-snap-align: end;
-}
+} */
 
 .btn_shadow_primary,
 .btn_shadow_white {
