@@ -45,16 +45,17 @@
   }
 
   ::-webkit-scrollbar {
-    @apply w-2.5;
+    /* @apply w-2.5; */
+    display: none;
   }
 
-  ::-webkit-scrollbar-track {
+  /* ::-webkit-scrollbar-track {
     @apply bg-transparent;
-  }
+  } */
 
-  ::-webkit-scrollbar-thumb {
+  /* ::-webkit-scrollbar-thumb {
     @apply bg-darkgray;
-  }
+  } */
 
   .edgespacing {
     @apply mx-[8%] my-8 md:my-12;

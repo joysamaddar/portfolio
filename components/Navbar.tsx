@@ -7,7 +7,7 @@ import { useState } from "react";
 import MenuToggle from "./ui/MenuToggle";
 import Socials from "./ui/Socials";
 
-const navSections = ["About", "Experience", "Projects", "Skills"];
+const navSections = ["About", "Experience", "Projects", "Skills", "Hobbies"];
 
 export default function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -99,7 +99,7 @@ export default function Navbar() {
                   </motion.li>
                 ))}
               </motion.ul>
-              <Socials direction="horizontal"/>
+              <Socials direction="horizontal" />
             </div>
           </motion.div>
         )}

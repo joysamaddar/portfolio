@@ -10,6 +10,7 @@ import { useEffect } from "react";
 import { useAnimate, useScroll, useVelocity } from "framer-motion";
 import Socials from "@/components/ui/Socials";
 import ScrollDown from "@/components/ui/ScrollDown";
+import Hobbies from "@/components/Hobbies";
 
 export default function Home() {
   const [socialsRef, animateSocials] = useAnimate();
@@ -56,6 +57,7 @@ export default function Home() {
         <Experience />
         <Projects />
         <Skills />
+        <Hobbies />
       </main>
       <ScrollDown ref={scrollDownRef} />
     </>
