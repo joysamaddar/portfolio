@@ -36,24 +36,24 @@ export default function Home() {
         animateSocials(
           socialsRef.current,
           { opacity: 0 },
-          { duration: 0.2, ease: "easeInOut" }
+          { duration: 0.1, ease: "easeInOut" }
         );
         animateScrollDown(
           scrollDownRef.current,
           { opacity: 0 },
-          { duration: 0.2, ease: "easeInOut" }
+          { duration: 0.1, ease: "easeInOut" }
         );
       }
       if (latestVelocity < 0 && socialsRef.current.style.opacity != 1) {
         animateSocials(
           socialsRef.current,
           { opacity: 1 },
-          { duration: 0.2, ease: "easeInOut" }
+          { duration: 0.1, ease: "easeInOut" }
         );
         animateScrollDown(
           scrollDownRef.current,
           { opacity: 1 },
-          { duration: 0.2, ease: "easeInOut" }
+          { duration: 0.1, ease: "easeInOut" }
         );
       }
     });

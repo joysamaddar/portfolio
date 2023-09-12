@@ -252,7 +252,7 @@ export default function Projects() {
               src={project.imageSrc}
               alt={`${project.title} product image`}
               className={cn(
-                "mt-48 absolute border-primary rounded-2xl border-[2px]",
+                "mt-48 absolute border-primary border-[2px]",
                 project.imagePosition == "top"
                   ? "top-0"
                   : "top-[55%] translate-y-[-50%] -mt-12",

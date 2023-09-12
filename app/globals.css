@@ -11,7 +11,7 @@
   --gray: #595959;
   --darkgray: #2b3030;
   --graytransparent: #ffffff88;
-  --maxwidth: 1500px;
+  --maxwidth: 1800px;
   box-sizing: border-box;
   padding: 0;
   border: 0;
@@ -125,4 +125,8 @@ html.lenis {
 .btn_shadow_white:hover {
   box-shadow: inset -120px 0px 0px var(--white);
   color: var(--black);
+}
+
+.lineheight{
+  line-height: 1.72rem;
 }
