@@ -66,7 +66,21 @@ export default function Skills() {
             className="relative w-full flex items-center justify-between text-gray py-12 px-12 group hover:text-graytransparent transition-all ease-in-out duration-500 min-h-[150px] overflow-hidden"
             key={i}
           >
-            <div className="absolute h-full w-full bg-gradient-to-r from-primary-light to-primary top-0 left-0 z-0 opacity-0 group-hover:opacity-100 transition-all ease-in-out duration-500 pointer-events-none" />
+            <motion.div
+              initial={{ width: 0, height: 0 }}
+              variants={{
+                show: {
+                  width: ["0%", "100%", "100%"],
+                  height: ["0.5%", "0.5%", "100%"],
+                  transition: {
+                    duration: 0.4,
+                    ease: "easeInOut",
+                    times: [0, 0.4, 0.9],
+                  },
+                },
+              }}
+              className="absolute left-1/2 translate-x-[-50%] bg-gradient-to-r from-primary-light to-primary z-0 pointer-events-none origin-center"
+            />
             <div className="absolute z-0 pointer-events-none flex items-center justify-center w-full translate-x-[-4%]">
               {[...Array(3)].map((_num, i: number) => {
                 const dist = 300 * (i + 1);
@@ -78,7 +92,12 @@ export default function Skills() {
                       show: {
                         width: dist + "px",
                         height: dist + "px",
-                        transition: { type: "spring", bounce: 0.3, repeat: 0 },
+                        transition: {
+                          type: "spring",
+                          bounce: 0.3,
+                          repeat: 0,
+                          delay: 0.4,
+                        },
                       },
                     }}
                     className="bg-[#0000000a] rounded-full absolute"
