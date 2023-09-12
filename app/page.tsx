@@ -14,6 +14,7 @@ import Hobbies from "@/components/Hobbies";
 import Lenis from "@studio-freight/lenis";
 
 export default function Home() {
+  const [mainRef, animateMain] = useAnimate();
   const [socialsRef, animateSocials] = useAnimate();
   const [scrollDownRef, animateScrollDown] = useAnimate();
   const { scrollYProgress } = useScroll();
@@ -32,6 +33,14 @@ export default function Home() {
 
   useEffect(() => {
     return xVelocity.onChange((latestVelocity) => {
+      animateMain(
+        mainRef.current,
+        {
+          skewY: latestVelocity * 4,
+        },
+        { duration: 0.04, ease: "easeIn" }
+      );
+
       if (latestVelocity > 0 && socialsRef.current.style.opacity != 0) {
         animateSocials(
           socialsRef.current,
@@ -62,7 +71,7 @@ export default function Home() {
   return (
     <>
       <Socials ref={socialsRef} />
-      <main className="max-w-screen overflow-clip">
+      <main className="max-w-screen overflow-clip" ref={mainRef}>
         <Hero />
         <MakeAndBreak />
         <Intro />
