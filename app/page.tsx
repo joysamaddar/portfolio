@@ -36,7 +36,7 @@ export default function Home() {
       animateMain(
         mainRef.current,
         {
-          skewY: latestVelocity * 4,
+          skewY: latestVelocity * 2.5,
         },
         { duration: 0.04, ease: "easeIn" }
       );

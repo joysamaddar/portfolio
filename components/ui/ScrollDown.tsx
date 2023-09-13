@@ -7,7 +7,7 @@ import React, { Ref } from "react";
 const ScrollDown = React.forwardRef((_props, ref) => (
   <div
     ref={ref as Ref<HTMLDivElement> | undefined}
-    className="fixed bottom-0 right-0 select-none flex items-center justify-center mx-[2%] my-8 md:my-12 z-[999] bg-[#00000022] rounded-full p-2 backdrop-blur-xl"
+    className="fixed bottom-0 right-0 select-none hidden sm:flex items-center justify-center mx-[2%] my-8 md:my-12 z-[999] bg-[#00000022] rounded-full p-2 backdrop-blur-xl"
   >
     <motion.svg
       viewBox="0 0 100 100"
