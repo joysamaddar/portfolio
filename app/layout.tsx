@@ -25,7 +25,7 @@ export default function RootLayout({
         <div className="w-screen h-screen absolute top-0 bottom-0 overflow-clip pointer-events-none select-none">
           <Image
             src={bg}
-            className="z-[990] w-full h-full object-cover opacity-60"
+            className="z-[990] w-full h-full object-cover object-left-top opacity-60"
             alt="Background image"
             priority
           />
