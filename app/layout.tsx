@@ -23,6 +23,16 @@ export default function RootLayout({
     <html lang="en">
       <body className={`${inter.className}`}>
         <div className="w-screen h-screen absolute top-0 bottom-0 overflow-clip pointer-events-none select-none">
+          <div
+            className={
+              "sm:hidden h-[100dvh] absolute top-0 z-[995] w-full bg-gradient-to-r from-black to-transparent"
+            }
+          />
+          <div
+            className={
+              "sm:hidden h-[30dvh] absolute top-0 z-[995] w-full bg-gradient-to-b from-black to-transparent"
+            }
+          />
           <Image
             src={bg}
             className="z-[990] w-full h-full object-cover object-left-top opacity-60"
