@@ -79,7 +79,7 @@ export default function Hobbies() {
   return (
     <section
       id="hobbies"
-      className="relative select-none mx-[15%] min-h-max mt-[12rem] pt-[6rem] pb-[12rem]"
+      className="relative select-none mx-[15%] min-h-max mt-[12rem] pt-[6rem] pb-[6rem]"
     >
       <Heading>HOBBIES</Heading>
       <div className="my-36 text-graytransparent">
@@ -100,31 +100,10 @@ export default function Hobbies() {
               </RevealingTextItem>
             ))}
           </RevealingTextContainer>
-          <p className="w-full text-right my-6">- Probably someone, not me</p>
-        </motion.div>
-        <motion.div
-          variants={hideAndShowVariant}
-          initial="hide"
-          whileInView="show"
-          viewport={{ once: true }}
-          className="flex mt-36 text-left w-2/3 font-light lineheight"
-        >
-          <p>
-            Wait, I do have a life apart from coding too.
-            <br />
-            <br />
-            You can usually find me{" "}
-            <span className="text-white">petting doggos</span>,{" "}
-            <span className="text-white">travelling around the world</span>,
-            chilling on the <span className="text-white">beach</span>, binging
-            on some <span className="text-white">netflix shows</span>, trying{" "}
-            <span className="text-white">something new to eat</span> at some
-            local restro, <span className="text-white">painting</span>, or
-            probably doing <span className="text-white">something stupid</span>.
-          </p>
+          <p className="w-full text-right my-6 text-sm">- Probably someone, not me</p>
         </motion.div>
         <div
-          className="flex flex-row mt-[25rem] items-center justify-between gap-8 overflow-visible"
+          className="flex flex-row mt-[15rem] items-center justify-between gap-8 overflow-visible"
           ref={imageContainerRef}
         >
           {hobbiesList.map((hobbies, i) => (
@@ -162,6 +141,27 @@ export default function Hobbies() {
             </motion.div>
           ))}
         </div>
+        <motion.div
+          variants={hideAndShowVariant}
+          initial="hide"
+          whileInView="show"
+          viewport={{ once: true }}
+          className="flex mt-[15rem] w-full lg:w-1/2 m-auto leading-7 text-center text-xl font-medium"
+        >
+          <p>
+            Apart from coding,
+            <br />
+            <br />
+            You can usually find me{" "}
+            <span className="text-white">petting doggos</span>,{" "}
+            <span className="text-white">travelling around the world</span>,
+            chilling on the <span className="text-white">beach</span>, binging
+            on some <span className="text-white">netflix shows</span>, trying{" "}
+            <span className="text-white">something new to eat</span> at some
+            local restro, <span className="text-white">painting</span>, or
+            probably doing <span className="text-white">something stupid</span>.
+          </p>
+        </motion.div>
       </div>
     </section>
   );
