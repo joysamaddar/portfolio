@@ -19,7 +19,7 @@ export default function Hero() {
       ref={sectionRef}
       className="h-[100dvh] mx-[15%] flex flex-row items-center justify-center"
     >
-      <div className="flex items-center justify-center z-10">
+      <div className="flex items-center justify-center z-[996]">
         <TextCarousel />
       </div>
     </motion.section>
