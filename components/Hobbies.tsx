@@ -2,10 +2,7 @@
 
 import { useRef } from "react";
 import Heading from "./ui/Heading";
-import {
-  motion,
-  useScroll
-} from "framer-motion";
+import { motion, useScroll } from "framer-motion";
 import { RevealingTextContainer, RevealingTextItem } from "./ui/RevealingText";
 import neo from "@/public/neo.jpg";
 import mt_titlis from "@/public/mt_titlis.jpeg";
@@ -20,16 +17,31 @@ import { cn, useParallax } from "@/lib/utils";
 
 const hobbiesList = [
   [
-    { title: "Admiring the Eiffel Tower at night", src: eiffel },
+    { title: "Hugging my doggo Neo", src: neo },
     { title: "On top of Mt. Titlis", src: mt_titlis },
+  ],
+  [
+    { title: "Chilling near a beach", src: nusa },
+    { title: "Admiring the Eiffel Tower at night", src: eiffel },
+  ],
+  [
     { title: "Munching on some waffles", src: waffle },
     { title: "Another one of my paintings", src: painting2 },
   ],
   [
-    { title: "Hugging my doggo Neo", src: neo },
-    { title: "Chilling near a beach", src: nusa },
     { title: "A night sky painting", src: painting1 },
     { title: "One of my many sketches", src: sketch },
+  ],
+];
+
+const hobbiesListMobile = [
+  [
+    { title: "Hugging my doggo Neo", src: neo },
+    { title: "One of my many sketches", src: sketch },
+  ],
+  [
+    { title: "On top of Mt. Titlis", src: mt_titlis },
+    { title: "A night sky painting", src: painting1 },
   ],
 ];
 
@@ -41,12 +53,19 @@ export default function Hobbies() {
   } as any);
 
   const imageContainerRef = useRef<HTMLDivElement>(null);
+  const imageContainerRefMobile = useRef<HTMLDivElement>(null);
   const { scrollYProgress: scrollYProgressImageContainer } = useScroll({
     target: imageContainerRef,
     offset: ["start end", "end start"],
   } as any);
-  const yReverse = useParallax(scrollYProgressImageContainer, -100);
-  const yForward = useParallax(scrollYProgressImageContainer, 200);
+  const { scrollYProgress: scrollYProgressImageContainerMobile } = useScroll({
+    target: imageContainerRefMobile,
+    offset: ["start end", "end start"],
+  } as any);
+  const yReverse = useParallax(scrollYProgressImageContainer, -150);
+  const yForward = useParallax(scrollYProgressImageContainer, 300);
+  const yReverseMobile = useParallax(scrollYProgressImageContainerMobile, -150);
+  const yForwardMobile = useParallax(scrollYProgressImageContainerMobile, 300);
 
   const hideAndShowVariant = {
     hide: {
@@ -100,10 +119,12 @@ export default function Hobbies() {
               </RevealingTextItem>
             ))}
           </RevealingTextContainer>
-          <p className="w-full text-right my-6 text-sm">- Probably someone, not me</p>
+          <p className="w-full text-center my-6 text-sm">
+            - Probably someone, not me
+          </p>
         </motion.div>
         <div
-          className="flex flex-row mt-[15rem] items-center justify-between gap-8 overflow-visible"
+          className="hidden md:flex flex-row mt-[15rem] items-center justify-between gap-2 h-[60dvh] overflow-clip"
           ref={imageContainerRef}
         >
           {hobbiesList.map((hobbies, i) => (
@@ -114,10 +135,7 @@ export default function Hobbies() {
               whileInView="show"
               style={{ y: i % 2 == 0 ? yForward : yReverse }}
               viewport={{ once: true }}
-              className={cn(
-                "w-1/2 flex flex-col gap-4",
-                i % 2 == 0 ? "items-end" : "items-start"
-              )}
+              className={cn("flex flex-col gap-2")}
             >
               {hobbies.map((hobbie, j) => (
                 <motion.div
@@ -126,16 +144,48 @@ export default function Hobbies() {
                   initial="hide"
                   whileInView="show"
                   viewport={{ once: true }}
-                  className="flex flex-col gap-1"
+                  className=""
                 >
                   <Image
                     src={hobbie.src}
                     alt={hobbie.title}
                     className="h-[400px] w-[300px] object-cover"
+                    priority
                   />
-                  <p className="text-xs font-extralight text-left">
-                    {hobbie.title}
-                  </p>
+                </motion.div>
+              ))}
+            </motion.div>
+          ))}
+        </div>
+        <div
+          className="flex md:hidden flex-row mt-[15rem] items-center justify-between gap-2 h-[60dvh] overflow-clip"
+          ref={imageContainerRefMobile}
+        >
+          {hobbiesListMobile.map((hobbies, i) => (
+            <motion.div
+              key={i}
+              variants={hideAndShowVariant}
+              initial="hide"
+              whileInView="show"
+              style={{ y: i % 2 == 0 ? yForwardMobile : yReverseMobile }}
+              viewport={{ once: true }}
+              className={cn("flex flex-col gap-2")}
+            >
+              {hobbies.map((hobbie, j) => (
+                <motion.div
+                  key={j}
+                  variants={hideAndShowAndScaleVariant}
+                  initial="hide"
+                  whileInView="show"
+                  viewport={{ once: true }}
+                  className=""
+                >
+                  <Image
+                    src={hobbie.src}
+                    alt={hobbie.title}
+                    className="h-[400px] w-[300px] object-cover"
+                    priority
+                  />
                 </motion.div>
               ))}
             </motion.div>
