@@ -41,7 +41,7 @@ const hobbiesListMobile = [
   ],
   [
     { title: "On top of Mt. Titlis", src: mt_titlis },
-    { title: "A night sky painting", src: painting1 },
+    { title: "Another one of my paintings", src: painting2 },
   ],
 ];
 
@@ -207,8 +207,7 @@ export default function Hobbies() {
             <span className="text-white">travelling around the world</span>,
             chilling on the <span className="text-white">beach</span>, binging
             on some <span className="text-white">netflix shows</span>, trying{" "}
-            <span className="text-white">something new to eat</span> at some
-            local restro, <span className="text-white">painting</span>, or
+            <span className="text-white">something new to eat</span>, <span className="text-white">painting</span>, or
             probably doing <span className="text-white">something stupid</span>.
           </p>
         </motion.div>
