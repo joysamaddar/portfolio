@@ -1,0 +1,52 @@
+export const projects = [
+  {
+    title: "DOOIT",
+    metadata: ["Utility"],
+    description: "A kanban board with a sleek design and intuitive UX.",
+    url: "/projects/dooit",
+    features: [
+      "Create and manage multiple projects",
+      "Add/Remove users from projects on the fly",
+      "Get tasks progress and other statistics",
+    ],
+    skills: [
+      "TypeScript",
+      "NestJS",
+      "GraphQL",
+      "MongoDB",
+      "TypeORM",
+      "NextJS",
+      "Tailwind CSS",
+      "SCSS",
+      "Daisy UI",
+    ],
+    liveLink: "https://dooit.vercel.app/",
+    codeLink: "https://github.com/joysamaddar/dooit",
+  },
+  {
+    title: "JOEY JUMPS",
+    metadata: ["Gaming"],
+    url: "/projects/joey_jumps",
+    description: "A platformer game for fun and lols.",
+    features: [
+      "No libraries used. No gimmicks. Just plain old HTML and JS.",
+      "Amazing sprite animations.",
+    ],
+    skills: ["HTML", "Vanilla Javascript"],
+    liveLink: "https://joysamaddar.github.io/Joey-Jumps/",
+    codeLink: "https://github.com/joysamaddar/Joey-Jumps",
+  },
+  {
+    title: "XATTY",
+    url: "/projects/xatty",
+    description: "A chat app that allows realtime chat between users.",
+    metadata: ["Social"],
+    features: [
+      "Allows multiple users per room",
+      "No useless signup or login needed. Share room link & chat!",
+    ],
+    skills: ["Node.js", "Express.js", "Socket.IO", "React", "SCSS"],
+    liveLink: "https://xatty.netlify.app/",
+    codeLink: "https://github.com/joysamaddar/Xatty",
+  },
+];

@@ -1,109 +1,38 @@
 "use client";
 
-import Image from "next/image";
 import Link from "next/link";
-import { motion, useScroll, useTransform } from "framer-motion";
-import dooit from "@/public/dooit.png";
-import joey_jumps from "@/public/joey_jumps.png";
-import xatty from "@/public/xatty.png";
+import { motion, useScroll } from "framer-motion";
 import Heading from "./ui/Heading";
-import { SlidingText } from "./ui/SlidingText";
 import GradientBlocker from "./ui/GradientBlocker";
 import Button from "./ui/Button";
 import { cn } from "@/lib/utils";
-import { RevealingTextContainer, RevealingTextItem } from "./ui/RevealingText";
 import { useRef } from "react";
-import { Github } from "lucide-react";
-import GradientGrid from "./ui/GradientGrid";
+import { Github, MoveRight } from "lucide-react";
 import AlternateSlidingTexts from "./ui/AlternateSlidingTexts";
-
-const projects = [
-  {
-    title: "DOOIT",
-    imageSrc: dooit,
-    imagePosition: "top",
-    description: "A kanban board with a sleek design and intuitive UX.",
-    primaryColorText: "kanban board",
-    features: [
-      "Create and manage multiple projects",
-      "Add/Remove users from projects on the fly",
-      "Get tasks progress and other statistics",
-    ],
-    skills: [
-      "TypeScript",
-      "NestJS",
-      "GraphQL",
-      "MongoDB",
-      "TypeORM",
-      "NextJS",
-      "Tailwind CSS",
-      "SCSS",
-      "Daisy UI",
-    ],
-    liveLink: "https://dooit.vercel.app/",
-    codeLink: "https://github.com/joysamaddar/dooit",
-    align: "left",
-  },
-  {
-    title: "JOEY JUMPS",
-    imageSrc: joey_jumps,
-    imageBorder: "white",
-    description: "A platformer game for fun and lols.",
-    primaryColorText: "platformer game",
-    features: [
-      "No libraries used. No gimmicks. Just plain old HTML and JS.",
-      "Amazing sprite animations.",
-    ],
-    skills: ["HTML", "Vanilla Javascript"],
-    liveLink: "https://joysamaddar.github.io/Joey-Jumps/",
-    codeLink: "https://github.com/joysamaddar/Joey-Jumps",
-    align: "left",
-  },
-  {
-    title: "XATTY",
-    imageSrc: xatty,
-    description: "A chat app that allows realtime chat between users.",
-    primaryColorText: "chat app",
-    features: [
-      "Allows multiple users per room",
-      "No useless signup or login needed. Share room link & chat!",
-    ],
-    skills: ["Node.js", "Express.js", "Socket.IO", "React", "SCSS"],
-    liveLink: "https://xatty.netlify.app/",
-    codeLink: "https://github.com/joysamaddar/Xatty",
-    align: "right",
-  },
-];
+import { projects } from "@/constants/projects";
 
 const textsData = [
+  ["MORE", "MORE", "MORE", "MORE", "MORE", "MORE", "MORE"],
   [
-    "HTML",
-    "CSS",
-    "SCSS",
-    "TailwindCSS",
-    "Bootstrap",
-    "Javascript",
-    "TypeScript",
+    "PROJECTS",
+    "PROJECTS",
+    "PROJECTS",
+    "PROJECTS",
+    "PROJECTS",
+    "PROJECTS",
+    "PROJECTS",
   ],
-  ["React", "Next.js", "Framer Motion", "GSAP", "Git", "Zustand", "Redux"],
-  ["Node.js", "Express.js", "NestJS", "NoSQL", "SQL", "Mongoose", "TypeORM"],
+  ["MORE", "MORE", "MORE", "MORE", "MORE", "MORE", "MORE"],
   [
-    "GraphQL",
-    "RestAPIs",
-    "Clojure",
-    "ClojureScript",
-    "Python",
-    "Java",
-    "Spring",
+    "PROJECTS",
+    "PROJECTS",
+    "PROJECTS",
+    "PROJECTS",
+    "PROJECTS",
+    "PROJECTS",
+    "PROJECTS",
   ],
-  [
-    "SpringBoot",
-    "RadixUI",
-    "Daisy UI",
-    "Tanstack Table",
-    "Hibernate",
-    "Socket.IO",
-  ],
+  ["MORE", "MORE", "MORE", "MORE", "MORE", "MORE"],
 ];
 
 export default function Projects() {
@@ -112,12 +41,6 @@ export default function Projects() {
     target: targetRef,
     offset: ["start end", "end end"],
   } as any);
-
-  const transformOpacity = useTransform(
-    scrollYProgress,
-    [0, 0.5, 1],
-    [1, 1, 0]
-  );
 
   const textsVariant = {
     hidden: {
@@ -134,210 +57,123 @@ export default function Projects() {
     }),
   };
 
-  const skillsVariant = {
-    hidden: {
-      opacity: 0,
-      scale: "140%",
-    },
-    show: (i: number) => ({
-      opacity: 1,
-      scale: "100%",
-      transition: {
-        duration: 0.4,
-        delay: 0.35 * i,
-      },
-    }),
-  };
-
   return (
-    <section id="projects" className="relative select-none mx-[15%] pt-[3rem]">
-      <motion.div
-        style={{ opacity: transformOpacity }}
-        className="sticky h-16 md:h-24 top-0 flex items-end bg-black z-[997] pb-[1.25rem] w-[120%]"
+    <section
+      id="projects"
+      className="relative select-none mx-[15%] pt-[3rem] pb-[1rem]"
+    >
+      <Heading>Projects</Heading>
+      <motion.p
+        variants={{
+          hidden: {
+            opacity: 0,
+          },
+          show: {
+            opacity: 1,
+            transition: {
+              duration: 0.4,
+              delay: 0.4,
+            },
+          },
+        }}
+        initial="hidden"
+        whileInView="show"
+        viewport={{ once: true }}
+        className=" mt-[6rem] w-full leading-7 text-center text-xl font-medium text-graytransparent"
       >
-        <Heading>Projects</Heading>
-      </motion.div>
-      {projects.map((project, i) => (
-        <motion.div
-          key={i}
-          variants={{
-            hidden: {
-              opacity: 0,
-            },
-            show: {
-              opacity: 1,
-              transition: {
-                duration: 0.4,
-              },
-            },
-          }}
-          initial={"hidden"}
-          whileInView={"show"}
-          viewport={{ once: false, margin: "0px 0px -200px 0px" }}
-          className={cn(
-            "flex items-center justify-between gap-12 text-white h-[100dvh] relative overflow-y-clip overflow-x-visible",
-            project.align == "left" ? "flex-row-reverse" : "flex-row"
-          )}
-        >
-          <GradientGrid
-            className="z-[0] left-2/3 !opacity-10"
-            doNotRepeat={false}
-          />
-          <div className="flex flex-col w-1/2">
-            <SlidingText
-              className={
-                project.title.split("").length < 7 ? "text-[6vw]" : "text-[5vw]"
-              }
-              doNotRepeat={false}
-            >
-              {project.title}
-            </SlidingText>
-            <div className="flex flex-col gap-8">
-              <motion.p
-                custom={1.5}
-                variants={textsVariant}
-                className="text-[1.5vw]"
-              >
-                {project.description.split(project.primaryColorText)[0]}
-                <span className="text-primary">{project.primaryColorText}</span>
-                {project.description.split(project.primaryColorText)[1]}
-              </motion.p>
-              {project.features && (
-                <div className="flex flex-col gap-1 font-thin">
-                  <motion.p
-                    custom={2}
-                    variants={textsVariant}
-                    className="font-normal"
-                  >
-                    FEATURES
-                  </motion.p>
-                  {project.features.map((feature, i) => (
-                    <motion.p custom={3 + i} variants={textsVariant} key={i}>
-                      ◼ {feature}
-                    </motion.p>
-                  ))}
-                </div>
-              )}
-              <div className="flex flex-row gap-2 flex-wrap font-thin w-[75%] text-[11px]">
-                {project.skills.map((skill, i) => (
-                  <motion.p
-                    custom={project.features ? project.features.length + 3 : 2}
-                    variants={skillsVariant}
-                    className="p-1 gradientborder shadow-2xl"
-                    key={i}
-                  >
-                    {skill}
-                  </motion.p>
-                ))}
-              </div>
-            </div>
-          </div>
+        Check out some of my <span className="text-primary">side projects</span>{" "}
+        below.
+      </motion.p>
+      <motion.div className="flex flex-row my-24 items-center justify-center flex-wrap gap-14">
+        {projects.map((project, i) => (
           <motion.div
-            variants={{
-              hidden: {
-                y: 100,
-              },
-              show: {
-                y: 0,
-                transition: {
-                  duration: 0.9,
-                  ease: "easeInOut",
-                },
-              },
-            }}
-            className="w-1/2 relative h-[100dvh]"
-          >
-            {project.imagePosition == "top" && <GradientBlocker />}
-            <Image
-              src={project.imageSrc}
-              alt={`${project.title} product image`}
-              className={cn(
-                "mt-48 absolute border-primary border-[2px]",
-                project.imagePosition == "top"
-                  ? "top-0"
-                  : "top-[55%] translate-y-[-50%] -mt-12",
-                project.imageBorder == "white" && "border-white"
-              )}
-              priority
-            />
-          </motion.div>
-          <motion.div
+            key={i}
             variants={{
               hidden: {
                 opacity: 0,
-                y: 100,
-                x: -118,
               },
               show: {
                 opacity: 1,
-                y: 0,
-                x: -118,
                 transition: {
-                  duration: 0.8,
+                  duration: 0.4,
                   delay: 0.4,
-                  ease: "easeInOut",
                 },
               },
             }}
-            className={cn(
-              "absolute bottom-12 left-[50.75%] z-[996] flex flex-row gap-2 flex-wrap bg-black drop-shadow-2xl p-3 gradientborder"
-            )}
+            initial={"hidden"}
+            whileInView={"show"}
+            viewport={{ once: true }}
+            className={cn("flex flex-col relative w-[400px] h-[300px]")}
           >
-            <Link href={project.codeLink} target="_blank">
-              <Button type="white">View Code</Button>
-            </Link>
-            <Link href={project.liveLink} target="_blank">
-              <Button>View Live</Button>
-            </Link>
+            <div className="w-full h-full border bg-black z-20 p-20 gradientborder text-graytransparent">
+              <div className="h-full leading-7 tracking-wider font-medium flex flex-col items-start justify-center">
+                <div className="flex flex-col gap-6">
+                  <p className="text-xl text-graytransparent">
+                    {project.title}
+                  </p>
+                  <p className="font-light text-sm text-gray">
+                    {project.description}
+                  </p>
+                  <div className="flex flex-row gap-4">
+                    {project.metadata?.map((meta, i) => (
+                      <p
+                        key={i}
+                        className="text-xs font-mono text-darkgray uppercase"
+                      >
+                        {meta}
+                      </p>
+                    ))}
+                  </div>
+                </div>
+                <div className="absolute right-0 bottom-0 p-4">
+                  <Link href={project.url}>
+                    <MoveRight className="w-5 text-gray hover:text-primary duration-300 transition-all ease-in-out" />
+                  </Link>
+                </div>
+              </div>
+            </div>
+            <div className="w-full h-full border gradientborder bg-black absolute top-[3%] left-[-2%] z-10"></div>
           </motion.div>
-        </motion.div>
-      ))}
-      <div
-        ref={targetRef}
-        className="h-[80dvh] flex flex-col gap-16 items-center justify-center text-center relative"
-      >
-        <div className="absolute blur-[5px] w-full opacity-60">
-          <AlternateSlidingTexts
-            scrollYProgress={scrollYProgress}
-            textsData={textsData}
-          />
-          <GradientBlocker />
-        </div>
-        <RevealingTextContainer scrollYProgress={scrollYProgress}>
-          {["Check out more", "of my projects on"].map((text, i) => (
-            <RevealingTextItem index={i} key={i}>
-              {text}
-            </RevealingTextItem>
-          ))}
-        </RevealingTextContainer>
+        ))}
         <motion.div
           variants={{
             hidden: {
               opacity: 0,
-              y: 50,
             },
             show: {
               opacity: 1,
-              y: 0,
               transition: {
                 duration: 0.4,
-                ease: "easeInOut",
+                delay: 0.4,
               },
             },
           }}
           initial={"hidden"}
           whileInView={"show"}
-          viewport={{ once: false, margin: "0px 0px 0px 0px" }}
+          viewport={{ once: true }}
+          className={cn("flex flex-col relative w-[400px] h-[300px]")}
         >
-          <Link href={"https://github.com/joysamaddar"} target="_blank">
-            <Button type="white" className="relative p-3">
-              <p className="flex flex-row gap-2">
-                <Github /> Github
-              </p>
-            </Button>
-          </Link>
+          <div className="w-full h-full border bg-black z-20 gradientborder relative">
+            <div className="absolute w-full opacity-50">
+              <AlternateSlidingTexts
+                scrollYProgress={scrollYProgress}
+                textsData={textsData}
+              />
+              <GradientBlocker />
+            </div>
+            <div className="w-full h-full flex items-center justify-center">
+              <Link href={"https://github.com/joysamaddar"} target="_blank">
+                <Button type="white" className="relative p-2 text-sm bg-black">
+                  <p className="flex flex-row gap-2 items-center justify-center">
+                    <Github className="w-4" /> Github
+                  </p>
+                </Button>
+              </Link>
+            </div>
+          </div>
+          <div className="w-full h-full border gradientborder bg-black absolute top-[3%] left-[-2%] z-10"></div>
         </motion.div>
-      </div>
+      </motion.div>
     </section>
   );
 }
