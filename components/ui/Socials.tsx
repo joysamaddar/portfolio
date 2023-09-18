@@ -24,13 +24,21 @@ const Socials = React.forwardRef(
     const socialsAnimSelector = {
       vertical: {
         hidden: { opacity: 0, x: "1.5rem" },
-        show: { opacity: 1, x: "0", transition: { type: "spring", bounce: 0.3 } },
+        show: {
+          opacity: 1,
+          x: "0",
+          transition: { type: "spring", bounce: 0.3 },
+        },
       },
       horizontal: {
         hidden: { opacity: 0, y: "1.5rem" },
-        show: { opacity: 1, y: "0", transition: { type: "spring", bounce: 0.3 } },
-      }
-    }
+        show: {
+          opacity: 1,
+          y: "0",
+          transition: { type: "spring", bounce: 0.3 },
+        },
+      },
+    };
 
     const socialsAnim = socialsAnimSelector[direction];
 
@@ -40,7 +48,10 @@ const Socials = React.forwardRef(
         variants={ulAnim}
         initial="hidden"
         animate="show"
-        className={cn("text-graytransparent flex flex-col items-center justify-start transition-all fixed bottom-0 ml-[2.5%] my-8 md:my-12 z-[997]", direction == "horizontal" && "flex-row ml-0")}
+        className={cn(
+          "text-graytransparent hidden sm:flex flex-col items-center justify-start transition-all fixed bottom-0 ml-[2.5%] my-8 md:my-12 z-[997]",
+          direction == "horizontal" && "flex-row ml-0 flex"
+        )}
       >
         <motion.a
           variants={socialsAnim}
