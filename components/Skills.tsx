@@ -1,56 +1,13 @@
 "use client";
 
-import { motion, useScroll } from "framer-motion";
+import { motion } from "framer-motion";
 import { useRef } from "react";
 import Heading from "./ui/Heading";
 import { SlidingText } from "./ui/SlidingText";
-
-const skills: Record<string, string[]> = {
-  frontend: [
-    "HTML",
-    "CSS",
-    "SCSS",
-    "TailwindCSS",
-    "RadixUI",
-    "Daisy UI",
-    "Bootstrap",
-    "Javascript",
-    "TypeScript",
-    "React",
-    "Next.js",
-    "Framer Motion",
-    "GSAP",
-    "Zustand",
-    "Redux",
-    "and more...",
-  ],
-  backend: [
-    "Node.js",
-    "Express.js",
-    "NestJS",
-    "NoSQL",
-    "Mongoose",
-    "SQL",
-    "TypeORM",
-    "Clojure",
-    "ClojureScript",
-    "Python",
-    "Java",
-    "Spring",
-    "SpringBoot",
-    "Hibernate",
-    "Socket.IO",
-    "and more...",
-  ],
-  others: ["Git", "RestAPIs", "GraphQL", "and more..."],
-};
+import { skills } from "@/constants/skills";
 
 export default function Skills() {
   const targetElem = useRef<HTMLElement>(null);
-  const { scrollYProgress } = useScroll({
-    target: targetElem,
-    offset: ["start end", "end start"],
-  } as any);
 
   return (
     <section

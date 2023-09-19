@@ -20,7 +20,9 @@ export default function Hero() {
       className="h-[100dvh] mx-[15%] flex flex-row items-center justify-center"
     >
       <div className="flex items-center justify-center z-[996]">
-        <TextCarousel />
+        <TextCarousel
+          greetings={["Hello", "नमस्ते", "你好", "Hola", "Bonjour"]}
+        />
       </div>
     </motion.section>
   );

@@ -2,9 +2,11 @@
 
 import { motion } from "framer-motion";
 
-const greetings = ["Hello", "नमस्ते", "你好", "Hola", "Bonjour"];
+interface TextCarouselProps {
+  greetings: string[];
+}
 
-export default function TextCarousel() {
+export default function TextCarousel({ greetings }: TextCarouselProps) {
   return (
     <>
       {greetings.map((greeting, i) => (
@@ -14,7 +16,12 @@ export default function TextCarousel() {
           animate={{
             scale: [0.6, 1, 1, 0.6],
             opacity: [0, 1, 1, 0],
-            filter: ["blur(0.4rem)", "blur(0rem)", "blur(0rem)", "blur(0.4rem)"],
+            filter: [
+              "blur(0.4rem)",
+              "blur(0rem)",
+              "blur(0rem)",
+              "blur(0.4rem)",
+            ],
             y: [110, 0, 0, -110],
           }}
           transition={{

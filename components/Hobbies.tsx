@@ -4,46 +4,9 @@ import { useRef } from "react";
 import Heading from "./ui/Heading";
 import { motion, useScroll } from "framer-motion";
 import { RevealingTextContainer, RevealingTextItem } from "./ui/RevealingText";
-import neo from "@/public/neo.jpg";
-import mt_titlis from "@/public/mt_titlis.jpeg";
-import eiffel from "@/public/eiffel.jpeg";
-import nusa from "@/public/nusa.jpeg";
-import waffle from "@/public/waffle.jpeg";
-import sketch from "@/public/sketch.jpeg";
-import painting1 from "@/public/painting1.jpeg";
-import painting2 from "@/public/painting2.jpeg";
 import Image from "next/image";
 import { cn, useParallax } from "@/lib/utils";
-
-const hobbiesList = [
-  [
-    { title: "Hugging my doggo Neo", src: neo },
-    { title: "On top of Mt. Titlis", src: mt_titlis },
-  ],
-  [
-    { title: "Chilling near a beach", src: nusa },
-    { title: "Admiring the Eiffel Tower at night", src: eiffel },
-  ],
-  [
-    { title: "Munching on some waffles", src: waffle },
-    { title: "Another one of my paintings", src: painting2 },
-  ],
-  [
-    { title: "A night sky painting", src: painting1 },
-    { title: "One of my many sketches", src: sketch },
-  ],
-];
-
-const hobbiesListMobile = [
-  [
-    { title: "Hugging my doggo Neo", src: neo },
-    { title: "One of my many sketches", src: sketch },
-  ],
-  [
-    { title: "On top of Mt. Titlis", src: mt_titlis },
-    { title: "Another one of my paintings", src: painting2 },
-  ],
-];
+import { hobbiesList, hobbiesListMobile } from "@/constants/hobbies";
 
 export default function Hobbies() {
   const targetRef = useRef<HTMLDivElement>(null);
@@ -207,8 +170,9 @@ export default function Hobbies() {
             <span className="text-white">travelling around the world</span>,
             chilling on the <span className="text-white">beach</span>, binging
             on some <span className="text-white">netflix shows</span>, trying{" "}
-            <span className="text-white">something new to eat</span>, <span className="text-white">painting</span>, or
-            probably doing <span className="text-white">something stupid</span>.
+            <span className="text-white">something new to eat</span>,{" "}
+            <span className="text-white">painting</span>, or probably doing{" "}
+            <span className="text-white">something stupid</span>.
           </p>
         </motion.div>
       </div>

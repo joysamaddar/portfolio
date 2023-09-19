@@ -42,21 +42,6 @@ export default function Projects() {
     offset: ["start end", "end end"],
   } as any);
 
-  const textsVariant = {
-    hidden: {
-      opacity: 0,
-      y: "1rem",
-    },
-    show: (i: number) => ({
-      opacity: 1,
-      y: "0rem",
-      transition: {
-        duration: 0.4,
-        delay: 0.35 * i,
-      },
-    }),
-  };
-
   return (
     <section
       id="projects"
