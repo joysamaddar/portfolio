@@ -12,6 +12,7 @@ import Socials from "@/components/ui/Socials";
 import ScrollDown from "@/components/ui/ScrollDown";
 import Hobbies from "@/components/Hobbies";
 import Lenis from "@studio-freight/lenis";
+import Navbar from "@/components/Navbar";
 
 export default function Home() {
   const [mainRef, animateMain] = useAnimate();
@@ -73,6 +74,7 @@ export default function Home() {
 
   return (
     <>
+      <Navbar />
       <Socials ref={socialsRef} />
       <main className="max-w-screen overflow-clip" ref={mainRef}>
         <Hero />
