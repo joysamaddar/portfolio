@@ -1,6 +1,5 @@
 "use client";
 
-import { cn } from "@/lib/utils";
 import { AnimatePresence, motion } from "framer-motion";
 import Link from "next/link";
 import { useState } from "react";
@@ -34,7 +33,11 @@ export default function Navbar() {
   return (
     <>
       <div className="fixed left-[3%] top-8 md:top-12 text-xs select-none z-[1001]">
-        <Link href={"#hero"} className="group">
+        <Link
+          href={"/#hero"}
+          className="group"
+          onClick={() => setMenuOpen(false)}
+        >
           <motion.svg
             initial={{ opacity: 0, x: "-1.5rem" }}
             animate={{ opacity: 1, x: 0 }}

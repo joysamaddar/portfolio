@@ -14,6 +14,7 @@ export default function TextCarousel() {
           animate={{
             scale: [0.6, 1, 1, 0.6],
             opacity: [0, 1, 1, 0],
+            filter: ["blur(0.4rem)", "blur(0rem)", "blur(0rem)", "blur(0.4rem)"],
             y: [110, 0, 0, -110],
           }}
           transition={{

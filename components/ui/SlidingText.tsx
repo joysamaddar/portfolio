@@ -14,7 +14,7 @@ export function SlidingText({ children, className, doNotRepeat=true, amount=0.8,
 
   return (
     <motion.div
-      className={cn("text-6xl font-black flex relative overflow-hidden", className)}
+      className={cn("text-6xl font-black flex relative overflow-hidden text-center", className)}
       variants={{
         down: {
           opacity: "0%",

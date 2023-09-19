@@ -22,7 +22,7 @@ export default function Heading({ children, className }: HeadingProps): JSX.Elem
       }}
       initial={"hidden"}
       whileInView={"show"}
-      viewport={{ once: false, amount: 0.8, margin: "0px 0px -200px 0px" }}
+      viewport={{ once: false}}
       className={cn("text-xs text-gray uppercase underline underline-offset-4", className)}
     >
       {children}

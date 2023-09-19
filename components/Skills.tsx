@@ -125,7 +125,7 @@ export default function Skills() {
               className="h-[1px] absolute top-0 left-0 linegradient"
             ></motion.div>
             <SlidingText
-              className="text-[1rem] uppercase gap-[0.1rem] font-semibold"
+              className="text-[1rem] uppercase gap-[0.1rem] font-semibold text-graytransparent"
               doNotRepeat={true}
               margin={"0px"}
               amount={"all"}
