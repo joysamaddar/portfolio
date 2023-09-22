@@ -39,14 +39,14 @@ export const projects = [
     url: "/projects/joey_jumps",
     description: "A platformer game for fun and lols.",
     features: [
-      "No libraries used. No gimmicks. Just plain old HTML and JS.",
+      "No libraries used. No gimmicks. Just plain old HTML, CSS and JS.",
       "Amazing sprite animations.",
     ],
     problem:
       "Challenged myself to make a platformer game without using any game engine, any frameworks or html canvas. Just plain old html, css and javascript.",
     solution:
-      "Achieved this by using html divs for the character sprite and the shooting blast. For the running and jumping of the sprite, css animations were used. Shooting blase divs were randomly generated at random intervals of time to the viewport. Then calculated if the character and the blast intersects (which means the character dies) by using the getBoundingClientRect method, which returns a DOMRect object providing information about the size of an element and its position relative to the viewport.",
-    skills: { Frontend: ["HTML", "CSS", "Vanilla Javascript"] },
+      "Achieved this by using html divs for the character sprite and the shooting blast. For the running and jumping of the sprite, css animations were used. Shooting blast divs were randomly generated at random intervals of time and appended to the document. Then calculated if the character and the blast intersects (which means the character dies) by using the getBoundingClientRect method, which returns a DOMRect object providing information about the size of an element and its position relative to the viewport.",
+    skills: { Frontend: ["HTML", "CSS", "Javascript"] },
     liveLink: "https://joysamaddar.github.io/Joey-Jumps/",
     codeLink: "https://github.com/joysamaddar/Joey-Jumps",
   },
