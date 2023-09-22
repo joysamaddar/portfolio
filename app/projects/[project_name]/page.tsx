@@ -1,6 +1,5 @@
 "use client";
 
-import Button from "@/components/ui/Button";
 import Heading from "@/components/ui/Heading";
 import { projects } from "@/constants/projects";
 import Lenis from "@studio-freight/lenis";
@@ -10,6 +9,7 @@ import Link from "next/link";
 import { useEffect } from "react";
 import { notFound } from "next/navigation";
 import { cn } from "@/lib/utils";
+import { Button } from "@/components/ui/Buttons";
 
 interface PageProps {
   params: { project_name: string };

@@ -24,8 +24,7 @@
     @apply bg-black text-white;
   }
 
-  main,
-  #nav-container {
+  #nav-container, .container {
     max-width: var(--maxwidth);
     width: 100%;
     margin: auto;
@@ -100,8 +99,12 @@ html.lenis {
 }
 
 .btn_shadow_primary,
-.btn_shadow_white {
+.btn_shadow_white{
   transition: all 0.2s ease-in-out;
+}
+
+.icon_btn_shadow_primary{
+  transition: all 0.6s ease-in-out;
 }
 
 .btn_shadow_primary {
@@ -112,6 +115,11 @@ html.lenis {
   box-shadow: inset -0px 0px 0px var(--white);
 }
 
+.icon_btn_shadow_primary{
+  box-shadow: inset -0px 0px 0px var(--white);
+  color: var(--white);
+}
+
 .btn_shadow_primary:hover {
   box-shadow: inset -120px 0px 0px var(--primary);
   color: white;
@@ -119,5 +127,10 @@ html.lenis {
 
 .btn_shadow_white:hover {
   box-shadow: inset -120px 0px 0px var(--white);
+  color: var(--black);
+}
+
+.icon_btn_shadow_primary:hover{
+  box-shadow: inset 1000px 0px 0px var(--white);
   color: var(--black);
 }

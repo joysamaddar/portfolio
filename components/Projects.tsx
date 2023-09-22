@@ -4,12 +4,12 @@ import Link from "next/link";
 import { motion, useScroll } from "framer-motion";
 import Heading from "./ui/Heading";
 import GradientBlocker from "./ui/GradientBlocker";
-import Button from "./ui/Button";
 import { cn } from "@/lib/utils";
 import { useRef } from "react";
 import { Github, MoveRight } from "lucide-react";
 import AlternateSlidingTexts from "./ui/AlternateSlidingTexts";
 import { projects } from "@/constants/projects";
+import { Button } from "./ui/Buttons";
 
 const textsData = [
   ["MORE", "MORE", "MORE", "MORE", "MORE", "MORE", "MORE"],
@@ -64,7 +64,7 @@ export default function Projects() {
         initial="hidden"
         whileInView="show"
         viewport={{ once: true }}
-        className=" mt-[6rem] w-full leading-7 text-center text-xl font-medium text-graytransparent"
+        className="mt-[6rem] w-full leading-7 text-center text-xl font-medium text-graytransparent"
       >
         Check out some of my <span className="text-primary">side projects</span>{" "}
         below.
