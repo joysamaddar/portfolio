@@ -27,6 +27,7 @@ export default function Intro() {
       className="relative mx-[15%] mt-[6rem] pt-[6rem] pb-[6rem] select-none flex flex-col"
     >
       <Heading>ABOUT ME</Heading>
+      <div className="mt-24">
       <RevealingTextContainer scrollYProgress={scrollYProgress}>
         {texts.map((text, i) => (
           <RevealingTextItem index={i} key={i}>
@@ -34,6 +35,7 @@ export default function Intro() {
           </RevealingTextItem>
         ))}
       </RevealingTextContainer>
+      </div>
     </section>
   );
 }
