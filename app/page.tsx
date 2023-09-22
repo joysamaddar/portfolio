@@ -7,12 +7,22 @@ import MakeAndBreak from "@/components/MakeAndBreak";
 import Skills from "@/components/Skills";
 import Projects from "@/components/Projects";
 import { useEffect } from "react";
-import { useAnimate, useScroll, useVelocity } from "framer-motion";
+import {
+  motion,
+  useAnimate,
+  useScroll,
+  useSpring,
+  useTransform,
+  useVelocity,
+} from "framer-motion";
 import Socials from "@/components/ui/Socials";
 import ScrollDown from "@/components/ui/ScrollDown";
 import Hobbies from "@/components/Hobbies";
 import Lenis from "@studio-freight/lenis";
 import Navbar from "@/components/Navbar";
+import Contact from "@/components/Contact";
+import Image from "next/image";
+import slanting_lines from "@/public/slanting_lines.svg";
 
 export default function Home() {
   const [mainRef, animateMain] = useAnimate();
@@ -20,6 +30,11 @@ export default function Home() {
   const [scrollDownRef, animateScrollDown] = useAnimate();
   const { scrollYProgress } = useScroll();
   const xVelocity = useVelocity(scrollYProgress);
+  const xTransform = useTransform(useSpring(scrollYProgress, {
+    stiffness: 100,
+    damping: 25,
+    restDelta: 0.001,
+  }), [0, 1], ["50%", "-50%"]);
 
   useEffect(() => {
     const lenis = new Lenis();
@@ -76,14 +91,26 @@ export default function Home() {
     <>
       <Navbar />
       <Socials ref={socialsRef} />
-      <main className="max-w-screen overflow-clip" ref={mainRef}>
-        <Hero />
-        <MakeAndBreak />
-        <Intro />
-        <Experience />
-        <Projects />
-        <Skills />
-        <Hobbies />
+      <main className="overflow-clip" ref={mainRef}>
+        <div className="container">
+          <Hero />
+          <MakeAndBreak />
+          <Intro />
+          <Experience />
+          <Projects />
+          <Skills />
+          <Hobbies />
+        </div>
+        <motion.div style={{ x: xTransform }} className="w-[200%] mt-12 select-none">
+          <Image
+            src={slanting_lines}
+            alt="Slanting lines"
+            className="w-full h-[170px] object-cover -rotate-6"
+          />
+        </motion.div>
+        <div className="container">
+          <Contact />
+        </div>
       </main>
       <ScrollDown ref={scrollDownRef} />
     </>

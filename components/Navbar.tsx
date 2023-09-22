@@ -6,7 +6,7 @@ import { useState } from "react";
 import MenuToggle from "./ui/MenuToggle";
 import Socials from "./ui/Socials";
 
-const navSections = ["About", "Experience", "Projects", "Skills", "Hobbies"];
+const navSections = ["About", "Experience", "Projects", "Skills", "Hobbies", "Contact"];
 
 export default function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
