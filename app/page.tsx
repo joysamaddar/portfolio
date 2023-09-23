@@ -23,6 +23,7 @@ import Navbar from "@/components/Navbar";
 import Contact from "@/components/Contact";
 import Image from "next/image";
 import slanting_lines from "@/public/slanting_lines.svg";
+import Footer from "@/components/Footer";
 
 export default function Home() {
   const [mainRef, animateMain] = useAnimate();
@@ -30,11 +31,15 @@ export default function Home() {
   const [scrollDownRef, animateScrollDown] = useAnimate();
   const { scrollYProgress } = useScroll();
   const xVelocity = useVelocity(scrollYProgress);
-  const xTransform = useTransform(useSpring(scrollYProgress, {
-    stiffness: 100,
-    damping: 25,
-    restDelta: 0.001,
-  }), [0, 1], ["50%", "-50%"]);
+  const xTransform = useTransform(
+    useSpring(scrollYProgress, {
+      stiffness: 100,
+      damping: 25,
+      restDelta: 0.001,
+    }),
+    [0, 1],
+    ["50%", "-50%"]
+  );
 
   useEffect(() => {
     const lenis = new Lenis();
@@ -101,7 +106,10 @@ export default function Home() {
           <Skills />
           <Hobbies />
         </div>
-        <motion.div style={{ x: xTransform }} className="w-[200%] mt-12 select-none">
+        <motion.div
+          style={{ x: xTransform }}
+          className="w-[200%] mt-12 select-none"
+        >
           <Image
             src={slanting_lines}
             alt="Slanting lines"
@@ -110,6 +118,7 @@ export default function Home() {
         </motion.div>
         <div className="container">
           <Contact />
+          <Footer />
         </div>
       </main>
       <ScrollDown ref={scrollDownRef} />
