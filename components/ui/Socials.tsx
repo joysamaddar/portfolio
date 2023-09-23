@@ -1,8 +1,9 @@
 "use client";
 
+import resume_link from "@/constants/resume";
 import { cn } from "@/lib/utils";
 import { motion } from "framer-motion";
-import { Github, Linkedin, Twitter } from "lucide-react";
+import { Github, Linkedin, ScrollText, Twitter } from "lucide-react";
 import React, { Ref } from "react";
 
 interface SocialsProps {
@@ -76,6 +77,14 @@ const Socials = React.forwardRef(
           className="p-2"
         >
           <Twitter className="w-5 h-5 hover:text-primary" />
+        </motion.a>
+        <motion.a
+          variants={socialsAnim}
+          href={resume_link}
+          target="_blank"
+          className="p-2"
+        >
+          <ScrollText className="w-5 h-5 hover:text-primary" />
         </motion.a>
       </motion.div>
     );
