@@ -53,16 +53,8 @@ export default function Home() {
   }, []);
 
   useEffect(() => {
-    return xVelocity.onChange((latestVelocity) => {
+    return xVelocity.on("change", (latestVelocity) => {
       if (window.getComputedStyle(socialsRef.current).display != "none") {
-        animateMain(
-          mainRef.current,
-          {
-            skewY: latestVelocity * 2.5,
-          },
-          { duration: 0.04, ease: "easeIn" }
-        );
-
         if (latestVelocity > 0 && socialsRef.current.style.opacity != 0) {
           animateSocials(
             socialsRef.current,
