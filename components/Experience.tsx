@@ -1,7 +1,6 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { ArrowUpRight } from "lucide-react";
 import { useRef } from "react";
 import Heading from "./ui/Heading";
 import { ExperienceType } from "@/@types/experience.type";
@@ -12,7 +11,7 @@ interface ExperienceItemProps {
 }
 
 function ExperienceItem({ experience }: ExperienceItemProps) {
-  const animCount = useRef<number>(2);
+  const animCount = useRef<number>(1);
   const pTagVariants = {
     hidden: {
       opacity: 0,
@@ -44,7 +43,7 @@ function ExperienceItem({ experience }: ExperienceItemProps) {
       initial={"hidden"}
       whileInView={"show"}
       viewport={{ once: true, amount: 0.8 }}
-      className="relative flex flex-row items-start justify-between w-full py-12"
+      className="relative flex flex-col sm:flex-row items-center justify-between w-full py-12 min-h-[180px] sm:min-h-[250px] gap-10"
     >
       <motion.div
         variants={{
@@ -67,48 +66,15 @@ function ExperienceItem({ experience }: ExperienceItemProps) {
       <motion.h2
         custom={1}
         variants={pTagVariants}
-        className="uppercase font-black text-4xl tracking-wide flex flex-row"
+        className="text-lg md:text-xl text-white leading-7 tracking-wider font-medium flex flex-row"
       >
-        <p className="flex flex-col items-center">
-          <span>{experience.from.month}</span>
-          <motion.span
-            custom={2}
-            variants={pTagVariants}
-            className="font-extralight text-xs"
-          >
-            {experience.from.year}
-          </motion.span>
-        </p>
-        -
-        <p className="flex flex-col items-center">
-          <span>{experience.to.month}</span>
-          {experience.to.year && (
-            <motion.span
-              custom={2}
-              variants={pTagVariants}
-              className="font-extralight text-xs"
-            >
-              {experience.to.year}
-            </motion.span>
-          )}
-        </p>
+        {experience.company}
       </motion.h2>
-      <div className="text-right relative">
-        <motion.a
-          custom={1}
-          variants={pTagVariants}
-          href={experience.companyLink}
-          target="_blank"
-        >
-          <ArrowUpRight className="z-[999] text-gray absolute top-0 right-[-2rem] translate-y-[5%]" />
-        </motion.a>
-        <motion.p custom={1} variants={pTagVariants} className="text-lg mb-2">
-          {experience.company}
-        </motion.p>
-        <div className="flex flex-col gap-4">
+      <div className="text-center sm:text-right relative">
+        <div className="flex flex-col gap-6">
           {experience.roles.map((role, index) => {
             return (
-              <div key={index}>
+              <div key={index} className=" flex flex-col gap-0.5">
                 <motion.p
                   custom={animCount.current++}
                   variants={pTagVariants}
@@ -122,7 +88,9 @@ function ExperienceItem({ experience }: ExperienceItemProps) {
                     variants={pTagVariants}
                     className="text-gray text-xs font-light"
                   >
-                    {`${role.from?.month} ${role.from?.year}-${role.to?.month} ${role.to?.year}`}
+                    {`${role.from?.month} ${role.from?.year} - ${
+                      role.to?.month
+                    } ${role.to?.year ? role.to.year : ""}`}
                   </motion.p>
                 )}
                 <motion.p
@@ -143,12 +111,30 @@ function ExperienceItem({ experience }: ExperienceItemProps) {
 
 export default function Experience() {
   return (
-    <section id="experience" className="select-none mx-[15%] py-[6rem]">
-      <Heading>EXPERIENCE</Heading>
-      <div className="flex flex-col gap-20 mt-24 items-start justify-center">
+    <section id="experience" className="select-none sm:mx-[15%] py-[6rem]">
+      <Heading className="mx-[15%] sm:mx-[0%]">EXPERIENCE</Heading>
+      <div className="flex flex-col mt-24 items-start justify-center">
         {experiences.map((experience, i) => (
           <ExperienceItem key={i} experience={experience} />
         ))}
+        <motion.div
+          variants={{
+            collapse: {
+              width: "0%",
+            },
+            expand: {
+              width: "100%",
+              transition: {
+                duration: 0.6,
+                delay: 0.4,
+              },
+            },
+          }}
+          initial={"collapse"}
+          whileInView={"expand"}
+          viewport={{ once: true, amount: 0.8, margin: "0px 0px -10% 0px" }}
+          className="h-[1px] linegradient"
+        ></motion.div>
       </div>
     </section>
   );

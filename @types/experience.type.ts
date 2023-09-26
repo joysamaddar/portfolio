@@ -1,21 +1,13 @@
 export type ExperienceType = {
-  from: {
-    month: string;
-    year: number;
-  };
-  to: {
-    month: string;
-    year?: number;
-  };
   company: string;
   companyLink: string;
   roles: {
     role: string;
-    from?: {
+    from: {
       month: string;
       year: number;
     };
-    to?: {
+    to: {
       month: string;
       year?: number;
     };
