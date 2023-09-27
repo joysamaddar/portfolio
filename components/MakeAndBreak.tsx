@@ -8,16 +8,16 @@ export default function MakeAndBreak() {
   return (
     <section
       ref={targetElem}
-      className="h-[240px] select-none mx-[15%] mt-[15rem]"
+      className="h-[150px] sm:h-[240px] select-none sm:mx-[15%] mt-[6rem]"
     >
       <motion.div
         initial={{ width: 0, height: 0 }}
         whileInView={{
           width: ["0%", "100%", "100%"],
-          height: ["3px", "3px", "240px"],
+          height: ["1.25%", "1.25%", "100%"],
           transition: { duration: 2, ease: "easeInOut", times: [0, 0.15, 0.9] },
         }}
-        viewport={{ once: true, amount: 1, margin: "0px 0px -200px 0px" }}
+        viewport={{ once: true, amount: 1, margin: "0px 0px -15% 0px" }}
         className="relative bg-gradient-to-r from-primary-light to-primary h-[15rem] mb-24 flex items-center justify-center mx-auto overflow-hidden z-[998]"
       >
         {[...Array(3)].map((_num, i: number) => {
@@ -48,22 +48,22 @@ export default function MakeAndBreak() {
             y: "0",
             transition: { duration: 0.5, delay: 1 },
           }}
-          viewport={{ once: true, amount: 1, margin: "-25%", root: targetElem }}
-          className="flex flex-row italic font-semibold text-4xl text-graytransparent cursor-default"
+          viewport={{ once: true, amount: 1, root: targetElem }}
+          className="flex flex-row italic font-semibold text-lg sm:text-2xl lg:text-4xl text-graytransparent cursor-default"
         >
-          <p className="mr-2.5">I</p>
+          <p className="mr-1.5 sm:mr-2.5">I</p>
           <motion.div className="relative inline-block group cursor-pointer">
             <motion.p className="absolute opacity-0 group-hover:opacity-100 text-primary-dark transition duration-250 ease-in-out">
               break
             </motion.p>
-            <motion.p className="absolute brokenclip1 group-hover:translate-y-[-2rem] transition duration-250 ease-in-out pr-1">
+            <motion.p className="absolute brokenclip1 group-hover:translate-y-[-1.5rem] md:group-hover:translate-y-[-2rem] transition duration-250 ease-in-out pr-1">
               make
             </motion.p>
-            <motion.p className="brokenclip2 group-hover:translate-y-[2rem] transition duration-250 ease-in-out pr-1">
+            <motion.p className="brokenclip2 group-hover:translate-y-[1.5rem] md:group-hover:translate-y-[2rem] transition duration-250 ease-in-out pr-1">
               make
             </motion.p>
           </motion.div>
-          <p className="ml-1.5">stuff on the internet</p>
+          <p className="ml-0.5 sm:ml-1.5">stuff on the internet</p>
         </motion.div>
       </motion.div>
     </section>

@@ -82,7 +82,7 @@ export default function Hobbies() {
               </RevealingTextItem>
             ))}
           </RevealingTextContainer>
-          <p className="w-full text-center my-6 text-sm">
+          <p className="w-full text-center my-6 text-xs sm:text-sm">
             - Probably someone, not me
           </p>
         </motion.div>
@@ -159,7 +159,7 @@ export default function Hobbies() {
           initial="hide"
           whileInView="show"
           viewport={{ once: true }}
-          className="flex mt-[15rem] w-full lg:w-1/2 m-auto leading-7 text-center text-xl font-medium"
+          className="flex mt-[15rem] w-full lg:w-1/2 m-auto leading-7 text-center text-base sm:text-xl font-medium"
         >
           <p>
             Apart from coding,

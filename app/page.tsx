@@ -105,7 +105,7 @@ export default function Home() {
           <Image
             src={slanting_lines}
             alt="Slanting lines"
-            className="w-full h-[170px] object-cover -rotate-6"
+            className="w-full h-[130px] sm:h-[170px] object-cover -rotate-6"
           />
         </motion.div>
         <div className="container">

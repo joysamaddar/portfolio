@@ -56,7 +56,7 @@ export default function ProjectPage({ params }: PageProps) {
           className="h-[250px] object-cover"
         ></Image>
       </div>
-      <div className="flex flex-row justify-between items-center">
+      <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
         <h2 className="text-2xl font-semibold tracking-wide">
           {project.title}
         </h2>

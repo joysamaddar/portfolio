@@ -16,8 +16,20 @@ export default function Intro() {
     "paintbrushes and computers,",
     "and the artistic and analytical side",
     "in me has since transitioned into",
-    "developing pixel-perfect UIs",
+    "developing pixel perfect UIs",
     "and robust backends.",
+  ];
+
+  const textsMobile = [
+    "Grew up fiddling with",
+    "paintbrushes and",
+    "computers, and the",
+    "artistic and analytical",
+    "side in me has since",
+    "transitioned into",
+    "developing pixel",
+    "perfect UIs and",
+    "robust backends.",
   ];
 
   return (
@@ -27,14 +39,23 @@ export default function Intro() {
       className="relative mx-[15%] mt-[6rem] pt-[6rem] pb-[6rem] select-none flex flex-col"
     >
       <Heading>ABOUT ME</Heading>
-      <div className="mt-24">
-      <RevealingTextContainer scrollYProgress={scrollYProgress}>
-        {texts.map((text, i) => (
-          <RevealingTextItem index={i} key={i}>
-            {text}
-          </RevealingTextItem>
-        ))}
-      </RevealingTextContainer>
+      <div className="mt-24 hidden sm:block">
+        <RevealingTextContainer scrollYProgress={scrollYProgress}>
+          {texts.map((text, i) => (
+            <RevealingTextItem index={i} key={i}>
+              {text}
+            </RevealingTextItem>
+          ))}
+        </RevealingTextContainer>
+      </div>
+      <div className="mt-24 block sm:hidden">
+        <RevealingTextContainer scrollYProgress={scrollYProgress}>
+          {textsMobile.map((text, i) => (
+            <RevealingTextItem index={i} key={i}>
+              {text}
+            </RevealingTextItem>
+          ))}
+        </RevealingTextContainer>
       </div>
     </section>
   );

@@ -28,7 +28,7 @@ export default function Contact() {
             </RevealingTextItem>
           ))}
         </RevealingTextContainer>
-        <div className="w-full flex flex-row items-center justify-start gap-8 flex-wrap mt-16">
+        <div className="w-full flex flex-row items-center justify-start gap-8 flex-wrap mt-16 text-sm sm:text-base">
           <Link href={"https://calendly.com/joysamaddar/chat"} target="_blank" className="flex-grow">
             <ButtonWithIcon icon={Calendar}>Schedule a meeting</ButtonWithIcon>
           </Link>

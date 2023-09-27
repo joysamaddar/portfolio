@@ -32,8 +32,8 @@ export function ButtonWithIcon({
 }: ButtonWithIconProps) {
   return (
     <button className={cn("flex flex-row items-center icon_btn_shadow_primary w-full", className)}>
-      <p className="p-4 bg-white text-black border border-white">
-        <Icon />
+      <p className="p-3.5 sm:p-4 bg-white text-black border border-white">
+        <Icon className="w-5 sm:w-6"/>
       </p>
       <p className="p-4 border border-white flex-grow text-center">
         {children}

@@ -16,7 +16,7 @@ export default function Footer() {
       initial="hidden"
       whileInView="show"
       id="footer"
-      className="relative select-none mx-[15%] flex items-center py-8 justify-between text-graytransparent"
+      className="relative select-none sm:mx-[15%] flex flex-col sm:flex-row items-center py-8 justify-between text-graytransparent gap-6"
     >
       <motion.div
         variants={{
@@ -36,7 +36,7 @@ export default function Footer() {
         viewport={{ once: true }}
         className="h-[1px] linegradient absolute top-0"
       ></motion.div>
-      <p className="w-1/3 hover:text-primary transition-all duration-500">
+      <p className="hidden sm:block w-1/3 hover:text-primary transition-all duration-500">
         Joy Samaddar
       </p>
       <svg
@@ -45,7 +45,7 @@ export default function Footer() {
         viewBox="0 0 137 137"
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
-        className="group"
+        className="group scale-90 sm:scale-100"
       >
         <path
           d="M137 0H0V82.5H41.3223L61.6612 62.1612L79.3388 79.8388L51.6777 107.5H0V137H137V0Z"
@@ -53,7 +53,7 @@ export default function Footer() {
           className="group-hover:fill-primary transition-all duration-500"
         />
       </svg>
-      <div className="flex flex-row items-center justify-end transition-all z-[997] gap-4 w-1/3">
+      <div className="flex flex-row items-center justify-center sm:justify-end transition-all z-[997] gap-4 w-1/3">
         <a
           href="https://www.linkedin.com/in/joy-samaddar/"
           target="_blank"

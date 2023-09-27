@@ -32,7 +32,7 @@ export default function Navbar() {
 
   return (
     <>
-      <div className="fixed left-[3%] top-8 md:top-12 text-xs select-none z-[1001]">
+      <div className="fixed left-[3%] top-8 md:top-12 text-xs select-none z-[1001] scale-75 sm:scale-100">
         <Link
           href={"/#hero"}
           className="group"
@@ -74,7 +74,7 @@ export default function Navbar() {
               x: "100%",
             }}
             transition={{ ease: "easeInOut", duration: 0.3 }}
-            className="w-screen h-screen bg-black fixed top-0 left-0 z-[1000] px-[15%]"
+            className="w-screen h-[100dvh] bg-black fixed top-0 left-0 z-[1000] px-[15%]"
           >
             <div
               id="nav-container"
@@ -84,7 +84,7 @@ export default function Navbar() {
                 variants={ulAnim}
                 initial="hidden"
                 animate="show"
-                className="flex flex-col items-center justify-center text-graytransparent uppercase gap-6 text-2xl font-medium tracking-widest"
+                className="flex flex-col items-center justify-center text-graytransparent uppercase gap-6 text-xl sm:text-2xl font-medium tracking-widest"
               >
                 {navSections.map((navSection, i) => (
                   <motion.li

@@ -64,7 +64,7 @@ export default function Projects() {
         initial="hidden"
         whileInView="show"
         viewport={{ once: true }}
-        className="mt-[6rem] w-full leading-7 text-center text-xl font-medium text-graytransparent"
+        className="mt-[6rem] w-full leading-7 text-center text-base sm:text-lg md:text-xl font-medium text-graytransparent"
       >
         Check out some of my <span className="text-primary">side projects</span>{" "}
         below.
@@ -90,13 +90,13 @@ export default function Projects() {
             viewport={{ once: true }}
             className={cn("flex flex-col relative w-[400px] h-[300px]")}
           >
-            <div className="w-full h-full border bg-black z-20 p-20 gradientborder text-graytransparent">
+            <div className="w-full h-full border bg-black z-20 p-12 md:p-20 gradientborder text-graytransparent">
               <div className="h-full leading-7 tracking-wider font-medium flex flex-col items-start justify-center">
                 <div className="flex flex-col gap-6">
-                  <p className="text-xl text-graytransparent">
+                  <p className="text-lg md:text-xl text-white">
                     {project.title}
                   </p>
-                  <p className="font-light text-sm text-gray">
+                  <p className="font-light text-sm text-graytransparent">
                     {project.description}
                   </p>
                   <div className="flex flex-row gap-4">

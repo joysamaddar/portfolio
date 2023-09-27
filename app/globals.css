@@ -92,7 +92,7 @@ html.lenis {
 .gradientborder {
   border-width: 1px;
   border-style: solid;
-  border-image: linear-gradient(to bottom right, var(--black), var(--darkgray))
+  border-image: linear-gradient(to bottom right, var(--darkgray), #59595952)
     1;
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.4);
   overflow: hidden;
@@ -133,4 +133,9 @@ html.lenis {
 .icon_btn_shadow_primary:hover{
   box-shadow: inset 1000px 0px 0px var(--white);
   color: var(--black);
+}
+
+.responsive_text_xl{
+  gap: clamp(8px, 0.8vw, 28px);
+  font-size: clamp(24px, 3.1vw, 60px);
 }

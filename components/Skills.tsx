@@ -13,14 +13,14 @@ export default function Skills() {
     <section
       id="skills"
       ref={targetElem}
-      className="relative select-none mx-[15%] min-h-max pt-[6rem] mb-[6rem]"
+      className="relative select-none sm:mx-[15%] min-h-max pt-[6rem] mb-[6rem]"
     >
-      <Heading>SKILLS</Heading>
+      <Heading className="mx-[15%] sm:mx-[0%]">SKILLS</Heading>
       <div className="flex flex-col items-center justify-center mt-24">
         {Object.keys(skills).map((skillName, i) => (
           <motion.div
             whileHover="show"
-            className="relative w-full flex items-center justify-between text-gray py-12 px-12 group hover:text-graytransparent transition-all ease-in-out duration-500 min-h-[150px] overflow-hidden"
+            className="relative w-full flex flex-col sm:flex-row gap-10 items-center justify-between text-gray py-12 px-12 group hover:text-graytransparent transition-all ease-in-out duration-500 min-h-[180px] overflow-hidden"
             key={i}
           >
             <motion.div
@@ -36,7 +36,7 @@ export default function Skills() {
                   },
                 },
               }}
-              className="absolute left-1/2 translate-x-[-50%] bg-gradient-to-r from-primary-light to-primary z-0 pointer-events-none origin-center"
+              className="absolute top-0 sm:top-auto left-1/2 translate-x-[-50%] bg-gradient-to-r from-primary-light to-primary z-0 pointer-events-none origin-center"
             />
             <div className="absolute z-0 pointer-events-none flex items-center justify-center w-full translate-x-[-4%]">
               {[...Array(3)].map((_num, i: number) => {
@@ -82,7 +82,7 @@ export default function Skills() {
               className="h-[1px] absolute top-0 left-0 linegradient"
             ></motion.div>
             <SlidingText
-              className="text-[1rem] uppercase gap-[0.1rem] font-semibold text-graytransparent"
+              className="text-[1rem] uppercase gap-[0.1rem] font-semibold text-white"
               doNotRepeat={true}
               margin={"0px"}
               amount={"all"}
@@ -106,9 +106,9 @@ export default function Skills() {
               viewport={{
                 once: true,
               }}
-              className="w-1/2 flex flex-row gap-2 flex-wrap text-sm font-light font-mono text-justify z-[1]"
+              className="w-full sm:w-1/2 flex flex-row gap-2 flex-wrap text-sm font-light font-mono text-center sm:text-justify z-[1]"
             >
-              <p>{skills[skillName].join(", ")}</p>
+              <p className="w-full">{skills[skillName].join(", ")}</p>
             </motion.div>
             {Object.keys(skills).length == i + 1 && (
               <motion.div

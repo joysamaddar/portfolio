@@ -17,7 +17,7 @@ export function RevealingTextContainer({
   const widthDiff = (1 - widthEnd) / (children.length==1?1:(children.length - 1));
 
   return (
-    <div className="flex flex-col gap-6 font-semibold text-6xl text-white">
+    <div className="flex flex-col font-semibold text-white responsive_text_xl">
       {children.map((child) => {
         return React.cloneElement(child, {
           scrollYProgress,

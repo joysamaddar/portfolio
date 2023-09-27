@@ -23,7 +23,7 @@ export default function Heading({ children, className }: HeadingProps): JSX.Elem
       initial={"hidden"}
       whileInView={"show"}
       viewport={{ once: false}}
-      className={cn("text-xs text-gray uppercase underline underline-offset-4", className)}
+      className={cn("text-[10px] md:text-xs text-gray uppercase underline underline-offset-4", className)}
     >
       {children}
     </motion.h2>
