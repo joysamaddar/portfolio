@@ -1,18 +1,24 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { motion, useScroll, useTransform } from "framer-motion";
 import { useRef } from "react";
 import Heading from "./ui/Heading";
 import { SlidingText } from "./ui/SlidingText";
 import { skills } from "@/constants/skills";
 
 export default function Skills() {
-  const targetElem = useRef<HTMLElement>(null);
+  const sectionRef = useRef<HTMLElement>(null);
+  const { scrollYProgress: opacityScroller } = useScroll({
+    target: sectionRef,
+    offset: ["end end", "end start"],
+  } as any);
+  const sectionOpacity = useTransform(opacityScroller, [0.6, 1], [1, 0]);
 
   return (
-    <section
+    <motion.section
+      style={{ opacity: sectionOpacity }}
       id="skills"
-      ref={targetElem}
+      ref={sectionRef}
       className="relative select-none sm:mx-[15%] min-h-max pt-[6rem] mb-[6rem]"
     >
       <Heading className="mx-[15%] sm:mx-[0%]">SKILLS</Heading>
@@ -134,6 +140,6 @@ export default function Skills() {
           </motion.div>
         ))}
       </div>
-    </section>
+    </motion.section>
   );
 }

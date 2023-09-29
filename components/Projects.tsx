@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { motion, useScroll } from "framer-motion";
+import { motion, useScroll, useTransform } from "framer-motion";
 import Heading from "./ui/Heading";
 import GradientBlocker from "./ui/GradientBlocker";
 import { cn } from "@/lib/utils";
@@ -41,9 +41,17 @@ export default function Projects() {
     target: targetRef,
     offset: ["start end", "end end"],
   } as any);
+  const sectionRef = useRef(null);
+  const { scrollYProgress: opacityScroller } = useScroll({
+    target: sectionRef,
+    offset: ["end end", "end start"],
+  } as any);
+  const sectionOpacity = useTransform(opacityScroller, [0.4, 0.8], [1, 0]);
 
   return (
-    <section
+    <motion.section
+      ref={sectionRef}
+      style={{ opacity: sectionOpacity }}
       id="projects"
       className="relative select-none mx-[15%] pt-[3rem] pb-[1rem]"
     >
@@ -159,6 +167,6 @@ export default function Projects() {
           <div className="w-full h-full border gradientborder bg-black absolute top-[3%] left-[-2%] z-10"></div>
         </motion.div>
       </motion.div>
-    </section>
+    </motion.section>
   );
 }

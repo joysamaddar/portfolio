@@ -2,7 +2,7 @@
 
 import { useRef } from "react";
 import Heading from "./ui/Heading";
-import { motion, useScroll } from "framer-motion";
+import { motion, useScroll, useTransform } from "framer-motion";
 import { RevealingTextContainer, RevealingTextItem } from "./ui/RevealingText";
 import Image from "next/image";
 import { cn, useParallax } from "@/lib/utils";
@@ -14,7 +14,12 @@ export default function Hobbies() {
     target: targetRef,
     offset: ["start end", "end center"],
   } as any);
-
+  const sectionRef = useRef(null);
+  const { scrollYProgress: opacityScroller } = useScroll({
+    target: sectionRef,
+    offset: ["end end", "end start"],
+  } as any);
+  const sectionOpacity = useTransform(opacityScroller, [0.4, 0.8], [1, 0]);
   const imageContainerRef = useRef<HTMLDivElement>(null);
   const imageContainerRefMobile = useRef<HTMLDivElement>(null);
   const { scrollYProgress: scrollYProgressImageContainer } = useScroll({
@@ -59,7 +64,9 @@ export default function Hobbies() {
   };
 
   return (
-    <section
+    <motion.section
+      ref={sectionRef}
+      style={{ opacity: sectionOpacity }}
       id="hobbies"
       className="relative select-none mx-[15%] min-h-max mt-[12rem] pt-[6rem] pb-[6rem]"
     >
@@ -176,6 +183,6 @@ export default function Hobbies() {
           </p>
         </motion.div>
       </div>
-    </section>
+    </motion.section>
   );
 }

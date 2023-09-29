@@ -99,6 +99,16 @@ export default function Home() {
           <Hobbies />
         </div>
         <motion.div
+          initial={{ opacity: 0 }}
+          animate={{
+            opacity: 1,
+            transition: {
+              duration: 0.6,
+              delay: 0.4,
+              ease: "easeInOut",
+            },
+          }}
+          viewport={{ once: true }}
           style={{ x: xTransform }}
           className="w-[200%] mt-12 select-none"
         >

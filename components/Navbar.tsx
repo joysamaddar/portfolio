@@ -6,7 +6,14 @@ import { useState } from "react";
 import MenuToggle from "./ui/MenuToggle";
 import Socials from "./ui/Socials";
 
-const navSections = ["About", "Experience", "Projects", "Skills", "Hobbies", "Contact"];
+const navSections = [
+  "About",
+  "Experience",
+  "Projects",
+  "Skills",
+  "Hobbies",
+  "Contact",
+];
 
 export default function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -32,7 +39,7 @@ export default function Navbar() {
 
   return (
     <>
-      <div className="fixed left-[3%] top-8 md:top-12 text-xs select-none z-[1001] scale-75 sm:scale-100">
+      <div className="fixed left-[3%] top-8 md:top-12 text-xs select-none z-[1001] scale-90 sm:scale-100">
         <Link
           href={"/#hero"}
           className="group"

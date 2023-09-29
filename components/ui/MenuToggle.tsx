@@ -65,7 +65,7 @@ export default function MenuToggle({
       initial="hidden"
       animate="show"
       className={cn(
-        "fixed right-[3%] top-8 md:top-12 text-xs select-none z-[1001] flex flex-col cursor-pointer h-[22px] w-[24px] scale-90 sm:scale-100",
+        "fixed right-[3%] top-8 md:top-12 text-xs select-none z-[1001] flex flex-col cursor-pointer h-[22px] w-[24px] scale-100",
         className
       )}
       onClick={() => setMenuOpen(!menuOpen)}

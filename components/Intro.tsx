@@ -1,6 +1,6 @@
 "use client";
 
-import { useScroll } from "framer-motion";
+import { motion, useScroll, useTransform } from "framer-motion";
 import { useRef } from "react";
 import Heading from "./ui/Heading";
 import { RevealingTextContainer, RevealingTextItem } from "./ui/RevealingText";
@@ -11,6 +11,26 @@ export default function Intro() {
     target: sectionRef,
     offset: ["start end", "end start"],
   } as any);
+
+  const { scrollYProgress: opacityScroller } = useScroll({
+    target: sectionRef,
+    offset: ["end end", "end start"],
+  } as any);
+  const sectionOpacity = useTransform(opacityScroller, [0.4, 0.8], [1, 0]);
+
+  const hideAndShowVariant = {
+    hide: {
+      opacity: 0,
+    },
+    show: {
+      opacity: 1,
+      transition: {
+        duration: 0.6,
+        ease: "easeInOut",
+      },
+    },
+  };
+
   const texts = [
     "Grew up fiddling with",
     "paintbrushes and computers,",
@@ -33,13 +53,20 @@ export default function Intro() {
   ];
 
   return (
-    <section
+    <motion.section
+      style={{ opacity: sectionOpacity }}
       id="about"
       ref={sectionRef}
       className="relative mx-[15%] mt-[6rem] pt-[6rem] pb-[6rem] select-none flex flex-col"
     >
       <Heading>ABOUT ME</Heading>
-      <div className="mt-24 hidden sm:block">
+      <motion.div
+        variants={hideAndShowVariant}
+        initial="hide"
+        whileInView="show"
+        viewport={{ once: true }}
+        className="mt-24 hidden sm:block"
+      >
         <RevealingTextContainer scrollYProgress={scrollYProgress}>
           {texts.map((text, i) => (
             <RevealingTextItem index={i} key={i}>
@@ -47,8 +74,14 @@ export default function Intro() {
             </RevealingTextItem>
           ))}
         </RevealingTextContainer>
-      </div>
-      <div className="mt-24 block sm:hidden">
+      </motion.div>
+      <motion.div
+        variants={hideAndShowVariant}
+        initial="hide"
+        whileInView="show"
+        viewport={{ once: true }}
+        className="mt-24 block sm:hidden"
+      >
         <RevealingTextContainer scrollYProgress={scrollYProgress}>
           {textsMobile.map((text, i) => (
             <RevealingTextItem index={i} key={i}>
@@ -56,7 +89,7 @@ export default function Intro() {
             </RevealingTextItem>
           ))}
         </RevealingTextContainer>
-      </div>
-    </section>
+      </motion.div>
+    </motion.section>
   );
 }

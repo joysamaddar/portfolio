@@ -1,6 +1,6 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { motion, useScroll, useTransform } from "framer-motion";
 import { useRef } from "react";
 import Heading from "./ui/Heading";
 import { ExperienceType } from "@/@types/experience.type";
@@ -110,8 +110,20 @@ function ExperienceItem({ experience }: ExperienceItemProps) {
 }
 
 export default function Experience() {
+  const sectionRef = useRef(null);
+  const { scrollYProgress: opacityScroller } = useScroll({
+    target: sectionRef,
+    offset: ["end end", "end start"],
+  } as any);
+  const sectionOpacity = useTransform(opacityScroller, [0.4, 0.8], [1, 0]);
+
   return (
-    <section id="experience" className="select-none sm:mx-[15%] py-[6rem]">
+    <motion.section
+      style={{ opacity: sectionOpacity }}
+      ref={sectionRef}
+      id="experience"
+      className="select-none sm:mx-[15%] py-[6rem]"
+    >
       <Heading className="mx-[15%] sm:mx-[0%]">EXPERIENCE</Heading>
       <div className="flex flex-col mt-24 items-start justify-center">
         {experiences.map((experience, i) => (
@@ -136,6 +148,6 @@ export default function Experience() {
           className="h-[1px] linegradient"
         ></motion.div>
       </div>
-    </section>
+    </motion.section>
   );
 }

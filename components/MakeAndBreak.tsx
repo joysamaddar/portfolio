@@ -1,13 +1,20 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { motion, useScroll, useTransform } from "framer-motion";
 import { useRef } from "react";
 
 export default function MakeAndBreak() {
-  const targetElem = useRef(null);
+  const sectionRef = useRef(null);
+  const { scrollYProgress: opacityScroller } = useScroll({
+    target: sectionRef,
+    offset: ["end end", "end start"],
+  } as any);
+  const sectionOpacity = useTransform(opacityScroller, [0.6, 1], [1, 0]);
+
   return (
-    <section
-      ref={targetElem}
+    <motion.section
+      style={{ opacity: sectionOpacity }}
+      ref={sectionRef}
       className="h-[150px] sm:h-[240px] select-none sm:mx-[15%] mt-[6rem]"
     >
       <motion.div
@@ -35,7 +42,7 @@ export default function MakeAndBreak() {
                 once: true,
                 amount: 1,
                 margin: "-25%",
-                root: targetElem,
+                root: sectionRef,
               }}
               className="bg-[#00000005] absolute rounded-full"
             />
@@ -48,7 +55,7 @@ export default function MakeAndBreak() {
             y: "0",
             transition: { duration: 0.5, delay: 1 },
           }}
-          viewport={{ once: true, amount: 1, root: targetElem }}
+          viewport={{ once: true, amount: 1, root: sectionRef }}
           className="flex flex-row italic font-semibold text-lg sm:text-2xl lg:text-4xl text-graytransparent cursor-default"
         >
           <p className="mr-1.5 sm:mr-2.5">I</p>
@@ -66,6 +73,6 @@ export default function MakeAndBreak() {
           <p className="ml-0.5 sm:ml-1.5">stuff on the internet</p>
         </motion.div>
       </motion.div>
-    </section>
+    </motion.section>
   );
 }
