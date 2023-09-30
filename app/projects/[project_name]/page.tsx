@@ -7,7 +7,7 @@ import { MoveLeft, MoveRight } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import { useEffect } from "react";
-import { notFound } from "next/navigation";
+import { notFound, redirect } from "next/navigation";
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/Buttons";
 import GradientBlocker from "@/components/ui/GradientBlocker";
@@ -24,7 +24,7 @@ export default function ProjectPage({ params }: PageProps) {
   const project = projects.find((project) => project.id == project_name)!;
 
   if (!project) {
-    notFound();
+    redirect("/");
   }
 
   useEffect(() => {
