@@ -2,16 +2,16 @@
 
 import resume_link from "@/constants/resume";
 import { cn } from "@/lib/utils";
-import { motion } from "framer-motion";
+import { HTMLMotionProps, motion } from "framer-motion";
 import { Github, Linkedin, ScrollText, Twitter } from "lucide-react";
 import React, { Ref } from "react";
 
-interface SocialsProps {
+interface SocialsProps extends HTMLMotionProps<"div"> {
   direction?: "vertical" | "horizontal";
 }
 
 const Socials = React.forwardRef(
-  ({ direction = "vertical" }: SocialsProps, ref) => {
+  ({ direction = "vertical", ...props }: SocialsProps, ref) => {
     const ulAnim = {
       hidden: { opacity: 0 },
       show: {
@@ -45,6 +45,7 @@ const Socials = React.forwardRef(
 
     return (
       <motion.div
+        {...props}
         ref={ref as Ref<HTMLDivElement> | undefined}
         variants={ulAnim}
         initial="hidden"

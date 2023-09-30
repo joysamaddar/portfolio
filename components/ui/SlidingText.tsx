@@ -1,20 +1,31 @@
 import { cn } from "@/lib/utils";
-import { motion } from "framer-motion";
+import { HTMLMotionProps, motion } from "framer-motion";
 
-interface SlidingTextProps {
+interface SlidingTextProps extends HTMLMotionProps<"div"> {
   children: string;
   className?: string;
   doNotRepeat?: boolean;
-  amount?: number | "all" | "some",
-  margin?: string,
+  amount?: number | "all" | "some";
+  margin?: string;
 }
 
-export function SlidingText({ children, className, doNotRepeat=true, amount=0.8, margin="0px 0px -200px 0px" }: SlidingTextProps) {
+export function SlidingText({
+  children,
+  className,
+  doNotRepeat = true,
+  amount = 0.8,
+  margin = "0px 0px -200px 0px",
+  ...props
+}: SlidingTextProps) {
   const letters = children.split("");
 
   return (
     <motion.div
-      className={cn("text-6xl font-black flex relative overflow-hidden text-center", className)}
+      {...props}
+      className={cn(
+        "text-6xl font-black flex relative overflow-hidden text-center",
+        className
+      )}
       variants={{
         down: {
           opacity: "0%",
@@ -43,7 +54,7 @@ export function SlidingText({ children, className, doNotRepeat=true, amount=0.8,
               transition: {
                 duration: 0.38,
                 delay: 0.18 * i,
-                ease: "easeOut"
+                ease: "easeOut",
               },
             }),
           }}

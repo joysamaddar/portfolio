@@ -1,16 +1,20 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { HTMLMotionProps, motion } from "framer-motion";
 
-interface TextCarouselProps {
+interface TextCarouselProps extends HTMLMotionProps<"h1"> {
   greetings: string[];
 }
 
-export default function TextCarousel({ greetings }: TextCarouselProps) {
+export default function TextCarousel({
+  greetings,
+  ...props
+}: TextCarouselProps) {
   return (
     <>
       {greetings.map((greeting, i) => (
         <motion.h1
+          {...props}
           key={i}
           initial={true}
           animate={{

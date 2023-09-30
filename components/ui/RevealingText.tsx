@@ -1,7 +1,8 @@
 import { MotionValue, motion, useTransform } from "framer-motion";
 import React from "react";
 
-interface RevealingTextContainerProps {
+interface RevealingTextContainerProps
+  extends React.HTMLAttributes<HTMLDivElement> {
   scrollYProgress: MotionValue<number>;
   widthStart?: number;
   widthEnd?: number;
@@ -13,11 +14,16 @@ export function RevealingTextContainer({
   widthStart = 0.35,
   widthEnd = 0.5,
   children,
+  ...props
 }: RevealingTextContainerProps) {
-  const widthDiff = (1 - widthEnd) / (children.length==1?1:(children.length - 1));
+  const widthDiff =
+    (1 - widthEnd) / (children.length == 1 ? 1 : children.length - 1);
 
   return (
-    <div className="flex flex-col font-semibold text-white responsive_text_xl">
+    <div
+      {...props}
+      className="flex flex-col font-semibold text-white responsive_text_xl"
+    >
       {children.map((child) => {
         return React.cloneElement(child, {
           scrollYProgress,
@@ -30,13 +36,12 @@ export function RevealingTextContainer({
   );
 }
 
-interface RevealingTextItemProps {
+interface RevealingTextItemProps extends React.HTMLAttributes<HTMLDivElement> {
   scrollYProgress?: MotionValue<number>;
   widthStart?: number;
   widthEnd?: number;
   widthDiff?: number;
   index: number;
-  children: string;
 }
 
 export function RevealingTextItem({
@@ -46,6 +51,7 @@ export function RevealingTextItem({
   widthDiff,
   index,
   children,
+  ...props
 }: RevealingTextItemProps) {
   const width = useTransform(
     scrollYProgress!,
@@ -53,7 +59,7 @@ export function RevealingTextItem({
     ["100%", "0%"]
   );
   return (
-    <div className="relative">
+    <div {...props} className="relative">
       <p>{children}</p>
       <motion.div
         style={{ width }}

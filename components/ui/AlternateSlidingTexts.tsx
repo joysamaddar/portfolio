@@ -1,7 +1,8 @@
 import { cn } from "@/lib/utils";
 import { MotionValue, motion, useSpring, useTransform } from "framer-motion";
 
-interface AlternateSlidingTextsProps {
+interface AlternateSlidingTextsProps
+  extends React.HTMLAttributes<HTMLDivElement> {
   scrollYProgress: MotionValue<number>;
   textsData: string[][];
   className?: string;
@@ -11,6 +12,7 @@ export default function AlternateSlidingTexts({
   scrollYProgress,
   textsData,
   className,
+  ...props
 }: AlternateSlidingTextsProps) {
   const forwardText = useTransform(
     useSpring(scrollYProgress, {
@@ -33,6 +35,7 @@ export default function AlternateSlidingTexts({
 
   return (
     <div
+      {...props}
       className={cn(
         "flex flex-col gap-3 justify-center font-extralight text-5xl my-3 text-white overflow-clip uppercase tracking-wider",
         className
@@ -45,7 +48,10 @@ export default function AlternateSlidingTexts({
           key={i}
         >
           {texts.map((text, j) => (
-            <div className="flex flex-row items-center justify-center gap-2" key={j}>
+            <div
+              className="flex flex-row items-center justify-center gap-2"
+              key={j}
+            >
               <p className="hover:text-primary hover:scale-105 transition duration-100 ease-in-out">
                 {text}
               </p>

@@ -1,8 +1,8 @@
 import { cn } from "@/lib/utils";
-import { motion, useAnimate } from "framer-motion";
+import { HTMLMotionProps, motion, useAnimate } from "framer-motion";
 import { Dispatch, SetStateAction, useEffect } from "react";
 
-interface MenuToggleProps {
+interface MenuToggleProps extends HTMLMotionProps<"div"> {
   menuOpen: boolean;
   setMenuOpen: Dispatch<SetStateAction<boolean>>;
   className?: string;
@@ -12,6 +12,7 @@ export default function MenuToggle({
   menuOpen,
   setMenuOpen,
   className,
+  ...props
 }: MenuToggleProps) {
   const [line1, animateLine1] = useAnimate();
   const [line2, animateLine2] = useAnimate();
@@ -61,6 +62,7 @@ export default function MenuToggle({
 
   return (
     <motion.div
+      {...props}
       variants={lineContinerAnim}
       initial="hidden"
       animate="show"
