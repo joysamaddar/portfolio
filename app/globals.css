@@ -24,7 +24,8 @@
     @apply bg-black text-white;
   }
 
-  #nav-container, .container {
+  #nav-container,
+  .container {
     max-width: var(--maxwidth);
     width: 100%;
     margin: auto;
@@ -92,18 +93,32 @@ html.lenis {
 .gradientborder {
   border-width: 1px;
   border-style: solid;
-  border-image: linear-gradient(to bottom right, var(--darkgray), #59595952)
-    1;
+  border-image: linear-gradient(to bottom right, var(--darkgray), #59595952) 1;
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.4);
   overflow: hidden;
 }
 
+.gradientblockergradient {
+  background: linear-gradient(
+    to top,
+    var(--black) 0%,
+    #0d0d0dd6 10%,
+    #0d0d0db3 20%,
+    #0d0d0d96 30%,
+    #0d0d0d70 40%,
+    #0d0d0d4e 50%,
+    #0d0d0d2a 60%,
+    #0d0d0d12 70%,
+    transparent 80%
+  );
+}
+
 .btn_shadow_primary,
-.btn_shadow_white{
+.btn_shadow_white {
   transition: all 0.2s ease-in-out;
 }
 
-.icon_btn_shadow_primary{
+.icon_btn_shadow_primary {
   transition: all 0.6s ease-in-out;
 }
 
@@ -115,7 +130,7 @@ html.lenis {
   box-shadow: inset -0px 0px 0px var(--white);
 }
 
-.icon_btn_shadow_primary{
+.icon_btn_shadow_primary {
   box-shadow: inset -0px 0px 0px var(--white);
   color: var(--white);
 }
@@ -130,12 +145,12 @@ html.lenis {
   color: var(--black);
 }
 
-.icon_btn_shadow_primary:hover{
+.icon_btn_shadow_primary:hover {
   box-shadow: inset 1000px 0px 0px var(--white);
   color: var(--black);
 }
 
-.responsive_text_xl{
+.responsive_text_xl {
   gap: clamp(8px, 0.8vw, 28px);
   font-size: clamp(24px, 3.1vw, 60px);
 }

@@ -5,7 +5,7 @@ interface MetadataProps{
 };
 
 export async function generateMetadata({ params }: MetadataProps): Promise<Metadata> {
-  const project_name = params.project_name;
+  const project_name = params.project_name.slice(0,1).toUpperCase()+params.project_name.slice(1).replaceAll("_", " ");
   return {
     title: `Joy's Portfolio - ${project_name}`,
     description: "Making pixel-perfect UIs and robust backends.",
@@ -17,5 +17,5 @@ export default function RootLayout({
 }: {
   children: React.ReactNode;
 }) {
-  return <main className="max-w-screen overflow-clip">{children}</main>;
+  return <main className="overflow-clip container">{children}</main>;
 }

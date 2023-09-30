@@ -26,7 +26,6 @@ import slanting_lines from "@/public/slanting_lines.svg";
 import Footer from "@/components/Footer";
 
 export default function Home() {
-  const [mainRef, animateMain] = useAnimate();
   const [socialsRef, animateSocials] = useAnimate();
   const [scrollDownRef, animateScrollDown] = useAnimate();
   const { scrollYProgress } = useScroll();
@@ -88,7 +87,7 @@ export default function Home() {
     <>
       <Navbar />
       <Socials ref={socialsRef} />
-      <main className="overflow-clip" ref={mainRef}>
+      <main className="overflow-clip">
         <div className="container">
           <Hero />
           <MakeAndBreak />

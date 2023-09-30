@@ -10,6 +10,7 @@ import { useEffect } from "react";
 import { notFound } from "next/navigation";
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/Buttons";
+import GradientBlocker from "@/components/ui/GradientBlocker";
 
 interface PageProps {
   params: { project_name: string };
@@ -39,6 +40,7 @@ export default function ProjectPage({ params }: PageProps) {
 
   return (
     <section className="relative mx-[15%] py-[9rem] select-none flex flex-col gap-12">
+      <GradientBlocker className="fixed h-[25dvh]" />
       <Link href={"/"} className="text-gray flex flex-row gap-2 items-center">
         <MoveLeft className="w-5" /> Go back to homepage
       </Link>
@@ -54,6 +56,7 @@ export default function ProjectPage({ params }: PageProps) {
           src={project.cover_image as any}
           alt={`${project.title}'s cover image`}
           className="h-[250px] object-cover"
+          priority
         ></Image>
       </div>
       <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
@@ -81,14 +84,18 @@ export default function ProjectPage({ params }: PageProps) {
           ))}
         </ul>
       </div>
-      {project.problem && <div className="flex flex-col gap-8">
-        <Heading>PROBLEM</Heading>
-        <p className="text-graytransparent">{project.problem}</p>
-      </div>}
-      {project.solution && <div className="flex flex-col gap-8">
-        <Heading>SOLUTION</Heading>
-        <p className="text-graytransparent">{project.solution}</p>
-      </div>}
+      {project.problem && (
+        <div className="flex flex-col gap-8">
+          <Heading>PROBLEM</Heading>
+          <p className="text-graytransparent">{project.problem}</p>
+        </div>
+      )}
+      {project.solution && (
+        <div className="flex flex-col gap-8">
+          <Heading>SOLUTION</Heading>
+          <p className="text-graytransparent">{project.solution}</p>
+        </div>
+      )}
       <div className="flex flex-col gap-8">
         <Heading>TECH STACK</Heading>
         <div className="flex flex-col gap-8 md:gap-3">
@@ -118,6 +125,7 @@ export default function ProjectPage({ params }: PageProps) {
               src={screenshot as any}
               alt={`${project.title}'s ${i + 1} screenshot`}
               className="object-cover bg-gradient-to-br from-zinc-800 to-black"
+              priority
             ></Image>
           ))}
         </div>
