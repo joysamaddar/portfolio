@@ -53,7 +53,7 @@ export default function Projects() {
       ref={sectionRef}
       style={{ opacity: sectionOpacity }}
       id="projects"
-      className="relative select-none mx-[15%] pt-[3rem] pb-[1rem]"
+      className="relative select-none mx-[15%] my-[3rem] py-[6rem]"
     >
       <Heading>Projects</Heading>
       <motion.p
@@ -72,12 +72,12 @@ export default function Projects() {
         initial="hidden"
         whileInView="show"
         viewport={{ once: true }}
-        className="mt-[6rem] w-full leading-7 text-center text-base sm:text-lg md:text-xl font-medium text-graytransparent"
+        className="mt-24 w-full leading-7 text-center text-base sm:text-lg md:text-xl font-medium text-graytransparent"
       >
         Check out some of my <span className="text-primary">side projects</span>{" "}
         below.
       </motion.p>
-      <motion.div className="flex flex-row my-24 items-center justify-center flex-wrap gap-14">
+      <motion.div className="flex flex-row mt-24 items-center justify-center flex-wrap gap-14">
         {projects.map((project, i) => (
           <motion.div
             key={i}

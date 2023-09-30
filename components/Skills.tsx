@@ -19,7 +19,7 @@ export default function Skills() {
       style={{ opacity: sectionOpacity }}
       id="skills"
       ref={sectionRef}
-      className="relative select-none sm:mx-[15%] min-h-max pt-[6rem] mb-[6rem]"
+      className="relative select-none sm:mx-[15%] min-h-max my-[3rem] py-[6rem]"
     >
       <Heading className="mx-[15%] sm:mx-[0%]">SKILLS</Heading>
       <div className="flex flex-col items-center justify-center mt-24">

@@ -32,7 +32,7 @@ export default function TextCarousel({ greetings }: TextCarouselProps) {
             repeatDelay: 6.2,
             times: [0, 0.2, 0.6, 0.8, 1],
           }}
-          className="absolute text-[4rem] sm:text-[5rem] md:text-[7rem] text-clip whitespace-nowrap font-black select-none opacity-0 text-center z-[1] tracking-tight"
+          className="absolute text-[4rem] sm:text-[5rem] md:text-[7rem] text-clip whitespace-nowrap font-black select-none text-center z-[1] tracking-tight"
         >
           {greeting}
         </motion.h1>

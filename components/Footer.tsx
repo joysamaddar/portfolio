@@ -16,7 +16,7 @@ export default function Footer() {
       initial="hidden"
       whileInView="show"
       id="footer"
-      className="relative select-none sm:mx-[15%] flex flex-col sm:flex-row items-center py-8 justify-between text-graytransparent gap-6"
+      className="relative select-none sm:mx-[15%] flex flex-col sm:flex-row items-center py-8 justify-between text-graytransparent gap-6 mt-[3rem]"
     >
       <motion.div
         variants={{

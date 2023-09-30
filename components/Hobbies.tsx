@@ -68,10 +68,10 @@ export default function Hobbies() {
       ref={sectionRef}
       style={{ opacity: sectionOpacity }}
       id="hobbies"
-      className="relative select-none mx-[15%] min-h-max mt-[12rem] pt-[6rem] pb-[6rem]"
+      className="relative select-none mx-[15%] min-h-max my-[3rem] py-[6rem]"
     >
       <Heading>HOBBIES</Heading>
-      <div className="my-36 text-graytransparent">
+      <div className="mt-24 text-graytransparent">
         <motion.div
           variants={hideAndShowVariant}
           initial="hide"
@@ -94,7 +94,7 @@ export default function Hobbies() {
           </p>
         </motion.div>
         <div
-          className="hidden md:flex flex-row mt-[15rem] items-center justify-between gap-2 h-[60dvh] overflow-clip"
+          className="hidden md:flex flex-row my-[15rem] items-center justify-between gap-2 h-[60dvh] overflow-clip"
           ref={imageContainerRef}
         >
           {hobbiesList.map((hobbies, i) => (
@@ -128,7 +128,7 @@ export default function Hobbies() {
           ))}
         </div>
         <div
-          className="flex md:hidden flex-row mt-[15rem] items-center justify-between gap-2 h-[60dvh] overflow-clip"
+          className="flex md:hidden flex-row my-[15rem] items-center justify-between gap-2 h-[60dvh] overflow-clip"
           ref={imageContainerRefMobile}
         >
           {hobbiesListMobile.map((hobbies, i) => (
@@ -166,7 +166,7 @@ export default function Hobbies() {
           initial="hide"
           whileInView="show"
           viewport={{ once: true }}
-          className="flex mt-[15rem] w-full lg:w-1/2 m-auto leading-7 text-center text-base sm:text-xl font-medium"
+          className="flex mb-24 w-full lg:w-1/2 m-auto leading-7 text-center text-base sm:text-xl font-medium"
         >
           <p>
             Apart from coding,

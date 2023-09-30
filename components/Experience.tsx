@@ -122,7 +122,7 @@ export default function Experience() {
       style={{ opacity: sectionOpacity }}
       ref={sectionRef}
       id="experience"
-      className="select-none sm:mx-[15%] py-[6rem]"
+      className="select-none sm:mx-[15%] my-[3rem] py-[6rem]"
     >
       <Heading className="mx-[15%] sm:mx-[0%]">EXPERIENCE</Heading>
       <div className="flex flex-col mt-24 items-start justify-center">

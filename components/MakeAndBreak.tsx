@@ -15,7 +15,7 @@ export default function MakeAndBreak() {
     <motion.section
       style={{ opacity: sectionOpacity }}
       ref={sectionRef}
-      className="h-[150px] sm:h-[240px] select-none sm:mx-[15%] mt-[6rem]"
+      className="h-[150px] sm:h-[240px] select-none sm:mx-[15%] my-[6rem]"
     >
       <motion.div
         initial={{ width: 0, height: 0 }}

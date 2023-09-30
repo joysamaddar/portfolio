@@ -38,7 +38,7 @@ export default function ProjectPage({ params }: PageProps) {
   }, []);
 
   return (
-    <section className="relative mx-[15%] pt-[6rem] pb-[6rem] select-none flex flex-col gap-12">
+    <section className="relative mx-[15%] py-[9rem] select-none flex flex-col gap-12">
       <Link href={"/"} className="text-gray flex flex-row gap-2 items-center">
         <MoveLeft className="w-5" /> Go back to homepage
       </Link>
