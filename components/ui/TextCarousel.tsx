@@ -36,7 +36,7 @@ export default function TextCarousel({
             repeatDelay: 6.2,
             times: [0, 0.2, 0.6, 0.8, 1],
           }}
-          className="absolute text-[4rem] sm:text-[5rem] md:text-[7rem] text-clip whitespace-nowrap font-black select-none text-center z-[1] tracking-tight opacity-0"
+          className="absolute text-[5rem] md:text-[7rem] text-clip whitespace-nowrap font-black select-none text-center z-[1] tracking-tight opacity-0"
         >
           {greeting}
         </motion.h1>

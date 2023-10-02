@@ -35,7 +35,7 @@ export default function Contact() {
       ref={sectionRef}
       style={{ opacity: sectionOpacity }}
       id="contact"
-      className="relative select-none mx-[15%] my-[3rem] py-[6rem]"
+      className="relative select-none mx-[10%] sm:mx-[15%] my-[3rem] py-[6rem]"
     >
       <Heading>CONTACT</Heading>
       <motion.div

@@ -53,7 +53,7 @@ export default function Projects() {
       ref={sectionRef}
       style={{ opacity: sectionOpacity }}
       id="projects"
-      className="relative select-none mx-[15%] my-[3rem] py-[6rem]"
+      className="relative select-none mx-[10%] sm:mx-[15%] my-[3rem] py-[6rem]"
     >
       <Heading>Projects</Heading>
       <motion.p

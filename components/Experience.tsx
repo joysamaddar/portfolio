@@ -74,11 +74,10 @@ function ExperienceItem({ experience }: ExperienceItemProps) {
         <div className="flex flex-col gap-6">
           {experience.roles.map((role, index) => {
             return (
-              <div key={index} className=" flex flex-col gap-0.5">
+              <div key={index} className=" flex flex-col gap-0.5 text-gray">
                 <motion.p
                   custom={animCount.current++}
                   variants={pTagVariants}
-                  className="text-gray"
                 >
                   {role.role}
                 </motion.p>
@@ -86,7 +85,7 @@ function ExperienceItem({ experience }: ExperienceItemProps) {
                   <motion.p
                     custom={animCount.current++}
                     variants={pTagVariants}
-                    className="text-gray text-xs font-light"
+                    className="text-xs font-light"
                   >
                     {`${role.from?.month} ${role.from?.year} - ${
                       role.to?.month
@@ -96,7 +95,7 @@ function ExperienceItem({ experience }: ExperienceItemProps) {
                 <motion.p
                   custom={animCount.current++}
                   variants={pTagVariants}
-                  className="text-gray text-xs font-light"
+                  className="text-xs font-light"
                 >
                   {role.type}
                 </motion.p>
@@ -124,7 +123,7 @@ export default function Experience() {
       id="experience"
       className="select-none sm:mx-[15%] my-[3rem] py-[6rem]"
     >
-      <Heading className="mx-[15%] sm:mx-[0%]">EXPERIENCE</Heading>
+      <Heading className="mx-[10%] sm:mx-[0%]">EXPERIENCE</Heading>
       <div className="flex flex-col mt-24 items-start justify-center">
         {experiences.map((experience, i) => (
           <ExperienceItem key={i} experience={experience} />

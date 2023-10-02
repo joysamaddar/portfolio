@@ -15,7 +15,7 @@ export default function MakeAndBreak() {
     <motion.section
       style={{ opacity: sectionOpacity }}
       ref={sectionRef}
-      className="h-[150px] sm:h-[240px] select-none sm:mx-[15%] my-[6rem]"
+      className="h-[150px] sm:h-[240px] select-none sm:mx-[15%] my:[2rem] sm:my-[6rem]"
     >
       <motion.div
         initial={{ width: 0, height: 0 }}
@@ -56,7 +56,7 @@ export default function MakeAndBreak() {
             transition: { duration: 0.5, delay: 1 },
           }}
           viewport={{ once: true, amount: 1, root: sectionRef }}
-          className="flex flex-row italic font-semibold text-lg sm:text-2xl lg:text-4xl text-graytransparent cursor-default"
+          className="flex flex-row italic font-semibold text-xl sm:text-2xl lg:text-4xl text-graytransparent cursor-default"
         >
           <p className="mr-1.5 sm:mr-2.5">I</p>
           <motion.div className="relative inline-block group cursor-pointer">

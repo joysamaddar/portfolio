@@ -81,7 +81,7 @@ export default function Navbar() {
               x: "100%",
             }}
             transition={{ ease: "easeInOut", duration: 0.3 }}
-            className="w-screen h-[100dvh] bg-black fixed top-0 left-0 z-[1000] px-[15%]"
+            className="w-screen h-[100dvh] bg-black fixed top-0 left-0 z-[1000] px-[10%] sm:px-[15%]"
           >
             <div
               id="nav-container"

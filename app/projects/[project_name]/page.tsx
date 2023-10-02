@@ -39,7 +39,7 @@ export default function ProjectPage({ params }: PageProps) {
   }, []);
 
   return (
-    <section className="relative mx-[15%] py-[9rem] select-none flex flex-col gap-12">
+    <section className="relative mx-[10%] sm:mx-[15%] py-[9rem] select-none flex flex-col gap-12">
       <GradientBlocker className="fixed h-[25dvh]" />
       <Link href={"/"} className="text-gray flex flex-row gap-2 items-center">
         <MoveLeft className="w-5" /> Go back to homepage
@@ -78,9 +78,9 @@ export default function ProjectPage({ params }: PageProps) {
       </div>
       <div className="flex flex-col gap-8">
         <Heading>FEATURES</Heading>
-        <ul className="text-graytransparent list-inside list-disc">
+        <ul className="text-graytransparent list-outside list-disc ml-3.5">
           {project.features.map((feat, i) => (
-            <li key={i}>{feat}</li>
+            <li key={i} >{feat}</li>
           ))}
         </ul>
       </div>

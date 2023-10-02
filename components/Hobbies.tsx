@@ -68,7 +68,7 @@ export default function Hobbies() {
       ref={sectionRef}
       style={{ opacity: sectionOpacity }}
       id="hobbies"
-      className="relative select-none mx-[15%] min-h-max my-[3rem] py-[6rem]"
+      className="relative select-none mx-[10%] sm:mx-[15%] min-h-max my-[3rem] py-[6rem]"
     >
       <Heading>HOBBIES</Heading>
       <div className="mt-24 text-graytransparent">
@@ -89,7 +89,7 @@ export default function Hobbies() {
               </RevealingTextItem>
             ))}
           </RevealingTextContainer>
-          <p className="w-full text-center my-6 text-xs sm:text-sm">
+          <p className="w-full text-center mt-6 text-xs sm:text-sm">
             - Probably someone, not me
           </p>
         </motion.div>
@@ -128,7 +128,7 @@ export default function Hobbies() {
           ))}
         </div>
         <div
-          className="flex md:hidden flex-row my-[15rem] items-center justify-between gap-2 h-[60dvh] overflow-clip"
+          className="flex md:hidden flex-row my-[6rem] items-center justify-between gap-2 h-[60dvh] overflow-clip"
           ref={imageContainerRefMobile}
         >
           {hobbiesListMobile.map((hobbies, i) => (

@@ -17,7 +17,7 @@ export default function Hero() {
       id="hero"
       style={{ opacity }}
       ref={sectionRef}
-      className="h-[100dvh] max-h-[1080px] mx-[15%] flex flex-row items-center justify-center"
+      className="h-[100dvh] max-h-[1080px] mx-[10%] sm:mx-[15%] flex flex-row items-center justify-center"
     >
       <div className="flex items-center justify-center z-[996]">
         <TextCarousel

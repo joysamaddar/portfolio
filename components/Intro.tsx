@@ -57,7 +57,7 @@ export default function Intro() {
       style={{ opacity: sectionOpacity }}
       id="about"
       ref={sectionRef}
-      className="relative mx-[15%] my-[3rem] py-[6rem] select-none flex flex-col"
+      className="relative mx-[10%] sm:mx-[15%] my-[3rem] py-[6rem] select-none flex flex-col"
     >
       <Heading>ABOUT ME</Heading>
       <motion.div
