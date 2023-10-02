@@ -74,11 +74,11 @@ function ExperienceItem({ experience }: ExperienceItemProps) {
         <div className="flex flex-col gap-6">
           {experience.roles.map((role, index) => {
             return (
-              <div key={index} className=" flex flex-col gap-0.5 text-gray">
-                <motion.p
-                  custom={animCount.current++}
-                  variants={pTagVariants}
-                >
+              <div
+                key={index}
+                className=" flex flex-col gap-0.5 text-graytransparent"
+              >
+                <motion.p custom={animCount.current++} variants={pTagVariants}>
                   {role.role}
                 </motion.p>
                 {role.from?.month && (

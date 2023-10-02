@@ -119,7 +119,10 @@ export default function Projects() {
                   </div>
                 </div>
                 <div className="absolute right-0 bottom-0 p-4">
-                  <Link href={project.url}>
+                  <Link
+                    href={project.url}
+                    aria-label="Link to view the project"
+                  >
                     <MoveRight className="w-5 text-gray hover:text-primary duration-300 transition-all ease-in-out" />
                   </Link>
                 </div>

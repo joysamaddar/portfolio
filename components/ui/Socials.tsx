@@ -60,6 +60,7 @@ const Socials = React.forwardRef(
           href="https://www.linkedin.com/in/joy-samaddar/"
           target="_blank"
           className="p-2"
+          aria-label="Link to my linkedin"
         >
           <Linkedin className="w-5 h-5 hover:text-primary" />
         </motion.a>
@@ -68,6 +69,7 @@ const Socials = React.forwardRef(
           href="https://github.com/joysamaddar"
           target="_blank"
           className="p-2"
+          aria-label="Link to my github"
         >
           <Github className="w-5 h-5 hover:text-primary" />
         </motion.a>
@@ -76,6 +78,7 @@ const Socials = React.forwardRef(
           href="https://twitter.com/0xjooy"
           target="_blank"
           className="p-2"
+          aria-label="Link to my twitter"
         >
           <Twitter className="w-5 h-5 hover:text-primary" />
         </motion.a>
@@ -84,6 +87,7 @@ const Socials = React.forwardRef(
           href={resume_link}
           target="_blank"
           className="p-2"
+          aria-label="Link to view my resume"
         >
           <ScrollText className="w-5 h-5 hover:text-primary" />
         </motion.a>

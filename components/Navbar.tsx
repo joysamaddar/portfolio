@@ -44,6 +44,7 @@ export default function Navbar() {
           href={"/#hero"}
           className="group"
           onClick={() => setMenuOpen(false)}
+          aria-label="Logo"
         >
           <motion.svg
             initial={{ opacity: 0, x: "-1.5rem" }}

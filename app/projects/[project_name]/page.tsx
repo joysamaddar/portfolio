@@ -55,7 +55,7 @@ export default function ProjectPage({ params }: PageProps) {
         <Image
           src={project.cover_image as any}
           alt={`${project.title}'s cover image`}
-          className="h-[250px] object-cover"
+          className="h-[250px] object-cover bg-gradient-to-br from-zinc-800 to-black"
           priority
         ></Image>
       </div>
@@ -80,7 +80,7 @@ export default function ProjectPage({ params }: PageProps) {
         <Heading>FEATURES</Heading>
         <ul className="text-graytransparent list-outside list-disc ml-3.5">
           {project.features.map((feat, i) => (
-            <li key={i} >{feat}</li>
+            <li key={i}>{feat}</li>
           ))}
         </ul>
       </div>
