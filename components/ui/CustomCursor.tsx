@@ -20,7 +20,12 @@ export default function CustomCursor() {
       x: mousePosition.x - 6,
       y: mousePosition.y - 6,
       transition: {
-        duration: 0.15,
+        duration:
+          Math.sqrt(
+            mousePosition.x * mousePosition.x +
+              mousePosition.y * mousePosition.y
+          ) /
+          (window.innerWidth * 1.7),
       },
     },
   };
