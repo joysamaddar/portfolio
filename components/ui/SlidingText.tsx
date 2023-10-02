@@ -42,26 +42,46 @@ export function SlidingText({
       viewport={{ once: doNotRepeat, amount: amount, margin: margin }}
     >
       {letters.map((letter, i) => (
-        <motion.p
-          key={i}
-          custom={i}
-          variants={{
-            down: {
-              y: "100%",
-            },
-            up: (i: number) => ({
-              y: "0%",
-              transition: {
-                duration: 0.38,
-                delay: 0.18 * i,
-                ease: "easeOut",
+        <div key={i}>
+          <motion.p
+            custom={i}
+            variants={{
+              down: {
+                y: "0%",
               },
-            }),
-          }}
-          className="m-[-0.025em] min-w-[1.5rem]"
-        >
-          {letter}
-        </motion.p>
+              up: (i: number) => ({
+                y: "-100%",
+                transition: {
+                  duration: 0.38,
+                  delay: 0.18 * i,
+                  ease: "easeInOut",
+                },
+              }),
+            }}
+            className="m-[-0.025em] min-w-[0.8rem] absolute"
+          >
+            {letter}
+          </motion.p>
+          <motion.p
+            custom={i}
+            variants={{
+              down: {
+                y: "100%",
+              },
+              up: (i: number) => ({
+                y: "0%",
+                transition: {
+                  duration: 0.38,
+                  delay: 0.18 * i,
+                  ease: "easeInOut",
+                },
+              }),
+            }}
+            className="m-[-0.025em] min-w-[0.8rem]"
+          >
+            {letter}
+          </motion.p>
+        </div>
       ))}
     </motion.div>
   );
