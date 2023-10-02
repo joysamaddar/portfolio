@@ -49,8 +49,8 @@ export default function Navbar() {
             initial={{ opacity: 0, x: "-1.5rem" }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ type: "spring", bounce: 0.3 }}
-            width="28"
-            height="28"
+            width="24"
+            height="24"
             viewBox="0 0 137 137"
             fill="none"
             xmlns="http://www.w3.org/2000/svg"
