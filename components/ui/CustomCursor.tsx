@@ -9,6 +9,7 @@ export default function CustomCursor() {
     y: 0,
   });
   const [cursorRef, animateCursor] = useAnimate();
+  const [windowWidth, setWindowWidth] = useState(1500);
 
   const variants = {
     load: {
@@ -16,7 +17,7 @@ export default function CustomCursor() {
       x: -6,
       y: -6,
     },
-    move: {
+    move: (i: number) => ({
       x: mousePosition.x - 6,
       y: mousePosition.y - 6,
       transition: {
@@ -25,12 +26,14 @@ export default function CustomCursor() {
             mousePosition.x * mousePosition.x +
               mousePosition.y * mousePosition.y
           ) /
-          (window.innerWidth * 1.7),
+          (i * 1.7),
       },
-    },
+    }),
   };
 
   useEffect(() => {
+    setWindowWidth(window.innerWidth);
+
     const mouseMove = (e: MouseEvent) => {
       setMousePosition({
         x: e.clientX,
@@ -61,6 +64,7 @@ export default function CustomCursor() {
   return (
     <motion.div
       ref={cursorRef}
+      custom={windowWidth}
       variants={variants}
       initial="load"
       animate="move"
