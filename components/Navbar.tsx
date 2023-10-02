@@ -6,7 +6,7 @@ import { useState } from "react";
 import MenuToggle from "./ui/MenuToggle";
 import Socials from "./ui/Socials";
 import { Button } from "./ui/Buttons";
-import { Download } from "lucide-react";
+import { ScrollText } from "lucide-react";
 import resume_link from "@/constants/resume";
 
 const navSections = [
@@ -72,13 +72,14 @@ export default function Navbar() {
         animate={{ opacity: 1 }}
         transition={{ duration: 0.5, ease: "easeIn" }}
       >
-        <Button className="absolute right-[calc(3%+24px+1.5rem)] top-[22px] md:top-[38px] text-xs select-none z-[1000] flex items-center justify-center gap-2">
-          <Download className="w-[18px]" />
+        <Button className="absolute right-[calc(3%+24px+1.5rem)] top-[22px] md:top-[38px] text-xs select-none z-[1000] p-0">
           <a
             href={resume_link}
             target="_blank"
             aria-label="Link to view my resume"
+            className="flex items-center justify-center gap-2 p-2"
           >
+            <ScrollText className="w-[18px] pointer-events-none" />
             View Resume
           </a>
         </Button>
