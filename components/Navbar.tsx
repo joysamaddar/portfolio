@@ -5,6 +5,9 @@ import Link from "next/link";
 import { useState } from "react";
 import MenuToggle from "./ui/MenuToggle";
 import Socials from "./ui/Socials";
+import { Button } from "./ui/Buttons";
+import { Download } from "lucide-react";
+import resume_link from "@/constants/resume";
 
 const navSections = [
   "About",
@@ -64,6 +67,22 @@ export default function Navbar() {
           </motion.svg>
         </Link>
       </div>
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 0.5, ease: "easeIn" }}
+      >
+        <Button className="absolute right-[calc(3%+24px+1.5rem)] top-[22px] md:top-[38px] text-xs select-none z-[1000] flex items-center justify-center gap-2">
+          <Download className="w-[18px]" />
+          <a
+            href={resume_link}
+            target="_blank"
+            aria-label="Link to view my resume"
+          >
+            View Resume
+          </a>
+        </Button>
+      </motion.div>
       <MenuToggle menuOpen={menuOpen} setMenuOpen={setMenuOpen} />
       <AnimatePresence>
         {menuOpen && (
