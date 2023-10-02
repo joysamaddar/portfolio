@@ -10,7 +10,7 @@ export default function Contact() {
   const sectionRef = useRef<HTMLDivElement>(null);
   const { scrollYProgress: scrollYProgressRevealingText } = useScroll({
     target: sectionRef,
-    offset: ["start end", "end center"],
+    offset: ["start end", "end end"],
   } as any);
   const { scrollYProgress: opacityScroller } = useScroll({
     target: sectionRef,
@@ -45,7 +45,11 @@ export default function Contact() {
         viewport={{ once: true }}
         className="flex flex-col mt-24 items-start justify-center"
       >
-        <RevealingTextContainer scrollYProgress={scrollYProgressRevealingText}>
+        <RevealingTextContainer
+          scrollYProgress={scrollYProgressRevealingText}
+          widthStart={0.4}
+          widthEnd={0.8}
+        >
           {["IMPRESSED?", "LET'S HAVE A CHAT!"].map((text, i) => (
             <RevealingTextItem index={i} key={i}>
               {text}
