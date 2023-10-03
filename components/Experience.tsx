@@ -5,6 +5,7 @@ import { useRef } from "react";
 import Heading from "./ui/Heading";
 import { ExperienceType } from "@/@types/experience.type";
 import { experiences } from "@/constants/experiences";
+import LogoCarousel from "./ui/LogoCarousel";
 
 interface ExperienceItemProps {
   experience: ExperienceType;
@@ -125,6 +126,25 @@ export default function Experience() {
     >
       <Heading className="mx-[10%] sm:mx-[0%]">EXPERIENCE</Heading>
       <div className="flex flex-col mt-24 items-start justify-center">
+        <motion.div
+          variants={{
+            collapse: {
+              width: "0%",
+            },
+            expand: {
+              width: "100%",
+              transition: {
+                duration: 0.6,
+                delay: 0.4,
+              },
+            },
+          }}
+          initial={"collapse"}
+          whileInView={"expand"}
+          viewport={{ once: true, amount: 0.8, margin: "0px 0px -10% 0px" }}
+          className="h-[1px] linegradient"
+        ></motion.div>
+        <LogoCarousel />
         {experiences.map((experience, i) => (
           <ExperienceItem key={i} experience={experience} />
         ))}

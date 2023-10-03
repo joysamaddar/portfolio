@@ -1,9 +1,17 @@
 import { ExperienceType } from "@/@types/experience.type";
+import agoraverse from "@/public/agora.webp";
+import cognizant from "@/public/cognizant.webp";
+import fasthr from "@/public/fasthr.svg";
+
+export const yearsOfExperience =
+  (new Date().getTime() - new Date("2022-02-01").getTime()) /
+  (1000 * 60 * 60 * 24 * 365);
 
 export const experiences: ExperienceType[] = [
   {
     company: "Fasthr.AI",
     companyLink: "https://www.linkedin.com/company/fasthrdotai/",
+    companyLogo: fasthr,
     roles: [
       {
         role: "Frontend Engineer",
@@ -21,6 +29,7 @@ export const experiences: ExperienceType[] = [
   {
     company: "Cognizant",
     companyLink: "https://www.linkedin.com/company/cognizant/",
+    companyLogo: cognizant,
     roles: [
       {
         role: "Programmer Analyst",
@@ -51,6 +60,7 @@ export const experiences: ExperienceType[] = [
   {
     company: "Agoraverse",
     companyLink: "https://www.linkedin.com/company/agoraverse/",
+    companyLogo: agoraverse,
     roles: [
       {
         role: "Junior Full Stack Developer",

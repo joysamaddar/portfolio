@@ -1,6 +1,9 @@
+import { StaticImageData } from "next/image";
+
 export type ExperienceType = {
   company: string;
   companyLink: string;
+  companyLogo: StaticImageData;
   roles: {
     role: string;
     from: {

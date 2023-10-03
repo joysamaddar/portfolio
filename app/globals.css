@@ -154,3 +154,62 @@ html.lenis {
   gap: clamp(8px, 0.8vw, 28px);
   font-size: clamp(24px, 3.1vw, 60px);
 }
+
+.logo_slider_container:before {
+  content: "";
+  position: absolute;
+  left: 0;
+  height: 100%;
+  width: 20%;
+  z-index: 1;
+  background: linear-gradient(
+    to right,
+    var(--black) 0%,
+    #0d0d0dd6 10%,
+    #0d0d0db3 20%,
+    #0d0d0d96 30%,
+    #0d0d0d70 40%,
+    #0d0d0d4e 50%,
+    #0d0d0d2a 60%,
+    #0d0d0d12 70%,
+    transparent 80%
+  );
+}
+
+.logo_slider_container:after {
+  content: "";
+  position: absolute;
+  right: 0;
+  height: 100%;
+  width: 20%;
+  z-index: 1;
+  background: linear-gradient(
+    to left,
+    var(--black) 0%,
+    #0d0d0dd6 10%,
+    #0d0d0db3 20%,
+    #0d0d0d96 30%,
+    #0d0d0d70 40%,
+    #0d0d0d4e 50%,
+    #0d0d0d2a 60%,
+    #0d0d0d12 70%,
+    transparent 80%
+  );
+}
+
+.logo_slider_container:hover > .logo_slider {
+  animation-play-state: paused;
+}
+
+.logo_slider {
+  animation: 17s logo_slide_anim infinite linear;
+}
+
+@keyframes logo_slide_anim {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-100%);
+  }
+}

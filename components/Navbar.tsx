@@ -72,7 +72,7 @@ export default function Navbar() {
         animate={{ opacity: 1 }}
         transition={{ duration: 0.5, ease: "easeIn" }}
       >
-        <Button className="absolute right-[calc(3%+24px+1.5rem)] top-[22px] md:top-[38px] text-xs select-none z-[1000] p-0">
+        <Button className="absolute right-[calc(3%+24px+1.5rem)] top-[22px] md:top-[38px] text-xs sm:text-sm select-none z-[1000] p-0">
           <a
             href={resume_link}
             target="_blank"
