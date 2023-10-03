@@ -136,7 +136,7 @@ html.lenis {
 }
 
 .btn_shadow_primary:hover {
-  box-shadow: inset -120px 0px 0px var(--primary);
+  box-shadow: inset -140px 0px 0px var(--primary);
   color: white;
 }
 
