@@ -1,8 +1,10 @@
+import { cn } from "@/lib/utils";
 import { MotionValue, motion, useTransform } from "framer-motion";
 import React from "react";
 
 interface RevealingTextContainerProps
   extends React.HTMLAttributes<HTMLDivElement> {
+  className?: string;
   scrollYProgress: MotionValue<number>;
   widthStart?: number;
   widthEnd?: number;
@@ -10,6 +12,7 @@ interface RevealingTextContainerProps
 }
 
 export function RevealingTextContainer({
+  className,
   scrollYProgress,
   widthStart = 0.35,
   widthEnd = 0.5,
@@ -22,7 +25,10 @@ export function RevealingTextContainer({
   return (
     <div
       {...props}
-      className="flex flex-col font-semibold text-white responsive_text_xl"
+      className={cn(
+        "flex flex-col font-semibold text-white responsive_text_xl",
+        className
+      )}
     >
       {children.map((child) => {
         return React.cloneElement(child, {
@@ -37,6 +43,7 @@ export function RevealingTextContainer({
 }
 
 interface RevealingTextItemProps extends React.HTMLAttributes<HTMLDivElement> {
+  className?: string;
   scrollYProgress?: MotionValue<number>;
   widthStart?: number;
   widthEnd?: number;
@@ -45,6 +52,7 @@ interface RevealingTextItemProps extends React.HTMLAttributes<HTMLDivElement> {
 }
 
 export function RevealingTextItem({
+  className,
   scrollYProgress,
   widthStart,
   widthEnd,
@@ -63,7 +71,10 @@ export function RevealingTextItem({
       <p>{children}</p>
       <motion.div
         style={{ width }}
-        className="mask absolute top-0 right-0 bg-black opacity-60 h-[calc(100%+1rem)] w-full"
+        className={cn(
+          "mask absolute top-0 right-0 bg-black opacity-60 h-[calc(100%+1rem)] w-full",
+          className
+        )}
       ></motion.div>
     </div>
   );

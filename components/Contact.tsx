@@ -50,11 +50,13 @@ export default function Contact() {
           widthStart={0.4}
           widthEnd={0.8}
         >
-          {["IMPRESSED?", "LET'S HAVE A CHAT!"].map((text, i) => (
-            <RevealingTextItem index={i} key={i}>
-              {text}
-            </RevealingTextItem>
-          ))}
+          {["Let's turn your ideas into", "reality. Contact me!"].map(
+            (text, i) => (
+              <RevealingTextItem index={i} key={i}>
+                {text}
+              </RevealingTextItem>
+            )
+          )}
         </RevealingTextContainer>
         <div className="w-full flex flex-row items-center justify-start gap-8 flex-wrap mt-16 text-sm sm:text-base">
           <Link
