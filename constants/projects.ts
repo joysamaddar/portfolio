@@ -67,7 +67,7 @@ export const projects = [
       Backend: ["Node.js", "Express.js", "Socket.IO"],
       Frontend: ["React", "SCSS"],
     },
-    liveLink: "https://xatty.netlify.app/",
+    liveLink: "https://xatty.vercel.app/",
     codeLink: "https://github.com/joysamaddar/Xatty",
   },
 ];
