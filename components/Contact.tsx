@@ -2,7 +2,7 @@ import Heading from "./ui/Heading";
 import { useRef } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { RevealingTextContainer, RevealingTextItem } from "./ui/RevealingText";
-import { Calendar, Mail, Phone } from "lucide-react";
+import { Calendar, Mail } from "lucide-react";
 import { ButtonWithIcon } from "./ui/Buttons";
 import Link from "next/link";
 
@@ -70,9 +70,6 @@ export default function Contact() {
             <ButtonWithIcon icon={Mail}>
               joysamaddar123@gmail.com
             </ButtonWithIcon>
-          </a>
-          <a href="tel:+917980061385" className="flex-grow">
-            <ButtonWithIcon icon={Phone}>+917980061385</ButtonWithIcon>
           </a>
         </div>
       </motion.div>
