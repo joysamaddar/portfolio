@@ -76,7 +76,7 @@ export default function Navbar() {
           <a
             href={resume_link}
             target="_blank"
-            aria-label="Link to view my resume"
+            aria-label="View resume"
             className="flex items-center justify-center gap-2 p-2"
           >
             <ScrollText className="w-[18px] pointer-events-none" />
