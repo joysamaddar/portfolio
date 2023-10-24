@@ -28,6 +28,7 @@ export default function LogoCarousel({
       }}
       initial={"hidden"}
       whileInView={"show"}
+      viewport={{ once: true }}
       className={cn(
         "py-8 overflow-hidden flex flex-col w-full gap-4 sm:gap-2",
         className
